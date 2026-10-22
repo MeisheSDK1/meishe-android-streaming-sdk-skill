@@ -1,2 +1,2 @@
-# meishe-android-streaming-sdk-api
+# meishe-android-streaming-sdk-skill
 meishe-android-streaming-sdk-api
