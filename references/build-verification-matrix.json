@@ -1,0 +1,753 @@
+{
+  "schema_version": "1.0",
+  "sdk_version": "3.16.1.25",
+  "verification_date": "2026-08-04",
+  "scope": "Generation, compilation, incremental-integration, and standalone-isolation evidence. This file does not confer runtime_verified status.",
+  "toolchain": {
+    "android_compile_sdk": 35,
+    "gradle_version": "8.14.4",
+    "java_runtime_major": 21
+  },
+  "runs": [
+    {
+      "id": "build.all-blueprints.workspace-20260731",
+      "kind": "blueprint_build",
+      "result": "passed",
+      "isolated": false,
+      "blueprint_ids": [
+        "short-video-editor",
+        "beauty-camera",
+        "camera-plus-editor",
+        "asset-center-demo",
+        "template-mimo-cutsame-app",
+        "pip-editor",
+        "quick-splicing-app",
+        "full-sdk-demo",
+        "incremental-integration"
+      ],
+      "assertions": [
+        "Each blueprint was regenerated from the current skill.",
+        "Each generated project completed :app:assembleDebug.",
+        "Each project produced app/build/outputs/apk/debug/app-debug.apk.",
+        "All nine blueprints also built with --include-extra-sdk after the generator added the Demo-matched AppCompat dependency required by cafconvertor.aar."
+      ]
+    },
+    {
+      "id": "build.all-blueprints.isolated-20260731",
+      "kind": "standalone_blueprint_build",
+      "result": "passed",
+      "isolated": true,
+      "blueprint_ids": [
+        "short-video-editor",
+        "beauty-camera",
+        "camera-plus-editor",
+        "asset-center-demo",
+        "template-mimo-cutsame-app",
+        "pip-editor",
+        "quick-splicing-app",
+        "full-sdk-demo",
+        "incremental-integration"
+      ],
+      "fixture_contents": [
+        "NvAndroidStreamingSdk.jar",
+        "libNvStreamingSdkCore.so",
+        "effectlib.jar",
+        "meishesdk.lic"
+      ],
+      "assertions": [
+        "The skill was copied to a directory without original SdkDemo or Doxygen siblings.",
+        "Lookup, composition, generation, and build used only the copied skill and neutral SDK fixture.",
+        "All nine isolated projects completed :app:assembleDebug and produced debug APKs."
+      ]
+    },
+    {
+      "id": "build.incremental-fixtures-20260731",
+      "kind": "incremental_build",
+      "result": "passed",
+      "isolated": false,
+      "blueprint_ids": [
+        "incremental-integration"
+      ],
+      "variants": [
+        "java-groovy",
+        "java-kts",
+        "kotlin-groovy",
+        "kotlin-kts"
+      ],
+      "assertions": [
+        "Each host received a staged patch manifest and generated Java controller.",
+        "The Gradle dependency patch was applied without replacing the host Activity.",
+        "All four host variants completed :app:assembleDebug."
+      ]
+    },
+    {
+      "id": "build.affected-blueprints.isolated-stage6-20260731",
+      "kind": "standalone_blueprint_build",
+      "result": "passed",
+      "isolated": true,
+      "blueprint_ids": [
+        "short-video-editor",
+        "beauty-camera",
+        "camera-plus-editor",
+        "full-sdk-demo"
+      ],
+      "fixture_contents": [
+        "NvAndroidStreamingSdk.jar",
+        "libNvStreamingSdkCore.so",
+        "effectlib.jar",
+        "meishesdk.lic"
+      ],
+      "assertions": [
+        "The current skill was copied with Windows long-path support to C:/tmp/m6s733/s without Demo or Doxygen siblings.",
+        "The four blueprints affected by project-media and AR/segmentation changes were generated from that isolated copy.",
+        "All four projects completed :app:assembleDebug and produced debug APKs."
+      ]
+    },
+    {
+      "id": "build.knowledge-and-lookup-20260731",
+      "kind": "knowledge_validation",
+      "result": "passed",
+      "isolated": true,
+      "blueprint_ids": [],
+      "assertions": [
+        "Strict knowledge audit compiled all 109 java_unit entries and reported zero structural gaps.",
+        "147 lookup cases passed, including exact API, exact stable API, and natural-language Top-1 queries.",
+        "Skill quick validation passed."
+      ]
+    },
+    {
+      "id": "build.short-video-editor.mixed-media-20260803",
+      "kind": "blueprint_build",
+      "result": "passed",
+      "isolated": false,
+      "blueprint_ids": [
+        "short-video-editor"
+      ],
+      "assertions": [
+        "The current skill generated the mixed-media short-video editor project.",
+        "The generated project completed :app:assembleDebug and produced app/build/outputs/apk/debug/app-debug.apk.",
+        "The APK was installed on the physical-device validation target; runtime behavior is recorded separately in runtime-verification-matrix.json."
+      ]
+    },
+    {
+      "id": "build.incremental-fixtures-20260803",
+      "kind": "incremental_build",
+      "result": "passed",
+      "isolated": false,
+      "blueprint_ids": [
+        "incremental-integration"
+      ],
+      "variants": [
+        "java-groovy",
+        "java-kts",
+        "kotlin-groovy",
+        "kotlin-kts"
+      ],
+      "assertions": [
+        "Each host received and applied a staged timeline-state-store patch without replacing the host Activity.",
+        "Java and Kotlin hosts using Groovy and Kotlin DSL Gradle files all completed :app:assembleDebug.",
+        "Builds were executed serially after a Windows Android platform jar lock was identified as an environmental concurrency failure."
+      ]
+    },
+    {
+      "id": "build.knowledge-and-lookup-20260803",
+      "kind": "knowledge_validation",
+      "result": "passed",
+      "isolated": false,
+      "blueprint_ids": [],
+      "assertions": [
+        "Strict knowledge audit compiled all 119 java_unit entries against the SDK and Android jars and reported zero structural gaps.",
+        "The 157-case lookup suite reported 100% exact API, 100% exact stable API, and 100% natural-language Top-1 accuracy.",
+        "Simple-code strict coverage, three builder unit tests, and skill quick validation passed."
+      ]
+    },
+    {
+      "id": "build.short-video-editor.full-state-v2-20260803",
+      "kind": "blueprint_build",
+      "result": "passed",
+      "isolated": false,
+      "blueprint_ids": [
+        "short-video-editor"
+      ],
+      "assertions": [
+        "The current skill generated com.meishe.skillvalidation.fullstatev2 with versioned editor descriptors and persistent bundled-media copying.",
+        "The generated project completed :app:assembleDebug and produced app/build/outputs/apk/debug/app-debug.apk.",
+        "The APK installed on the physical-device target; process restore and export behavior are recorded separately in runtime-verification-matrix.json."
+      ]
+    },
+    {
+      "id": "build.knowledge-and-lookup.full-state-20260803",
+      "kind": "knowledge_validation",
+      "result": "passed",
+      "isolated": false,
+      "blueprint_ids": [],
+      "assertions": [
+        "Strict knowledge audit compiled all 124 java_unit entries against the SDK and Android jars and reported zero structural gaps.",
+        "The 161-case lookup suite reported 100% exact API, 100% exact stable API, and 100% natural-language Top-1 accuracy.",
+        "Simple-code strict coverage, three builder unit tests, skill quick validation, and the device crash buffer check passed."
+      ]
+    },
+    {
+      "id": "build.all-blueprints.contract19-20260803",
+      "kind": "blueprint_build",
+      "result": "passed",
+      "isolated": false,
+      "blueprint_ids": [
+        "short-video-editor",
+        "beauty-camera",
+        "camera-plus-editor",
+        "asset-center-demo",
+        "template-mimo-cutsame-app",
+        "pip-editor",
+        "quick-splicing-app",
+        "full-sdk-demo",
+        "incremental-integration"
+      ],
+      "assertions": [
+        "All nine blueprints were regenerated after the 19 contract-only APIs received exact java_unit implementations.",
+        "Every generated project completed :app:assembleDebug and produced app/build/outputs/apk/debug/app-debug.apk.",
+        "The builds covered the updated base, effects, audio, captions-stickers, beauty-AR, capture, timeline, and export templates."
+      ]
+    },
+    {
+      "id": "build.incremental-fixtures.contract19-20260803",
+      "kind": "incremental_build",
+      "result": "passed",
+      "isolated": false,
+      "blueprint_ids": [
+        "incremental-integration"
+      ],
+      "variants": [
+        "java-groovy",
+        "java-kts",
+        "kotlin-groovy",
+        "kotlin-kts"
+      ],
+      "assertions": [
+        "The current incremental generator staged and applied patches to all four host fixtures.",
+        "Java and Kotlin hosts using Groovy and Kotlin DSL all completed :app:assembleDebug.",
+        "Host Activities remained owned by the host project."
+      ]
+    },
+    {
+      "id": "build.knowledge-and-lookup.contract19-20260803",
+      "kind": "knowledge_validation",
+      "result": "passed",
+      "isolated": false,
+      "blueprint_ids": [],
+      "assertions": [
+        "Strict knowledge audit compiled all 143 java_unit entries against the SDK and Android jars and reported zero structural gaps.",
+        "The 197-case lookup suite reported 100% exact API, 100% exact stable API, and 100% natural-language Top-1 accuracy.",
+        "The API v2 registry contains 220 compiled_unit and 519 evidence_only members with zero contract_only members."
+      ]
+    },
+    {
+      "id": "build.all-blueprints.module-units-stage3-20260803",
+      "kind": "blueprint_build",
+      "result": "passed",
+      "isolated": false,
+      "blueprint_ids": [
+        "short-video-editor",
+        "beauty-camera",
+        "camera-plus-editor",
+        "asset-center-demo",
+        "template-mimo-cutsame-app",
+        "pip-editor",
+        "quick-splicing-app",
+        "full-sdk-demo",
+        "incremental-integration"
+      ],
+      "assertions": [
+        "All 27 previously recipe-only target modules now own explicit skill-owned Java render units.",
+        "All nine blueprints were regenerated and completed :app:assembleDebug with debug APK output.",
+        "The generated projects exercised the new template-workflows and media-workflows feature templates where required."
+      ]
+    },
+    {
+      "id": "build.incremental-fixtures.module-units-stage3-20260803",
+      "kind": "incremental_build",
+      "result": "passed",
+      "isolated": false,
+      "blueprint_ids": [
+        "incremental-integration"
+      ],
+      "variants": [
+        "java-groovy",
+        "java-kts",
+        "kotlin-groovy",
+        "kotlin-kts"
+      ],
+      "assertions": [
+        "The Stage 3 incremental generator staged and applied patches to all four host fixtures.",
+        "Java and Kotlin hosts using Groovy and Kotlin DSL all completed :app:assembleDebug.",
+        "The host Activity and project ownership boundaries remained intact."
+      ]
+    },
+    {
+      "id": "build.knowledge-and-lookup.module-units-stage3-20260803",
+      "kind": "knowledge_validation",
+      "result": "passed",
+      "isolated": false,
+      "blueprint_ids": [],
+      "assertions": [
+        "Strict knowledge audit compiled all 170 java_unit entries against the SDK and Android jars and reported zero structural gaps.",
+        "The 197-case lookup suite reported 100% exact API, 100% exact stable API, and 98.81% natural-language Top-1 accuracy.",
+        "All 57 small and big modules own direct Java units; the API v2 registry contains 236 compiled_unit and 503 evidence_only members with zero contract_only members."
+      ]
+    },
+    {
+      "id": "build.all-blueprints.template-execution-stage4-20260803",
+      "kind": "blueprint_build",
+      "result": "passed",
+      "isolated": false,
+      "blueprint_ids": [
+        "short-video-editor",
+        "beauty-camera",
+        "camera-plus-editor",
+        "asset-center-demo",
+        "template-mimo-cutsame-app",
+        "pip-editor",
+        "quick-splicing-app",
+        "full-sdk-demo",
+        "incremental-integration"
+      ],
+      "assertions": [
+        "All nine blueprints were regenerated from the final Stage 4 registry and completed :app:assembleDebug with debug APK output.",
+        "The template blueprint compiled package/license selection, nested descriptor mapping, conditional reverse conversion, standard and CutSame template branches, the separate Mimo JSON-driven branch, caption replacement, LiveWindow preview, compile callbacks, export, and material-center navigation.",
+        "NvsLiveWindow is constructed only after SDK initialization."
+      ]
+    },
+    {
+      "id": "build.incremental-fixtures.template-execution-stage4-20260803",
+      "kind": "incremental_build",
+      "result": "passed",
+      "isolated": false,
+      "blueprint_ids": [
+        "incremental-integration"
+      ],
+      "variants": [
+        "java-groovy",
+        "java-kts",
+        "kotlin-groovy",
+        "kotlin-kts"
+      ],
+      "assertions": [
+        "The final Stage 4 generator staged and applied patches to all four host fixtures.",
+        "Java and Kotlin hosts using Groovy and Kotlin DSL all completed :app:assembleDebug.",
+        "Host Activities and project ownership remained unchanged."
+      ]
+    },
+    {
+      "id": "build.knowledge-and-lookup.template-execution-stage4-20260803",
+      "kind": "knowledge_validation",
+      "result": "passed",
+      "isolated": false,
+      "blueprint_ids": [],
+      "assertions": [
+        "Strict knowledge audit compiled all 188 java_unit entries against the SDK and Android jars and reported zero structural gaps.",
+        "The 199-case lookup suite reported 100% exact API, 100% exact stable API, and 98.84% natural-language Top-1 accuracy.",
+        "The API v2 registry contains 248 compiled_unit and 498 evidence_only members with zero contract_only members."
+      ]
+    },
+    {
+      "id": "build.isolated-template-composition.stage4-20260803",
+      "kind": "independence_validation",
+      "result": "passed",
+      "isolated": true,
+      "blueprint_ids": [
+        "template-mimo-cutsame-app"
+      ],
+      "assertions": [
+        "A skill-only copy outside the project tree composed the CutSame api-only module without reading external Demo or Doxygen paths.",
+        "The isolated CutSame plan selected only java.template.create-cutsame-timeline and retained template-owned compile callbacks.",
+        "The isolated template blueprint dry run completed with --no-sample-assets and resolved R0, R1, R3, R4, R10, and R13."
+      ]
+    },
+    {
+      "id": "build.all-blueprints.editor-activity-split-stage5-20260803",
+      "kind": "blueprint_build",
+      "result": "passed",
+      "isolated": false,
+      "blueprint_ids": [
+        "short-video-editor",
+        "beauty-camera",
+        "camera-plus-editor",
+        "asset-center-demo",
+        "template-mimo-cutsame-app",
+        "pip-editor",
+        "quick-splicing-app",
+        "full-sdk-demo",
+        "incremental-integration"
+      ],
+      "assertions": [
+        "All nine blueprints were regenerated after the short-video editor Activity split and completed :app:assembleDebug with debug APK output.",
+        "MeisheEditorActivity contains 110 lines, has no com.meicam or Nvs imports, and delegates editor behavior through coordinator, session, command, overlay, voiceover, project, and UI-binding collaborators.",
+        "The proprietary optional SDK jars emitted known D8 stack-map warnings and Java target 8 emitted JDK 21 deprecation warnings without build failure."
+      ]
+    },
+    {
+      "id": "build.incremental-fixtures.editor-activity-split-stage5-20260803",
+      "kind": "incremental_build",
+      "result": "passed",
+      "isolated": false,
+      "blueprint_ids": [
+        "incremental-integration"
+      ],
+      "variants": [
+        "java-groovy",
+        "java-kts",
+        "kotlin-groovy",
+        "kotlin-kts"
+      ],
+      "assertions": [
+        "The Stage 5 generator prepared all four Java/Kotlin and Groovy/KTS host fixtures.",
+        "Each prepared fixture completed :app:assembleDebug through a direct Gradle invocation.",
+        "The short-video editor refactor did not change host Activity ownership or incremental patch contracts."
+      ]
+    },
+    {
+      "id": "build.knowledge-and-lookup.editor-activity-split-stage5-20260803",
+      "kind": "knowledge_validation",
+      "result": "passed",
+      "isolated": false,
+      "blueprint_ids": [],
+      "assertions": [
+        "Strict knowledge audit compiled all 188 java_unit entries against the SDK and Android jars and reported zero structural gaps.",
+        "Both strict structural audits passed, six builder tests passed, and the skill quick validator passed.",
+        "The 199-case lookup suite reported 100% exact API, 100% exact stable API, and 98.84% natural-language Top-1 accuracy."
+      ]
+    },
+    {
+      "id": "build.isolated-editor-composition.stage5-20260803",
+      "kind": "independence_validation",
+      "result": "passed",
+      "isolated": true,
+      "blueprint_ids": [
+        "short-video-editor"
+      ],
+      "assertions": [
+        "A skill-only copy outside the project and SDK distribution trees composed the short-video editor without external Demo or Doxygen reads.",
+        "The isolated dry run resolved the explicit short-video-editor blueprint, caption, sticker, and filter modules plus their prerequisite closure.",
+        "The isolated plan included recipe.editor-session-orchestration and the thin-Activity ownership guards."
+      ]
+    },
+    {
+      "id": "build.all-blueprints.project-v3-ownership-stage6-20260803",
+      "kind": "blueprint_build",
+      "result": "passed",
+      "isolated": false,
+      "blueprint_ids": [
+        "short-video-editor",
+        "beauty-camera",
+        "camera-plus-editor",
+        "asset-center-demo",
+        "template-mimo-cutsame-app",
+        "pip-editor",
+        "quick-splicing-app",
+        "full-sdk-demo",
+        "incremental-integration"
+      ],
+      "assertions": [
+        "All nine blueprints were regenerated after the version-3 project and Timeline ownership changes and completed :app:assembleDebug with debug APK output.",
+        "The short-video editor compiled atomic file persistence, stable object ids, v2 migration, extension codecs, bounded history, and EDITOR_OWNED/HOST_OWNED session policy.",
+        "MeisheEditorActivity remains 114 lines and contains no com.meicam or Nvs imports."
+      ]
+    },
+    {
+      "id": "build.incremental-fixtures.project-v3-ownership-stage6-20260803",
+      "kind": "incremental_build",
+      "result": "passed",
+      "isolated": false,
+      "blueprint_ids": [
+        "incremental-integration"
+      ],
+      "variants": [
+        "java-groovy",
+        "java-kts",
+        "kotlin-groovy",
+        "kotlin-kts"
+      ],
+      "assertions": [
+        "The Stage 6 generator prepared Java/Groovy, Java/KTS, Kotlin/Groovy, and Kotlin/KTS host fixtures.",
+        "Each fixture completed :app:assembleDebug through a direct Gradle invocation.",
+        "The new project-state helpers remain Java-callable and did not alter the controlled incremental patch contract."
+      ]
+    },
+    {
+      "id": "build.knowledge-and-lookup.project-v3-ownership-stage6-20260803",
+      "kind": "knowledge_validation",
+      "result": "passed",
+      "isolated": false,
+      "blueprint_ids": [],
+      "assertions": [
+        "Strict knowledge audit compiled all 191 java_unit entries against the SDK and Android 36 jars and reported zero structural gaps.",
+        "Strict coverage audit, six builder tests, coverage-summary consistency, and the skill quick validator passed.",
+        "The 199-case lookup suite reported 100% exact API, 100% exact stable API, and 98.84% natural-language Top-1 accuracy."
+      ]
+    },
+    {
+      "id": "build.isolated-editor-project-v3.stage6-20260803",
+      "kind": "independence_validation",
+      "result": "passed",
+      "isolated": true,
+      "blueprint_ids": [
+        "short-video-editor"
+      ],
+      "assertions": [
+        "A detached skill-only copy with no adjacent SdkDemo or Doxygen directory composed and generated the short-video editor without external source reads.",
+        "The isolated plan selected recipe.editor-project-v3-ownership and the stable-id, atomic-load, and atomic-save Java units through dependency closure.",
+        "The isolated generated project received only user-supplied proprietary SDK artifacts and completed :app:assembleDebug."
+      ]
+    },
+    {
+      "id": "build.all-blueprints.stage7-runtime-fixes-20260803",
+      "kind": "blueprint_build",
+      "result": "passed",
+      "isolated": false,
+      "blueprint_ids": [
+        "short-video-editor",
+        "beauty-camera",
+        "camera-plus-editor",
+        "asset-center-demo",
+        "template-mimo-cutsame-app",
+        "pip-editor",
+        "quick-splicing-app",
+        "full-sdk-demo",
+        "incremental-integration"
+      ],
+      "assertions": [
+        "All nine blueprints were regenerated after the Stage 7 asynchronous package, filename-preservation, Mimo workflow, and template initialization fixes and completed :app:assembleDebug.",
+        "The template blueprint compiled distinct standard/CutSame .template and Mimo ZIP/info.json execution paths, delayed NvsMediaFileConvertor construction until after SDK initialization, and preserved selected package filenames.",
+        "Every generated project produced app/build/outputs/apk/debug/app-debug.apk."
+      ]
+    },
+    {
+      "id": "build.incremental-fixtures.stage7-runtime-fixes-20260803",
+      "kind": "incremental_build",
+      "result": "passed",
+      "isolated": false,
+      "blueprint_ids": [
+        "incremental-integration"
+      ],
+      "variants": [
+        "java-groovy",
+        "java-kts",
+        "kotlin-groovy",
+        "kotlin-kts"
+      ],
+      "assertions": [
+        "The Stage 7 generator prepared and applied controlled patches to Java/Groovy, Java/KTS, Kotlin/Groovy, and Kotlin/KTS host fixtures.",
+        "Each prepared fixture completed :app:assembleDebug through a direct sequential Gradle invocation.",
+        "The asynchronous asset installer and updated shared media helpers remained callable from Java controllers in Java and Kotlin hosts."
+      ]
+    },
+    {
+      "id": "build.knowledge-and-lookup.stage7-runtime-fixes-20260803",
+      "kind": "knowledge_validation",
+      "result": "passed",
+      "isolated": false,
+      "blueprint_ids": [],
+      "assertions": [
+        "Strict knowledge audit compiled all 201 java_unit entries against the SDK and Android 35 jars and reported zero structural gaps.",
+        "Strict simple-code coverage audit and the skill quick validator passed.",
+        "The 199-case lookup suite reported 100% exact API, 100% exact stable API, and 98.84% natural-language Top-1 accuracy."
+      ]
+    },
+    {
+      "id": "build.incremental-api-only-hosts.stage8-20260803",
+      "kind": "incremental_build",
+      "result": "passed",
+      "isolated": false,
+      "blueprint_ids": [
+        "incremental-integration"
+      ],
+      "variants": [
+        "java-groovy",
+        "java-kts",
+        "kotlin-groovy",
+        "kotlin-kts"
+      ],
+      "assertions": [
+        "All four fresh host variants received the Stage 8 incremental patch and the generated api-only controllers and ApiOnlyUsage sample.",
+        "Each host completed :app:assembleDebug and produced app/build/outputs/apk/debug/app-debug.apk.",
+        "The Java generator output compiled from both Java and Kotlin host sources with Groovy and Kotlin DSL Gradle configurations."
+      ]
+    },
+    {
+      "id": "build.incremental-merge-contract.stage8-20260803",
+      "kind": "incremental_merge_validation",
+      "result": "passed",
+      "isolated": false,
+      "blueprint_ids": [
+        "incremental-integration"
+      ],
+      "variants": [
+        "java-groovy",
+        "java-kts",
+        "kotlin-groovy",
+        "kotlin-kts"
+      ],
+      "assertions": [
+        "A repeated identical --apply was idempotent for every host variant and did not duplicate Java files, Manifest permissions, or Gradle configuration.",
+        "A conflicting host source caused preflight failure before any source, Manifest, or Gradle mutation, including when --force was present.",
+        "The generator emitted editor ownership support files and a real api-only usage sample with Timeline, preview, caption, capture, asset installation, template query, and export calls."
+      ]
+    },
+    {
+      "id": "build.all-blueprints.stage8-integration-20260803",
+      "kind": "blueprint_build",
+      "result": "passed",
+      "isolated": false,
+      "blueprint_ids": [
+        "short-video-editor",
+        "beauty-camera",
+        "camera-plus-editor",
+        "asset-center-demo",
+        "template-mimo-cutsame-app",
+        "pip-editor",
+        "quick-splicing-app",
+        "full-sdk-demo",
+        "incremental-integration"
+      ],
+      "assertions": [
+        "All nine blueprints were regenerated after the Stage 8 editor ownership support and API-only usage changes.",
+        "Every regenerated project completed :app:assembleDebug sequentially and produced app/build/outputs/apk/debug/app-debug.apk.",
+        "The regression used the real SDK distribution and Android build toolchain; build success remains separate from runtime evidence."
+      ]
+    },
+    {
+      "id": "build.knowledge-and-isolation.stage8-20260803",
+      "kind": "knowledge_validation",
+      "result": "passed",
+      "isolated": true,
+      "blueprint_ids": [
+        "incremental-integration"
+      ],
+      "assertions": [
+        "Strict knowledge audit compiled all 201 java_unit entries against the SDK and Android 35 jars and reported zero structural gaps.",
+        "Strict simple-code coverage audit, ten Python regression tests, coverage-summary consistency, lookup validation, and the skill quick validator passed.",
+        "A complete skill copy with no adjacent SdkDemo or Doxygen directory generated API-only controllers and a concrete usage sample containing 11 selected-module call sites.",
+        "The 199-case lookup suite retained 100% exact API, 100% exact stable API, and 98.84% natural-language Top-1 accuracy."
+      ]
+    },
+    {
+      "id": "build.all-blueprints.low-frequency-p3-stage9-20260804",
+      "kind": "blueprint_build",
+      "result": "passed",
+      "isolated": false,
+      "blueprint_ids": [
+        "short-video-editor",
+        "beauty-camera",
+        "camera-plus-editor",
+        "asset-center-demo",
+        "template-mimo-cutsame-app",
+        "pip-editor",
+        "quick-splicing-app",
+        "full-sdk-demo",
+        "incremental-integration"
+      ],
+      "assertions": [
+        "All nine blueprints were regenerated after the Stage 9 member-level P3 mapping and semantic-unit additions.",
+        "Every regenerated project completed :app:assembleDebug sequentially and produced app/build/outputs/apk/debug/app-debug.apk.",
+        "The regression compiled capture controls, caption/sticker transforms, clip operations, keyframes, package inspection, frame retrieval, passthrough conversion, AR manipulation, and audio transition units without promoting build evidence to runtime evidence."
+      ]
+    },
+    {
+      "id": "build.incremental-fixtures.low-frequency-p3-stage9-20260804",
+      "kind": "incremental_build",
+      "result": "passed",
+      "isolated": false,
+      "blueprint_ids": [
+        "incremental-integration"
+      ],
+      "variants": [
+        "java-groovy",
+        "java-kts",
+        "kotlin-groovy",
+        "kotlin-kts"
+      ],
+      "assertions": [
+        "Fresh Java/Groovy, Java/KTS, Kotlin/Groovy, and Kotlin/KTS hosts received the Stage 9 affected module set through controlled incremental apply.",
+        "Repeated apply was idempotent for every host fixture.",
+        "All four hosts completed :app:assembleDebug after the clip-editor support-source dependency was made explicit."
+      ]
+    },
+    {
+      "id": "build.knowledge-and-isolation.low-frequency-p3-stage9-20260804",
+      "kind": "knowledge_validation",
+      "result": "passed",
+      "isolated": true,
+      "blueprint_ids": [
+        "quick-splicing-app"
+      ],
+      "assertions": [
+        "The strict knowledge audit compiled all 236 java_unit entries against the SDK and Android 35 jars and reported zero structural gaps.",
+        "The frozen 495-member low-frequency P3 scope reported 147 compiled members, 348 explicitly retained evidence members, zero unclassified members, zero missing module mappings, and zero generic reasons.",
+        "The 199-case lookup suite reported 100% exact API, 100% exact stable API, and 100% natural-language Top-1 accuracy.",
+        "A complete skill copy outside the SDK workspace resolved all nine blueprints without Demo/Doxygen access, then generated and built quick-splicing-app using a neutral fixture containing only the core jar, arm64 native library, and license."
+      ]
+    },
+    {
+      "id": "build.all-blueprints.production-resources-stage10-20260804",
+      "kind": "blueprint_build",
+      "result": "passed",
+      "isolated": false,
+      "blueprint_ids": [
+        "short-video-editor",
+        "beauty-camera",
+        "camera-plus-editor",
+        "asset-center-demo",
+        "template-mimo-cutsame-app",
+        "pip-editor",
+        "quick-splicing-app",
+        "full-sdk-demo",
+        "incremental-integration"
+      ],
+      "assertions": [
+        "All nine blueprints were regenerated after adding the replaceable material service, authentication provider, catalog adapter, resumable verifier, version cache, and user resource provider.",
+        "Every regenerated project completed :app:assembleDebug and produced app/build/outputs/apk/debug/app-debug.apk.",
+        "The Android builds used the real SDK distribution; build success remains separate from production-service and device evidence."
+      ]
+    },
+    {
+      "id": "build.incremental-fixtures.production-resources-stage10-20260804",
+      "kind": "incremental_build",
+      "result": "passed",
+      "isolated": false,
+      "blueprint_ids": [
+        "incremental-integration"
+      ],
+      "variants": [
+        "java-groovy",
+        "java-kts",
+        "kotlin-groovy",
+        "kotlin-kts"
+      ],
+      "assertions": [
+        "All four host variants received asset-center-service through controlled incremental apply.",
+        "Repeated apply was idempotent and did not duplicate source, Manifest permissions, or Gradle configuration.",
+        "All four hosts compiled the complete production material support-source set and completed :app:assembleDebug."
+      ]
+    },
+    {
+      "id": "build.material-pipeline-isolation.stage10-20260804",
+      "kind": "knowledge_validation",
+      "result": "passed",
+      "isolated": true,
+      "blueprint_ids": [
+        "asset-center-demo"
+      ],
+      "assertions": [
+        "The isolated root contained no SdkDemo or Doxygen directory.",
+        "The copied skill passed the external local-material validator against an authorized fixture bundle and resolved asset-center-service without an external Demo or Doxygen knowledge dependency or material request layer.",
+        "The copied skill generated and built asset-center-demo using a neutral fixture containing only the core jar, arm64 native library, and license."
+      ]
+    }
+  ],
+  "warnings": [
+    "The SDK-provided effectlib.jar emits D8 stack-map warnings but does not fail APK generation.",
+    "Other optional SDK helper jars and cafconvertor-runtime can emit the same D8 stack-map warning when --include-extra-sdk is enabled.",
+    "Java source/target 8 emits a JDK 21 deprecation warning.",
+    "Build success is not evidence that a feature rendered or behaved correctly on a device."
+  ]
+}

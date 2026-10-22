@@ -1,0 +1,113 @@
+{
+  "schema_version": 4,
+  "updated_at": "2026-08-04",
+  "scope": "External local-material policy and verification. The skill stores no material binaries and includes no material-service address, request implementation, authentication, or package downloader.",
+  "policy": {
+    "remote_material_service": "not_embedded",
+    "service_request_code": "forbidden",
+    "service_interface_questions": "contact_meishe_business",
+    "license_acquisition_questions": "contact_meishe_business",
+    "material_acquisition_questions": "contact_meishe_business",
+    "skill_material_storage": "none",
+    "repository_local_sample_bundle": "temp_assets/android-sample-assets",
+    "portable_sample_bundle_argument": "--sample-assets-dir <bundle-root>",
+    "official_sdk_download": "https://www.meishesdk.com/downloads -> SDK下载及开发文档 -> Android LTS -> 下载SDK人脸版本",
+    "official_package_map": "official-sdk-download-resource-map.json",
+    "large_models": "select_from_official_face_package_samples/android/SdkDemo/app/src/main/assets/facemode",
+    "standard_mimo_cutsame_packages": "user_provided_or_contact_meishe_business"
+  },
+  "external_catalog": {
+    "meaning": "Generated-app local catalog metadata; source binaries are external to the skill.",
+    "storage": "external_authorized_bundle",
+    "activity": "assets/android-feature-templates/asset-center/app/src/main/java/{{PACKAGE_PATH}}/MeisheAssetCenterActivity.java",
+    "catalog": "assets/android-feature-templates/asset-center/app/src/main/java/{{PACKAGE_PATH}}/MeisheLocalMaterialCatalog.java",
+    "asset_constants": "assets/android-template/app/src/main/java/{{PACKAGE_PATH}}/MeisheSampleAssets.java",
+    "families": [
+      "filter",
+      "transition",
+      "captionstyle",
+      "compoundcaption",
+      "captionbubble",
+      "captionrichword",
+      "captionanimation",
+      "customsticker",
+      "stickeranimation",
+      "animation",
+      "particle",
+      "picinpic",
+      "capturescene",
+      "arface",
+      "beauty",
+      "theme",
+      "font"
+    ],
+    "unavailable_demo_packages": [
+      "standard .template package",
+      "Mimo ZIP",
+      "CutSame package"
+    ]
+  },
+  "verification_runs": [
+    {
+      "id": "local-material-policy-20260804",
+      "result": "passed",
+      "command": "scripts/validate_local_material_assets.py --sample-assets-dir temp_assets/android-sample-assets --json",
+      "verified": [
+        "all catalog paths exist in the configured external bundle",
+        "no material binaries are stored inside the skill",
+        "network material classes are absent",
+        "service addresses and Demo API routes are absent from runtime material templates",
+        "local package install and bundled font registration units are present"
+      ],
+      "does_not_verify": [
+        "customer SDK license validity",
+        "package authorization outside bundled samples",
+        "large-model availability",
+        "standard template, Mimo, or CutSame package runtime",
+        "multi-device behavior"
+      ]
+    },
+    {
+      "id": "official-android-face-package-paths-20260804",
+      "result": "passed",
+      "command": "scripts/inspect_official_sdk_package.py --sdk-root <sdk-root> --strict --json",
+      "verified": [
+        "core Streaming SDK jar and arm64/armv7 native libraries exist at mapped relative paths",
+        "Effect SDK and optional helper artifacts exist at mapped relative paths",
+        "complete Streaming SDK facemode model set exists under the mapped Demo assets root",
+        "all 34 mapped Streaming SDK Demo material-family directories exist",
+        "the resource map stores no user-machine absolute path"
+      ],
+      "does_not_verify": [
+        "production application or package license rights",
+        "online material-service access",
+        "standard template, Mimo, or CutSame resource package runtime",
+        "multi-device behavior"
+      ]
+    }
+  ],
+  "external_requirements": {
+    "sample_materials": "contact_meishe_business; provide an authorized bundle with app/src/main/assets and pass --sample-assets-dir",
+    "sdk_runtime": "select_from_official_face_package_lib",
+    "demo_evaluation_license": "samples/android/SdkDemo/app/src/main/assets/meishesdk.lic; use only within its authorized Demo/evaluation scope",
+    "production_application_license": "contact_meishe_business",
+    "large_ar_ai_models": "select_from_official_face_package_samples/android/SdkDemo/app/src/main/assets/facemode",
+    "additional_demo_materials": "select_only_required_families_from_samples/android/SdkDemo/app/src/main/assets",
+    "online_material_service": "contact_meishe_business; no endpoint or request code is embedded",
+    "standard_template_package": "customer_provided_or_contact_meishe_business",
+    "mimo_package": "customer_provided_or_contact_meishe_business",
+    "cutsame_package": "customer_provided_or_contact_meishe_business"
+  },
+  "device_matrix": [
+    {
+      "target": "current Samsung API 35 arm64 physical device",
+      "availability": "connected",
+      "result": "not_run_after_local_only_policy"
+    },
+    {
+      "target": "additional device classes",
+      "availability": "not_available",
+      "result": "not_run"
+    }
+  ]
+}

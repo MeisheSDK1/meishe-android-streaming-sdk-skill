@@ -1,0 +1,1852 @@
+{
+  "version": 2,
+  "feature_count": 62,
+  "coverage": {
+    "compiled_unit": 62
+  },
+  "features": [
+    {
+      "feature": "app-root",
+      "module_id": "app-runtime",
+      "coverage": "mapped",
+      "simple_code_refs": [
+        "demo-simple-snippets-core-lifecycle.md"
+      ],
+      "resources": [
+        "R0"
+      ],
+      "simple_code_ids": [
+        "java.engine.stop",
+        "java.engine.stop-with-flags",
+        "java.sdk.configure-runtime",
+        "java.sdk.initialize",
+        "java.sdk.initialize-activity",
+        "java.sdk.initialize-activity-default",
+        "java.thread.require-main",
+        "recipe.feature.app-root",
+        "recipe.feature.base-meishe",
+        "recipe.sdk-init"
+      ],
+      "priority": "P0",
+      "coverage_status": "compiled_unit",
+      "feature_recipe_id": "recipe.feature.app-root",
+      "parent_modules": [],
+      "removable": false
+    },
+    {
+      "feature": "base-meishe",
+      "module_id": "app-runtime",
+      "coverage": "mapped",
+      "simple_code_refs": [
+        "demo-simple-snippets-core-lifecycle.md"
+      ],
+      "resources": [
+        "R0",
+        "R3"
+      ],
+      "simple_code_ids": [
+        "java.engine.stop",
+        "java.engine.stop-with-flags",
+        "java.sdk.configure-runtime",
+        "java.sdk.initialize",
+        "java.sdk.initialize-activity",
+        "java.sdk.initialize-activity-default",
+        "java.thread.require-main",
+        "recipe.feature.app-root",
+        "recipe.feature.base-meishe",
+        "recipe.sdk-init"
+      ],
+      "priority": "P0",
+      "coverage_status": "compiled_unit",
+      "feature_recipe_id": "recipe.feature.app-root",
+      "parent_modules": [],
+      "removable": false
+    },
+    {
+      "feature": "capture",
+      "module_id": "capture-camera",
+      "coverage": "mapped",
+      "simple_code_refs": [
+        "demo-simple-snippets-capture-recording.md"
+      ],
+      "resources": [
+        "R0",
+        "R2"
+      ],
+      "simple_code_ids": [
+        "java.capture.build-preview-flags",
+        "java.capture.configure-device-controls",
+        "java.capture.get-device-capability",
+        "java.capture.pause-recording",
+        "java.capture.register-callbacks",
+        "java.capture.resume-recording",
+        "java.capture.start-preview",
+        "java.capture.start-recording",
+        "java.capture.start-recording-configured",
+        "java.capture.start-recording-with-flags",
+        "java.capture.stop-recording",
+        "java.capture.stop-recording-synchronous",
+        "recipe.capture-preview-record",
+        "recipe.feature.capture"
+      ],
+      "priority": "P1",
+      "coverage_status": "compiled_unit",
+      "feature_recipe_id": "recipe.feature.capture",
+      "parent_modules": [
+        "app-runtime",
+        "permission-gates"
+      ],
+      "removable": true
+    },
+    {
+      "feature": "capture-beauty",
+      "module_id": "beauty-camera",
+      "coverage": "mapped",
+      "simple_code_refs": [
+        "demo-simple-snippets-ar-makeup-segmentation.md"
+      ],
+      "resources": [
+        "R0",
+        "R2",
+        "R4",
+        "R8"
+      ],
+      "simple_code_ids": [
+        "java.beauty.append-capture-fx",
+        "java.beauty.effect-sdk-init",
+        "java.beauty.effect-sdk-init-activity-default",
+        "java.beauty.effect-sdk-init-activity-flags",
+        "recipe.capture-preview-record",
+        "recipe.effect-sdk-init",
+        "recipe.feature.capture-beauty",
+        "recipe.feature.presenter"
+      ],
+      "priority": "P3",
+      "coverage_status": "compiled_unit",
+      "feature_recipe_id": "recipe.feature.capture-beauty",
+      "parent_modules": [
+        "capture-camera",
+        "asset-package-service",
+        "makeup-service"
+      ],
+      "removable": true
+    },
+    {
+      "feature": "edit-makeup",
+      "module_id": "makeup-editor",
+      "coverage": "mapped",
+      "simple_code_refs": [
+        "demo-simple-snippets-ar-makeup-segmentation.md"
+      ],
+      "resources": [
+        "R0",
+        "R1",
+        "R3",
+        "R4",
+        "R8"
+      ],
+      "simple_code_ids": [
+        "java.makeup.apply-compound",
+        "recipe.effect-sdk-init",
+        "recipe.feature.edit-makeup",
+        "recipe.feature.edit-view",
+        "recipe.filter-effect-edit"
+      ],
+      "priority": "P3",
+      "coverage_status": "compiled_unit",
+      "feature_recipe_id": "recipe.feature.edit-makeup",
+      "parent_modules": [
+        "editor-shell",
+        "makeup-service"
+      ],
+      "removable": true
+    },
+    {
+      "feature": "edit-view",
+      "module_id": "makeup-editor",
+      "coverage": "mapped",
+      "simple_code_refs": [
+        "demo-simple-snippets-ar-makeup-segmentation.md"
+      ],
+      "resources": [
+        "R0",
+        "R4",
+        "R8"
+      ],
+      "simple_code_ids": [
+        "java.makeup.apply-compound",
+        "recipe.effect-sdk-init",
+        "recipe.feature.edit-makeup",
+        "recipe.feature.edit-view",
+        "recipe.filter-effect-edit"
+      ],
+      "priority": "P3",
+      "coverage_status": "compiled_unit",
+      "feature_recipe_id": "recipe.feature.edit-makeup",
+      "parent_modules": [
+        "editor-shell",
+        "makeup-service"
+      ],
+      "removable": true
+    },
+    {
+      "feature": "makeup",
+      "module_id": "makeup-service",
+      "coverage": "mapped",
+      "simple_code_refs": [
+        "demo-simple-snippets-ar-makeup-segmentation.md"
+      ],
+      "resources": [
+        "R0",
+        "R4",
+        "R8"
+      ],
+      "simple_code_ids": [
+        "java.makeup.configure-part",
+        "recipe.effect-sdk-init",
+        "recipe.feature.makeup",
+        "recipe.install-asset-package"
+      ],
+      "priority": "P2",
+      "coverage_status": "compiled_unit",
+      "feature_recipe_id": "recipe.feature.makeup",
+      "parent_modules": [
+        "app-runtime",
+        "asset-package-service"
+      ],
+      "removable": true
+    },
+    {
+      "feature": "presenter",
+      "module_id": "beauty-camera",
+      "coverage": "mapped",
+      "simple_code_refs": [
+        "demo-simple-snippets-ar-makeup-segmentation.md"
+      ],
+      "resources": [
+        "R0",
+        "R2",
+        "R4",
+        "R8"
+      ],
+      "simple_code_ids": [
+        "java.beauty.append-capture-fx",
+        "java.beauty.effect-sdk-init",
+        "java.beauty.effect-sdk-init-activity-default",
+        "java.beauty.effect-sdk-init-activity-flags",
+        "recipe.capture-preview-record",
+        "recipe.effect-sdk-init",
+        "recipe.feature.capture-beauty",
+        "recipe.feature.presenter"
+      ],
+      "priority": "P3",
+      "coverage_status": "compiled_unit",
+      "feature_recipe_id": "recipe.feature.capture-beauty",
+      "parent_modules": [
+        "capture-camera",
+        "asset-package-service",
+        "makeup-service"
+      ],
+      "removable": true
+    },
+    {
+      "feature": "superzoom",
+      "module_id": "superzoom-ai",
+      "coverage": "mapped",
+      "simple_code_refs": [
+        "demo-simple-snippets-ar-makeup-segmentation.md"
+      ],
+      "resources": [
+        "R0",
+        "R1",
+        "R8",
+        "R9"
+      ],
+      "simple_code_ids": [
+        "java.superzoom.create-output-timeline",
+        "recipe.connect-livewindow",
+        "recipe.effect-sdk-init",
+        "recipe.feature.superzoom",
+        "recipe.timeline-build"
+      ],
+      "priority": "P3",
+      "coverage_status": "compiled_unit",
+      "feature_recipe_id": "recipe.feature.superzoom",
+      "parent_modules": [
+        "app-runtime",
+        "media-import"
+      ],
+      "removable": true
+    },
+    {
+      "feature": "utils",
+      "module_id": "timeline-state-store",
+      "coverage": "mapped",
+      "simple_code_refs": [
+        "demo-simple-snippets-timeline-editing.md"
+      ],
+      "resources": [
+        "R0",
+        "R1",
+        "R3"
+      ],
+      "simple_code_ids": [
+        "java.app.restore-timeline-structure",
+        "java.timeline.append-clip",
+        "java.timeline.append-media-list",
+        "java.timeline.configure-structure",
+        "java.timeline.create",
+        "java.timeline.create-with-flags",
+        "java.timeline.get-video-resolution",
+        "java.timeline.remove",
+        "recipe.feature.utils",
+        "recipe.feature.utils-datainfo",
+        "recipe.timeline-build"
+      ],
+      "priority": "P0",
+      "coverage_status": "compiled_unit",
+      "feature_recipe_id": "recipe.feature.utils",
+      "parent_modules": [
+        "app-runtime",
+        "media-import",
+        "app-repository"
+      ],
+      "removable": false
+    },
+    {
+      "feature": "utils-asset",
+      "module_id": "asset-package-service",
+      "coverage": "mapped",
+      "simple_code_refs": [
+        "demo-simple-snippets-assets-packages.md"
+      ],
+      "resources": [
+        "R0",
+        "R4"
+      ],
+      "simple_code_ids": [
+        "java.asset.inspect-package",
+        "java.asset.install-async",
+        "java.asset.install-or-upgrade",
+        "java.asset.package-type",
+        "java.sdk.get-asset-package-manager",
+        "recipe.feature.utils-asset",
+        "recipe.install-asset-package"
+      ],
+      "priority": "P3",
+      "coverage_status": "compiled_unit",
+      "feature_recipe_id": "recipe.feature.utils-asset",
+      "parent_modules": [
+        "app-runtime"
+      ],
+      "removable": true
+    },
+    {
+      "feature": "view",
+      "module_id": "editor-ui-shell",
+      "coverage": "mapped",
+      "simple_code_refs": [
+        "demo-simple-snippets-preview-export.md"
+      ],
+      "resources": [],
+      "simple_code_ids": [
+        "java.app.apply-system-bar-insets",
+        "java.app.show-editor-message",
+        "recipe.feature.dialog",
+        "recipe.feature.view"
+      ],
+      "priority": "P3",
+      "coverage_status": "compiled_unit",
+      "feature_recipe_id": "recipe.feature.dialog",
+      "parent_modules": [
+        "editor-shell"
+      ],
+      "removable": true
+    },
+    {
+      "feature": "capture-filter",
+      "module_id": "capture-filter",
+      "coverage": "mapped",
+      "simple_code_refs": [
+        "demo-simple-snippets-capture-recording.md"
+      ],
+      "resources": [
+        "R0",
+        "R2",
+        "R4",
+        "R5"
+      ],
+      "simple_code_ids": [
+        "java.capture.append-packaged-fx",
+        "java.capture.clear-effects",
+        "java.capture.list-effects",
+        "java.capture.remove-effect",
+        "recipe.capture-preview-record",
+        "recipe.feature.capture-filter",
+        "recipe.install-asset-package"
+      ],
+      "priority": "P3",
+      "coverage_status": "compiled_unit",
+      "feature_recipe_id": "recipe.feature.capture-filter",
+      "parent_modules": [
+        "capture-camera",
+        "asset-package-service"
+      ],
+      "removable": true
+    },
+    {
+      "feature": "download",
+      "module_id": "asset-center-service",
+      "coverage": "policy-replaced-local",
+      "simple_code_refs": [
+        "asset-center-workflow.md",
+        "default-sample-assets.md"
+      ],
+      "resources": [
+        "R0",
+        "R4"
+      ],
+      "simple_code_ids": [
+        "java.asset-center.install-bundled-package",
+        "java.asset-center.list-bundled-materials",
+        "java.asset-center.register-bundled-font",
+        "recipe.bundled-material-install",
+        "recipe.feature.base",
+        "recipe.feature.download",
+        "recipe.feature.libnet"
+      ],
+      "priority": "P3",
+      "coverage_status": "compiled_unit",
+      "feature_recipe_id": "recipe.feature.base",
+      "source_labels": [
+        "asset-center-workflow.md"
+      ],
+      "parent_modules": [
+        "app-runtime",
+        "asset-package-service"
+      ],
+      "removable": true
+    },
+    {
+      "feature": "edit-filter",
+      "module_id": "filter-editor",
+      "coverage": "mapped",
+      "simple_code_refs": [
+        "demo-simple-snippets-effects-transforms.md"
+      ],
+      "resources": [
+        "R0",
+        "R3",
+        "R4",
+        "R5"
+      ],
+      "simple_code_ids": [
+        "java.effect.add-packaged-timeline",
+        "java.effect.add-timeline-builtin",
+        "java.effect.append-builtin",
+        "java.effect.append-builtin-range",
+        "java.effect.append-packaged",
+        "java.effect.append-packaged-range",
+        "java.effect.append-raw-builtin",
+        "java.effect.append-raw-builtin-range",
+        "java.effect.get-first-timeline-fx",
+        "java.effect.list-clip-fx",
+        "java.effect.remove-timeline-fx",
+        "java.effect.set-float",
+        "java.effect.set-position-parameters",
+        "recipe.feature.edit-filter",
+        "recipe.filter-effect-edit"
+      ],
+      "priority": "P2",
+      "coverage_status": "compiled_unit",
+      "feature_recipe_id": "recipe.feature.edit-filter",
+      "parent_modules": [
+        "editor-shell"
+      ],
+      "removable": true
+    },
+    {
+      "feature": "boomrang",
+      "module_id": "boomrang-capture",
+      "coverage": "mapped",
+      "simple_code_refs": [
+        "demo-simple-snippets-capture-recording.md"
+      ],
+      "resources": [
+        "R0",
+        "R1",
+        "R2",
+        "R3"
+      ],
+      "simple_code_ids": [
+        "java.workflow.append-boomerang",
+        "recipe.capture-preview-record",
+        "recipe.connect-livewindow",
+        "recipe.feature.boomrang"
+      ],
+      "priority": "P2",
+      "coverage_status": "compiled_unit",
+      "feature_recipe_id": "recipe.feature.boomrang",
+      "parent_modules": [
+        "capture-camera",
+        "timeline-preview"
+      ],
+      "removable": true
+    },
+    {
+      "feature": "capturescene",
+      "module_id": "capture-scene",
+      "coverage": "mapped",
+      "simple_code_refs": [
+        "demo-simple-snippets-capture-recording.md"
+      ],
+      "resources": [
+        "R0",
+        "R2",
+        "R4",
+        "R5",
+        "R8"
+      ],
+      "simple_code_ids": [
+        "java.capture.append-scene-keyer",
+        "java.capture.apply-scene",
+        "recipe.capture-preview-record",
+        "recipe.feature.capturescene",
+        "recipe.install-asset-package"
+      ],
+      "priority": "P2",
+      "coverage_status": "compiled_unit",
+      "feature_recipe_id": "recipe.feature.capturescene",
+      "parent_modules": [
+        "capture-camera",
+        "asset-package-service"
+      ],
+      "removable": true
+    },
+    {
+      "feature": "edit-audio",
+      "module_id": "audio-equalizer",
+      "coverage": "mapped",
+      "simple_code_refs": [
+        "demo-simple-snippets-audio-media.md"
+      ],
+      "resources": [
+        "R0",
+        "R1",
+        "R3",
+        "R7"
+      ],
+      "simple_code_ids": [
+        "java.audio.append-clip-fx",
+        "java.audio.apply-equalizer",
+        "java.audio.replace-clip-fx",
+        "recipe.audio-edit",
+        "recipe.feature.edit-audio"
+      ],
+      "priority": "P3",
+      "coverage_status": "compiled_unit",
+      "feature_recipe_id": "recipe.feature.edit-audio",
+      "parent_modules": [
+        "music-editor"
+      ],
+      "removable": true
+    },
+    {
+      "feature": "edit-music",
+      "module_id": "music-editor",
+      "coverage": "mapped",
+      "simple_code_refs": [
+        "demo-simple-snippets-audio-media.md"
+      ],
+      "resources": [
+        "R0",
+        "R1",
+        "R3",
+        "R7"
+      ],
+      "simple_code_ids": [
+        "java.audio.add-clip",
+        "java.audio.add-clip-at",
+        "java.audio.append-clip-default",
+        "java.audio.configure-transition",
+        "java.audio.ensure-track",
+        "java.audio.get-clip",
+        "java.audio.set-clip-volume",
+        "java.audio.set-fades",
+        "java.audio.set-track-stereo-volume",
+        "java.timeline.set-theme-music-volume",
+        "recipe.audio-edit",
+        "recipe.feature.edit-music"
+      ],
+      "priority": "P2",
+      "coverage_status": "compiled_unit",
+      "feature_recipe_id": "recipe.feature.edit-music",
+      "parent_modules": [
+        "editor-shell"
+      ],
+      "removable": true
+    },
+    {
+      "feature": "glitter",
+      "module_id": "glitter-effects",
+      "coverage": "mapped",
+      "simple_code_refs": [
+        "demo-simple-snippets-effects-transforms.md"
+      ],
+      "resources": [
+        "R0",
+        "R2",
+        "R4",
+        "R5"
+      ],
+      "simple_code_ids": [
+        "java.capture.append-glitter",
+        "recipe.feature.glitter",
+        "recipe.filter-effect-edit"
+      ],
+      "priority": "P3",
+      "coverage_status": "compiled_unit",
+      "feature_recipe_id": "recipe.feature.glitter",
+      "parent_modules": [
+        "capture-camera"
+      ],
+      "removable": true
+    },
+    {
+      "feature": "particle",
+      "module_id": "particle-effects",
+      "coverage": "mapped",
+      "simple_code_refs": [
+        "demo-simple-snippets-effects-transforms.md"
+      ],
+      "resources": [
+        "R0",
+        "R1",
+        "R2",
+        "R3",
+        "R4",
+        "R5"
+      ],
+      "simple_code_ids": [
+        "java.effect.add-particle",
+        "java.particle.configure-emitter",
+        "recipe.feature.particle",
+        "recipe.filter-effect-edit",
+        "recipe.install-asset-package"
+      ],
+      "priority": "P2",
+      "coverage_status": "compiled_unit",
+      "feature_recipe_id": "recipe.feature.particle",
+      "parent_modules": [
+        "editor-shell",
+        "asset-package-service"
+      ],
+      "removable": true
+    },
+    {
+      "feature": "picinpic",
+      "module_id": "pip-editor",
+      "coverage": "mapped",
+      "simple_code_refs": [
+        "demo-simple-snippets-effects-transforms.md"
+      ],
+      "resources": [
+        "R0",
+        "R1",
+        "R3",
+        "R4",
+        "R11"
+      ],
+      "simple_code_ids": [
+        "java.timeline.build-picture-in-picture",
+        "recipe.compile-export",
+        "recipe.connect-livewindow",
+        "recipe.feature.picinpic",
+        "recipe.filter-effect-edit",
+        "recipe.timeline-build"
+      ],
+      "priority": "P2",
+      "coverage_status": "compiled_unit",
+      "feature_recipe_id": "recipe.feature.picinpic",
+      "parent_modules": [
+        "media-import",
+        "timeline-state-store",
+        "timeline-preview",
+        "export-compile"
+      ],
+      "removable": true
+    },
+    {
+      "feature": "selectmedia",
+      "module_id": "media-import",
+      "coverage": "mapped",
+      "simple_code_refs": [
+        "demo-simple-snippets-audio-media.md#audio-media-078"
+      ],
+      "resources": [
+        "R0",
+        "R1"
+      ],
+      "simple_code_ids": [
+        "java.app.copy-bundled-media-to-project",
+        "java.app.copy-content-uri-to-cache",
+        "java.app.copy-content-uri-to-project",
+        "java.media.create-frame-retriever",
+        "java.media.probe",
+        "java.media.probe-with-flags",
+        "java.media.release-frame-retriever",
+        "java.media.retrieve-frame",
+        "recipe.feature.selectmedia",
+        "recipe.media-probe-and-ratio"
+      ],
+      "priority": "P1",
+      "coverage_status": "compiled_unit",
+      "feature_recipe_id": "recipe.feature.selectmedia",
+      "parent_modules": [
+        "app-runtime",
+        "permission-gates"
+      ],
+      "removable": false
+    },
+    {
+      "feature": "urledit",
+      "module_id": "url-media-import",
+      "coverage": "mapped",
+      "simple_code_refs": [
+        "demo-simple-snippets-audio-media.md"
+      ],
+      "resources": [
+        "R0",
+        "R1",
+        "R12"
+      ],
+      "simple_code_ids": [
+        "java.media.probe-url",
+        "recipe.feature.urledit",
+        "recipe.media-probe-and-ratio"
+      ],
+      "priority": "P3",
+      "coverage_status": "compiled_unit",
+      "feature_recipe_id": "recipe.feature.urledit",
+      "parent_modules": [
+        "app-runtime"
+      ],
+      "removable": true
+    },
+    {
+      "feature": "dialog",
+      "module_id": "editor-ui-shell",
+      "coverage": "workflow-only",
+      "simple_code_refs": [
+        "demo-simple-snippets-captions-stickers.md"
+      ],
+      "resources": [],
+      "simple_code_ids": [
+        "java.app.apply-system-bar-insets",
+        "java.app.show-editor-message",
+        "recipe.feature.dialog",
+        "recipe.feature.view"
+      ],
+      "priority": "P3",
+      "coverage_status": "compiled_unit",
+      "feature_recipe_id": "recipe.feature.dialog",
+      "parent_modules": [
+        "editor-shell"
+      ],
+      "removable": true
+    },
+    {
+      "feature": "douvideo",
+      "module_id": "dou-video-workflow",
+      "coverage": "mapped",
+      "simple_code_refs": [
+        "demo-simple-snippets-capture-recording.md",
+        "demo-simple-snippets-timeline-editing.md"
+      ],
+      "resources": [
+        "R0",
+        "R1",
+        "R2",
+        "R3",
+        "R4",
+        "R6",
+        "R7"
+      ],
+      "simple_code_ids": [
+        "java.workflow.append-recorded-clips",
+        "recipe.capture-preview-record",
+        "recipe.connect-livewindow",
+        "recipe.feature.douvideo",
+        "recipe.timeline-build"
+      ],
+      "priority": "P2",
+      "coverage_status": "compiled_unit",
+      "feature_recipe_id": "recipe.feature.douvideo",
+      "parent_modules": [
+        "capture-camera",
+        "editor-shell",
+        "caption-editor",
+        "sticker-editor",
+        "music-editor"
+      ],
+      "removable": true
+    },
+    {
+      "feature": "edit",
+      "module_id": "editor-shell",
+      "coverage": "mapped",
+      "simple_code_refs": [
+        "demo-validated-editor-architecture.md"
+      ],
+      "resources": [
+        "R0",
+        "R1",
+        "R3"
+      ],
+      "simple_code_ids": [
+        "java.editor.clear-supported-features",
+        "java.editor.restore-supported-features",
+        "recipe.apply-refresh-editor-child",
+        "recipe.editor-project-v3-ownership",
+        "recipe.editor-session-orchestration",
+        "recipe.feature.edit"
+      ],
+      "priority": "P1",
+      "coverage_status": "compiled_unit",
+      "feature_recipe_id": "recipe.feature.edit",
+      "parent_modules": [
+        "media-import",
+        "timeline-state-store",
+        "timeline-preview",
+        "export-compile"
+      ],
+      "removable": true
+    },
+    {
+      "feature": "edit-animatesticker",
+      "module_id": "sticker-editor",
+      "coverage": "mapped",
+      "simple_code_refs": [
+        "demo-simple-snippets-captions-stickers.md"
+      ],
+      "resources": [
+        "R0",
+        "R3",
+        "R4",
+        "R6"
+      ],
+      "simple_code_ids": [
+        "java.clip.add-animated-sticker",
+        "java.clip.list-animated-stickers",
+        "java.clip.remove-animated-sticker",
+        "java.sticker.add",
+        "java.sticker.add-custom",
+        "java.sticker.clip-range",
+        "java.sticker.configure-animation-transform",
+        "java.sticker.list-at-position",
+        "java.sticker.list-timeline",
+        "java.sticker.remove",
+        "java.sticker.timeline-range",
+        "recipe.caption-sticker-edit",
+        "recipe.feature.edit-animatesticker"
+      ],
+      "priority": "P2",
+      "coverage_status": "compiled_unit",
+      "feature_recipe_id": "recipe.feature.edit-animatesticker",
+      "parent_modules": [
+        "editor-shell",
+        "asset-package-service"
+      ],
+      "removable": true
+    },
+    {
+      "feature": "edit-caption",
+      "module_id": "caption-editor",
+      "coverage": "mapped",
+      "simple_code_refs": [
+        "demo-simple-snippets-captions-stickers.md"
+      ],
+      "resources": [
+        "R0",
+        "R3",
+        "R4",
+        "R6"
+      ],
+      "simple_code_ids": [
+        "java.caption.add",
+        "java.caption.apply-modular-assets",
+        "java.caption.apply-readable-style",
+        "java.caption.clip-range",
+        "java.caption.configure-transform",
+        "java.caption.configure-typography",
+        "java.caption.list-clip",
+        "java.caption.list-timeline",
+        "java.caption.register-font",
+        "java.caption.remove",
+        "java.caption.set-letter-spacing",
+        "java.caption.set-text",
+        "java.caption.timeline-range",
+        "java.clip.add-caption",
+        "java.clip.add-modular-caption",
+        "java.clip.remove-caption",
+        "recipe.caption-sticker-edit",
+        "recipe.feature.edit-caption"
+      ],
+      "priority": "P1",
+      "coverage_status": "compiled_unit",
+      "feature_recipe_id": "recipe.feature.edit-caption",
+      "parent_modules": [
+        "editor-shell"
+      ],
+      "removable": true
+    },
+    {
+      "feature": "edit-clipedit",
+      "module_id": "clip-editor",
+      "coverage": "mapped",
+      "simple_code_refs": [
+        "demo-simple-snippets-timeline-editing.md"
+      ],
+      "resources": [
+        "R0",
+        "R1",
+        "R3"
+      ],
+      "simple_code_ids": [
+        "java.clip.change-speed",
+        "java.clip.change-trim-in",
+        "java.clip.configure-advanced-playback",
+        "java.clip.is-audio-video",
+        "java.clip.move",
+        "java.clip.move-to-timeline-position",
+        "java.clip.remove-at",
+        "java.clip.split-at-playhead",
+        "java.clip.trim-out-at-playhead",
+        "java.timeline.add-clip-at-position",
+        "java.timeline.append-trimmed-clip",
+        "java.timeline.get-video-clip",
+        "java.timeline.insert-clip-at-index",
+        "recipe.apply-refresh-editor-child",
+        "recipe.feature.edit-clipedit",
+        "recipe.timeline-build"
+      ],
+      "priority": "P1",
+      "coverage_status": "compiled_unit",
+      "feature_recipe_id": "recipe.feature.edit-clipedit",
+      "parent_modules": [
+        "editor-shell"
+      ],
+      "removable": true
+    },
+    {
+      "feature": "edit-compoundcaption",
+      "module_id": "compound-caption-editor",
+      "coverage": "mapped",
+      "simple_code_refs": [
+        "demo-simple-snippets-captions-stickers.md"
+      ],
+      "resources": [
+        "R0",
+        "R3",
+        "R4",
+        "R6"
+      ],
+      "simple_code_ids": [
+        "java.caption.add-compound",
+        "java.caption.compound-range",
+        "java.caption.list-clip-compound",
+        "java.caption.list-compound",
+        "java.caption.remove-compound",
+        "java.caption.set-compound-text",
+        "recipe.caption-sticker-edit",
+        "recipe.feature.edit-compoundcaption"
+      ],
+      "priority": "P2",
+      "coverage_status": "compiled_unit",
+      "feature_recipe_id": "recipe.feature.edit-compoundcaption",
+      "parent_modules": [
+        "editor-shell",
+        "asset-package-service"
+      ],
+      "removable": true
+    },
+    {
+      "feature": "edit-createpic",
+      "module_id": "still-image-export",
+      "coverage": "mapped",
+      "simple_code_refs": [
+        "demo-simple-snippets-preview-export.md"
+      ],
+      "resources": [
+        "R0",
+        "R1",
+        "R3"
+      ],
+      "simple_code_ids": [
+        "java.media.export-still-frame",
+        "java.preview.grab-image-async",
+        "recipe.connect-livewindow",
+        "recipe.feature.edit-createpic"
+      ],
+      "priority": "P3",
+      "coverage_status": "compiled_unit",
+      "feature_recipe_id": "recipe.feature.edit-createpic",
+      "parent_modules": [
+        "timeline-preview"
+      ],
+      "removable": true
+    },
+    {
+      "feature": "edit-mask",
+      "module_id": "mask-editor",
+      "coverage": "mapped",
+      "simple_code_refs": [
+        "demo-simple-snippets-effects-transforms.md"
+      ],
+      "resources": [
+        "R0",
+        "R1",
+        "R3",
+        "R5"
+      ],
+      "simple_code_ids": [
+        "java.effect.apply-mask-region",
+        "recipe.feature.edit-mask",
+        "recipe.filter-effect-edit"
+      ],
+      "priority": "P2",
+      "coverage_status": "compiled_unit",
+      "feature_recipe_id": "recipe.feature.edit-mask",
+      "parent_modules": [
+        "editor-shell"
+      ],
+      "removable": true
+    },
+    {
+      "feature": "edit-record",
+      "module_id": "voiceover-editor",
+      "coverage": "mapped",
+      "simple_code_refs": [
+        "demo-simple-snippets-audio-media.md"
+      ],
+      "resources": [
+        "R0",
+        "R1",
+        "R3",
+        "R7"
+      ],
+      "simple_code_ids": [
+        "java.audio.add-voiceover",
+        "recipe.audio-edit",
+        "recipe.feature.edit-record"
+      ],
+      "priority": "P2",
+      "coverage_status": "compiled_unit",
+      "feature_recipe_id": "recipe.feature.edit-record",
+      "parent_modules": [
+        "editor-shell"
+      ],
+      "removable": true
+    },
+    {
+      "feature": "edit-theme",
+      "module_id": "theme-editor",
+      "coverage": "mapped",
+      "simple_code_refs": [
+        "demo-simple-snippets-template-mimo-cutsame.md"
+      ],
+      "resources": [
+        "R0",
+        "R1",
+        "R3",
+        "R4",
+        "R10"
+      ],
+      "simple_code_ids": [
+        "java.theme.apply",
+        "recipe.feature.edit-theme",
+        "recipe.install-asset-package",
+        "recipe.timeline-build"
+      ],
+      "priority": "P3",
+      "coverage_status": "compiled_unit",
+      "feature_recipe_id": "recipe.feature.edit-theme",
+      "parent_modules": [
+        "editor-shell",
+        "asset-package-service"
+      ],
+      "removable": true
+    },
+    {
+      "feature": "edit-timelineeditor",
+      "module_id": "timeline-ui",
+      "coverage": "mapped",
+      "simple_code_refs": [
+        "demo-simple-snippets-preview-export.md"
+      ],
+      "resources": [
+        "R0",
+        "R1",
+        "R3"
+      ],
+      "simple_code_ids": [
+        "java.preview.configure-thumbnail-sequence",
+        "java.preview.map-thumbnail-position",
+        "recipe.connect-livewindow",
+        "recipe.feature.edit-timelineeditor"
+      ],
+      "priority": "P3",
+      "coverage_status": "compiled_unit",
+      "feature_recipe_id": "recipe.feature.edit-timelineeditor",
+      "parent_modules": [
+        "timeline-preview"
+      ],
+      "removable": true
+    },
+    {
+      "feature": "edit-transition",
+      "module_id": "transition-editor",
+      "coverage": "mapped",
+      "simple_code_refs": [
+        "demo-simple-snippets-effects-transforms.md"
+      ],
+      "resources": [
+        "R0",
+        "R1",
+        "R3",
+        "R4",
+        "R5"
+      ],
+      "simple_code_ids": [
+        "java.transition.configure-timing",
+        "java.transition.get",
+        "java.transition.set-builtin",
+        "java.transition.set-packaged",
+        "recipe.apply-refresh-editor-child",
+        "recipe.feature.edit-transition",
+        "recipe.filter-effect-edit"
+      ],
+      "priority": "P3",
+      "coverage_status": "compiled_unit",
+      "feature_recipe_id": "recipe.feature.edit-transition",
+      "parent_modules": [
+        "editor-shell"
+      ],
+      "removable": true
+    },
+    {
+      "feature": "edit-watermark",
+      "module_id": "watermark-editor",
+      "coverage": "mapped",
+      "simple_code_refs": [
+        "demo-simple-snippets-effects-transforms.md"
+      ],
+      "resources": [
+        "R0",
+        "R3",
+        "R4",
+        "R11"
+      ],
+      "simple_code_ids": [
+        "java.effect.add-watermark",
+        "recipe.feature.edit-watermark",
+        "recipe.filter-effect-edit"
+      ],
+      "priority": "P3",
+      "coverage_status": "compiled_unit",
+      "feature_recipe_id": "recipe.feature.edit-watermark",
+      "parent_modules": [
+        "editor-shell"
+      ],
+      "removable": true
+    },
+    {
+      "feature": "flipcaption",
+      "module_id": "flip-caption",
+      "coverage": "mapped",
+      "simple_code_refs": [
+        "demo-simple-snippets-captions-stickers.md"
+      ],
+      "resources": [
+        "R0",
+        "R1",
+        "R3",
+        "R6"
+      ],
+      "simple_code_ids": [
+        "java.caption.add-flip-storyboard",
+        "recipe.caption-sticker-edit",
+        "recipe.feature.flipcaption",
+        "recipe.filter-effect-edit"
+      ],
+      "priority": "P3",
+      "coverage_status": "compiled_unit",
+      "feature_recipe_id": "recipe.feature.flipcaption",
+      "parent_modules": [
+        "editor-shell",
+        "caption-editor"
+      ],
+      "removable": true
+    },
+    {
+      "feature": "musiclyrics",
+      "module_id": "music-lyrics",
+      "coverage": "mapped",
+      "simple_code_refs": [
+        "demo-simple-snippets-audio-media.md",
+        "demo-simple-snippets-captions-stickers.md"
+      ],
+      "resources": [
+        "R0",
+        "R1",
+        "R3",
+        "R6",
+        "R7"
+      ],
+      "simple_code_ids": [
+        "java.caption.add-timed-lyrics",
+        "recipe.audio-edit",
+        "recipe.caption-sticker-edit",
+        "recipe.feature.musiclyrics"
+      ],
+      "priority": "P3",
+      "coverage_status": "compiled_unit",
+      "feature_recipe_id": "recipe.feature.musiclyrics",
+      "parent_modules": [
+        "music-editor",
+        "caption-editor"
+      ],
+      "removable": true
+    },
+    {
+      "feature": "photoalbum",
+      "module_id": "photo-album",
+      "coverage": "mapped",
+      "simple_code_refs": [
+        "demo-simple-snippets-timeline-editing.md"
+      ],
+      "resources": [
+        "R0",
+        "R1",
+        "R3",
+        "R11"
+      ],
+      "simple_code_ids": [
+        "java.workflow.append-photo-album",
+        "recipe.compile-export",
+        "recipe.connect-livewindow",
+        "recipe.feature.photoalbum",
+        "recipe.timeline-build"
+      ],
+      "priority": "P2",
+      "coverage_status": "compiled_unit",
+      "feature_recipe_id": "recipe.feature.photoalbum",
+      "parent_modules": [
+        "media-import",
+        "timeline-state-store",
+        "timeline-preview",
+        "export-compile"
+      ],
+      "removable": true
+    },
+    {
+      "feature": "quicksplicing",
+      "module_id": "quick-splicing",
+      "coverage": "mapped",
+      "simple_code_refs": [
+        "demo-simple-snippets-audio-media.md"
+      ],
+      "resources": [
+        "R0",
+        "R1",
+        "R12"
+      ],
+      "simple_code_ids": [
+        "java.media.convert-passthrough",
+        "java.timeline.build-quick-splice",
+        "recipe.feature.quicksplicing",
+        "recipe.media-probe-and-ratio"
+      ],
+      "priority": "P3",
+      "coverage_status": "compiled_unit",
+      "feature_recipe_id": "recipe.feature.quicksplicing",
+      "parent_modules": [
+        "app-runtime",
+        "media-import"
+      ],
+      "removable": true
+    },
+    {
+      "feature": "themeshoot",
+      "module_id": "theme-shoot",
+      "coverage": "mapped",
+      "simple_code_refs": [
+        "demo-simple-snippets-template-mimo-cutsame.md"
+      ],
+      "resources": [
+        "R0",
+        "R1",
+        "R2",
+        "R4",
+        "R10"
+      ],
+      "simple_code_ids": [
+        "java.workflow.append-theme-shots",
+        "recipe.capture-preview-record",
+        "recipe.feature.themeshoot",
+        "recipe.template-replace-export"
+      ],
+      "priority": "P2",
+      "coverage_status": "compiled_unit",
+      "feature_recipe_id": "recipe.feature.themeshoot",
+      "parent_modules": [
+        "capture-camera",
+        "template-engine",
+        "export-compile"
+      ],
+      "removable": true
+    },
+    {
+      "feature": "utils-datainfo",
+      "module_id": "timeline-state-store",
+      "coverage": "mapped",
+      "simple_code_refs": [
+        "demo-simple-snippets-timeline-editing.md"
+      ],
+      "resources": [
+        "R0",
+        "R1",
+        "R3"
+      ],
+      "simple_code_ids": [
+        "java.app.restore-timeline-structure",
+        "java.timeline.append-clip",
+        "java.timeline.append-media-list",
+        "java.timeline.configure-structure",
+        "java.timeline.create",
+        "java.timeline.create-with-flags",
+        "java.timeline.get-video-resolution",
+        "java.timeline.remove",
+        "recipe.feature.utils",
+        "recipe.feature.utils-datainfo",
+        "recipe.timeline-build"
+      ],
+      "priority": "P3",
+      "coverage_status": "compiled_unit",
+      "feature_recipe_id": "recipe.feature.utils",
+      "parent_modules": [
+        "app-runtime",
+        "media-import",
+        "app-repository"
+      ],
+      "removable": false
+    },
+    {
+      "feature": "feedback",
+      "module_id": "support-feedback",
+      "coverage": "mapped",
+      "simple_code_refs": [
+        "demo-simple-snippets-core-lifecycle.md"
+      ],
+      "resources": [
+        "R0"
+      ],
+      "simple_code_ids": [
+        "java.app.create-feedback",
+        "recipe.feature.feedback"
+      ],
+      "priority": "P3",
+      "coverage_status": "compiled_unit",
+      "feature_recipe_id": "recipe.feature.feedback",
+      "parent_modules": [
+        "app-runtime"
+      ],
+      "removable": true
+    },
+    {
+      "feature": "libnet",
+      "module_id": "asset-center-service",
+      "coverage": "policy-replaced-local",
+      "simple_code_refs": [
+        "asset-center-workflow.md",
+        "default-sample-assets.md"
+      ],
+      "resources": [
+        "R0",
+        "R4"
+      ],
+      "simple_code_ids": [
+        "java.asset-center.install-bundled-package",
+        "java.asset-center.list-bundled-materials",
+        "java.asset-center.register-bundled-font",
+        "recipe.bundled-material-install",
+        "recipe.feature.base",
+        "recipe.feature.download",
+        "recipe.feature.libnet"
+      ],
+      "priority": "P3",
+      "coverage_status": "compiled_unit",
+      "feature_recipe_id": "recipe.feature.base",
+      "source_labels": [
+        "asset-center-workflow.md"
+      ],
+      "parent_modules": [
+        "app-runtime",
+        "asset-package-service"
+      ],
+      "removable": true
+    },
+    {
+      "feature": "main",
+      "module_id": "feature-hub",
+      "coverage": "workflow-only",
+      "simple_code_refs": [
+        "capability-catalog.md"
+      ],
+      "resources": [
+        "R0"
+      ],
+      "simple_code_ids": [
+        "java.app.route-feature",
+        "recipe.feature.activity",
+        "recipe.feature.main"
+      ],
+      "priority": "P3",
+      "coverage_status": "compiled_unit",
+      "feature_recipe_id": "recipe.feature.activity",
+      "parent_modules": [
+        "app-runtime"
+      ],
+      "removable": true
+    },
+    {
+      "feature": "repository",
+      "module_id": "app-repository",
+      "coverage": "mapped",
+      "simple_code_refs": [
+        "demo-simple-snippets-core-lifecycle.md"
+      ],
+      "resources": [
+        "R0"
+      ],
+      "simple_code_ids": [
+        "java.app.create-stable-object-id",
+        "java.app.extract-editor-state",
+        "java.app.latest-project-id",
+        "java.app.load-atomic-project-state",
+        "java.app.load-project-state",
+        "java.app.read-project-dimension",
+        "java.app.save-atomic-project-state",
+        "java.app.save-editor-state",
+        "java.app.save-project-state",
+        "java.app.save-timeline-structure",
+        "recipe.feature.repository"
+      ],
+      "priority": "P3",
+      "coverage_status": "compiled_unit",
+      "feature_recipe_id": "recipe.feature.repository",
+      "parent_modules": [
+        "app-runtime"
+      ],
+      "removable": true
+    },
+    {
+      "feature": "utils-permission",
+      "module_id": "permission-gates",
+      "coverage": "workflow-only",
+      "simple_code_refs": [
+        "demo-simple-snippets-core-lifecycle.md"
+      ],
+      "resources": [],
+      "simple_code_ids": [
+        "java.app.request-permissions",
+        "recipe.feature.utils-permission"
+      ],
+      "priority": "P3",
+      "coverage_status": "compiled_unit",
+      "feature_recipe_id": "recipe.feature.utils-permission",
+      "parent_modules": [
+        "app-runtime"
+      ],
+      "removable": false
+    },
+    {
+      "feature": "base",
+      "module_id": "asset-center-service",
+      "coverage": "policy-replaced-local",
+      "simple_code_refs": [
+        "asset-center-workflow.md",
+        "default-sample-assets.md"
+      ],
+      "resources": [
+        "R0",
+        "R4"
+      ],
+      "simple_code_ids": [
+        "java.asset-center.install-bundled-package",
+        "java.asset-center.list-bundled-materials",
+        "java.asset-center.register-bundled-font",
+        "recipe.bundled-material-install",
+        "recipe.feature.base",
+        "recipe.feature.download",
+        "recipe.feature.libnet"
+      ],
+      "priority": "P3",
+      "coverage_status": "compiled_unit",
+      "feature_recipe_id": "recipe.feature.base",
+      "source_labels": [
+        "asset-center-workflow.md"
+      ],
+      "parent_modules": [
+        "app-runtime",
+        "asset-package-service"
+      ],
+      "removable": true
+    },
+    {
+      "feature": "bean",
+      "module_id": "effect-parameter-models",
+      "coverage": "mapped",
+      "simple_code_refs": [
+        "demo-simple-snippets-effects-transforms.md"
+      ],
+      "resources": [
+        "R0",
+        "R5"
+      ],
+      "simple_code_ids": [
+        "java.effect.build-parameter",
+        "recipe.feature.bean",
+        "recipe.feature.edit-data"
+      ],
+      "priority": "P3",
+      "coverage_status": "compiled_unit",
+      "feature_recipe_id": "recipe.feature.bean",
+      "parent_modules": [
+        "app-runtime"
+      ],
+      "removable": true
+    },
+    {
+      "feature": "edit-anim",
+      "module_id": "animation-editor",
+      "coverage": "mapped",
+      "simple_code_refs": [
+        "demo-simple-snippets-effects-transforms.md"
+      ],
+      "resources": [
+        "R0",
+        "R1",
+        "R3",
+        "R5"
+      ],
+      "simple_code_ids": [
+        "java.clip.configure-image-motion",
+        "java.clip.configure-image-regions",
+        "java.effect.remove-nearest-keyframe",
+        "java.effect.set-float-keyframe",
+        "recipe.feature.edit-anim",
+        "recipe.filter-effect-edit"
+      ],
+      "priority": "P2",
+      "coverage_status": "compiled_unit",
+      "feature_recipe_id": "recipe.feature.edit-anim",
+      "parent_modules": [
+        "editor-shell"
+      ],
+      "removable": true
+    },
+    {
+      "feature": "edit-background",
+      "module_id": "background-editor",
+      "coverage": "mapped",
+      "simple_code_refs": [
+        "demo-simple-snippets-effects-transforms.md"
+      ],
+      "resources": [
+        "R0",
+        "R1",
+        "R3",
+        "R5",
+        "R11"
+      ],
+      "simple_code_ids": [
+        "java.effect.apply-solid-background",
+        "recipe.feature.edit-background",
+        "recipe.filter-effect-edit"
+      ],
+      "priority": "P3",
+      "coverage_status": "compiled_unit",
+      "feature_recipe_id": "recipe.feature.edit-background",
+      "parent_modules": [
+        "editor-shell"
+      ],
+      "removable": true
+    },
+    {
+      "feature": "edit-data",
+      "module_id": "effect-parameter-models",
+      "coverage": "mapped",
+      "simple_code_refs": [
+        "demo-simple-snippets-effects-transforms.md"
+      ],
+      "resources": [
+        "R0",
+        "R5"
+      ],
+      "simple_code_ids": [
+        "java.effect.build-parameter",
+        "recipe.feature.bean",
+        "recipe.feature.edit-data"
+      ],
+      "priority": "P3",
+      "coverage_status": "compiled_unit",
+      "feature_recipe_id": "recipe.feature.bean",
+      "parent_modules": [
+        "app-runtime"
+      ],
+      "removable": true
+    },
+    {
+      "feature": "makecover",
+      "module_id": "cover-maker",
+      "coverage": "mapped",
+      "simple_code_refs": [
+        "demo-simple-snippets-preview-export.md"
+      ],
+      "resources": [
+        "R0",
+        "R1",
+        "R3",
+        "R11"
+      ],
+      "simple_code_ids": [
+        "java.media.grab-cover-frame",
+        "recipe.connect-livewindow",
+        "recipe.feature.makecover"
+      ],
+      "priority": "P2",
+      "coverage_status": "compiled_unit",
+      "feature_recipe_id": "recipe.feature.makecover",
+      "parent_modules": [
+        "timeline-preview"
+      ],
+      "removable": true
+    },
+    {
+      "feature": "edit-livephoto",
+      "module_id": "livephoto-editor",
+      "coverage": "mapped",
+      "simple_code_refs": [
+        "demo-simple-snippets-preview-export.md"
+      ],
+      "resources": [
+        "R0",
+        "R1",
+        "R3"
+      ],
+      "simple_code_ids": [
+        "java.media.make-live-photo",
+        "recipe.connect-livewindow",
+        "recipe.feature.edit-livephoto",
+        "recipe.timeline-build"
+      ],
+      "priority": "P3",
+      "coverage_status": "compiled_unit",
+      "feature_recipe_id": "recipe.feature.edit-livephoto",
+      "parent_modules": [
+        "editor-shell",
+        "export-compile"
+      ],
+      "removable": true
+    },
+    {
+      "feature": "sequencenesting",
+      "module_id": "sequence-nesting",
+      "coverage": "mapped",
+      "simple_code_refs": [
+        "demo-simple-snippets-timeline-editing.md"
+      ],
+      "resources": [
+        "R0",
+        "R1",
+        "R3"
+      ],
+      "simple_code_ids": [
+        "java.timeline.append-nested",
+        "recipe.connect-livewindow",
+        "recipe.feature.sequencenesting",
+        "recipe.timeline-build"
+      ],
+      "priority": "P2",
+      "coverage_status": "compiled_unit",
+      "feature_recipe_id": "recipe.feature.sequencenesting",
+      "parent_modules": [
+        "timeline-state-store",
+        "timeline-preview"
+      ],
+      "removable": true
+    },
+    {
+      "feature": "activity",
+      "module_id": "feature-hub",
+      "coverage": "workflow-only",
+      "simple_code_refs": [
+        "demo-validated-editor-architecture.md"
+      ],
+      "resources": [
+        "R0"
+      ],
+      "simple_code_ids": [
+        "java.app.route-feature",
+        "recipe.feature.activity",
+        "recipe.feature.main"
+      ],
+      "priority": "P3",
+      "coverage_status": "compiled_unit",
+      "feature_recipe_id": "recipe.feature.activity",
+      "parent_modules": [
+        "app-runtime"
+      ],
+      "removable": true
+    },
+    {
+      "feature": "ar-scene",
+      "module_id": "ar-scene",
+      "coverage": "mapped",
+      "simple_code_refs": [
+        "demo-simple-snippets-ar-makeup-segmentation.md"
+      ],
+      "resources": [
+        "R0",
+        "R2",
+        "R4",
+        "R8"
+      ],
+      "simple_code_ids": [
+        "java.beauty.append-ar-scene",
+        "java.beauty.apply-ar-scene-package",
+        "java.beauty.apply-face-mesh-package",
+        "java.beauty.configure-ar-manipulation",
+        "java.beauty.configure-ar-scene",
+        "java.beauty.effect-human-detection-ext-configured",
+        "java.beauty.enable-ai-face-occlusion",
+        "java.beauty.initialize-human-detection",
+        "java.beauty.initialize-human-detection-configured",
+        "java.beauty.initialize-human-detection-ext-configured",
+        "java.beauty.release-human-detection",
+        "recipe.effect-sdk-init",
+        "recipe.feature.ar-scene",
+        "recipe.install-asset-package"
+      ],
+      "priority": "P2",
+      "coverage_status": "compiled_unit",
+      "feature_recipe_id": "recipe.feature.ar-scene",
+      "parent_modules": [
+        "beauty-camera",
+        "asset-package-service"
+      ],
+      "removable": true
+    },
+    {
+      "feature": "cutsame-template",
+      "module_id": "cutsame-template",
+      "coverage": "mapped",
+      "simple_code_refs": [
+        "demo-simple-snippets-template-mimo-cutsame.md"
+      ],
+      "resources": [
+        "R0",
+        "R1",
+        "R4",
+        "R10"
+      ],
+      "simple_code_ids": [
+        "java.template.create-cutsame-timeline",
+        "recipe.cutsame-replace-export",
+        "recipe.feature.cutsame-template"
+      ],
+      "priority": "P1",
+      "coverage_status": "compiled_unit",
+      "feature_recipe_id": "recipe.feature.cutsame-template",
+      "parent_modules": [
+        "template-engine"
+      ],
+      "removable": true
+    },
+    {
+      "feature": "engine-meishe",
+      "module_id": "template-engine",
+      "coverage": "mapped",
+      "simple_code_refs": [
+        "demo-simple-snippets-template-mimo-cutsame.md"
+      ],
+      "resources": [
+        "R0",
+        "R1",
+        "R3",
+        "R4",
+        "R10"
+      ],
+      "simple_code_ids": [
+        "java.template.build-footage",
+        "java.template.list-replaceable-footage",
+        "java.template.list-reverse-footage",
+        "java.template.query-captions",
+        "java.template.query-compound-captions",
+        "java.template.query-footages",
+        "java.template.reverse-cancel",
+        "java.template.reverse-generate",
+        "java.template.reverse-register-callback",
+        "java.template.reverse-release",
+        "java.template.validate-footage",
+        "recipe.feature.engine-meishe",
+        "recipe.template-prepare-footage"
+      ],
+      "priority": "P0",
+      "coverage_status": "compiled_unit",
+      "feature_recipe_id": "recipe.feature.engine-meishe",
+      "parent_modules": [
+        "app-runtime",
+        "asset-package-service",
+        "media-import"
+      ],
+      "removable": true
+    },
+    {
+      "feature": "mimodemo",
+      "module_id": "mimo-template",
+      "coverage": "mapped",
+      "simple_code_refs": [
+        "demo-simple-snippets-template-mimo-cutsame.md"
+      ],
+      "resources": [
+        "R0",
+        "R1",
+        "R4",
+        "R10"
+      ],
+      "simple_code_ids": [
+        "java.mimo.build-timeline",
+        "java.mimo.export",
+        "java.mimo.extract-archive",
+        "java.mimo.install-child-packages",
+        "java.mimo.install-extracted-child-packages",
+        "java.mimo.parse-package",
+        "java.mimo.reconnect-preview",
+        "recipe.feature.mimodemo",
+        "recipe.mimo-replace-export"
+      ],
+      "priority": "P1",
+      "coverage_status": "compiled_unit",
+      "feature_recipe_id": "recipe.feature.mimodemo",
+      "parent_modules": [
+        "app-runtime",
+        "asset-package-service",
+        "media-import",
+        "timeline-preview"
+      ],
+      "removable": true
+    }
+  ]
+}

@@ -1,0 +1,138 @@
+{
+  "schema_version": 1,
+  "description": "Generated current coverage summary. Historical Demo token and evidence-fragment counts are intentionally excluded from implementation coverage.",
+  "sources": [
+    "references/demo-api-simple-code-map.json",
+    "references/simple-code-registry.json",
+    "references/demo-feature-simple-code-map.json",
+    "references/sdk-module-registry.json",
+    "references/runtime-verification-matrix.json",
+    "references/build-verification-matrix.json",
+    "references/p3-api-processing.json"
+  ],
+  "api": {
+    "type_count": 283,
+    "member_count": 751,
+    "observed_method_count": 515,
+    "coverage": {
+      "compiled_unit": 405,
+      "evidence_only": 346
+    }
+  },
+  "simple_code": {
+    "unit_count": 322,
+    "kinds": {
+      "java_unit": 241,
+      "recipe": 81
+    },
+    "implementation_states": {
+      "compiled_unit": 303,
+      "generated_module": 19
+    }
+  },
+  "p3_processing": {
+    "target_count": 495,
+    "processed_count": 495,
+    "upgraded_count": 149,
+    "retained_evidence_count": 346,
+    "coverage_counts": {
+      "compiled_unit": 149,
+      "evidence_only": 346
+    },
+    "domain_counts": {
+      "ar-beauty-segmentation": 40,
+      "asset-packages": 44,
+      "audio-editing": 15,
+      "caption-editing": 129,
+      "capture-recording": 23,
+      "core-runtime": 16,
+      "effect-parameters": 77,
+      "export-compile": 11,
+      "media-conversion": 6,
+      "media-inspection": 42,
+      "particle-effects": 7,
+      "preview-playback": 20,
+      "render-core": 10,
+      "sticker-editing": 31,
+      "template-workflows": 14,
+      "timeline-editing": 83,
+      "timeline-ui": 13,
+      "transition-editing": 15
+    },
+    "reason_code_counts": {
+      "ar-beauty-segmentation.owned_lifecycle_operation": 1,
+      "ar-beauty-segmentation.typed_constant": 23,
+      "asset-packages.read_only_query": 2,
+      "asset-packages.typed_constant": 31,
+      "audio-editing.read_only_query": 5,
+      "caption-editing.read_only_query": 16,
+      "caption-editing.stateful_operation_requires_context": 25,
+      "caption-editing.typed_constant": 15,
+      "caption-editing.value_object_contract": 35,
+      "capture-recording.read_only_query": 3,
+      "capture-recording.stateful_operation_requires_context": 2,
+      "capture-recording.typed_constant": 4,
+      "core-runtime.callback_contract": 2,
+      "core-runtime.owned_lifecycle_operation": 2,
+      "core-runtime.read_only_query": 4,
+      "core-runtime.stateful_operation_requires_context": 4,
+      "core-runtime.typed_constant": 3,
+      "effect-parameters.read_only_query": 20,
+      "effect-parameters.stateful_operation_requires_context": 15,
+      "effect-parameters.typed_constant": 15,
+      "effect-parameters.value_object_contract": 5,
+      "export-compile.stateful_operation_requires_context": 1,
+      "export-compile.typed_constant": 8,
+      "media-conversion.callback_contract": 2,
+      "media-conversion.typed_constant": 2,
+      "media-inspection.callback_contract": 1,
+      "media-inspection.owned_lifecycle_operation": 2,
+      "media-inspection.read_only_query": 15,
+      "media-inspection.stateful_operation_requires_context": 2,
+      "media-inspection.typed_constant": 15,
+      "preview-playback.callback_contract": 1,
+      "preview-playback.stateful_operation_requires_context": 4,
+      "preview-playback.typed_constant": 7,
+      "render-core.opengl_operation": 7,
+      "render-core.typed_constant": 2,
+      "sticker-editing.read_only_query": 3,
+      "sticker-editing.stateful_operation_requires_context": 7,
+      "template-workflows.read_only_query": 1,
+      "template-workflows.stateful_operation_requires_context": 3,
+      "template-workflows.typed_constant": 3,
+      "timeline-editing.read_only_query": 9,
+      "timeline-editing.stateful_operation_requires_context": 1,
+      "timeline-editing.typed_constant": 10,
+      "timeline-ui.typed_constant": 1,
+      "transition-editing.read_only_query": 3,
+      "transition-editing.typed_constant": 4
+    },
+    "unclassified_count": 0,
+    "missing_module_count": 0,
+    "generic_reason_count": 0
+  },
+  "composition": {
+    "feature_count": 62,
+    "module_count": 57,
+    "blueprint_count": 9
+  },
+  "runtime": {
+    "run_count": 22,
+    "result_counts": {
+      "partial": 3,
+      "passed": 19
+    },
+    "blueprints_with_evidence_count": 8,
+    "blueprints_with_passed_run_count": 8,
+    "blueprints_with_partial_only_count": 0,
+    "verified_module_count": 57,
+    "verified_feature_count": 60,
+    "verified_unit_count": 112,
+    "verified_api_count": 111
+  },
+  "build": {
+    "run_count": 41,
+    "passed_run_count": 41,
+    "verified_blueprint_count": 9
+  }
+}

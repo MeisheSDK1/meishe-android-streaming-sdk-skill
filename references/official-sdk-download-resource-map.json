@@ -1,0 +1,233 @@
+{
+  "schema_version": 1,
+  "updated_at": "2026-08-04",
+  "official_download": {
+    "url": "https://www.meishesdk.com/downloads",
+    "page_section": "SDK下载及开发文档",
+    "platform": "Android",
+    "release_line": "LTS",
+    "button_label": "下载SDK人脸版本",
+    "selection_reason": "The face package contains the full Android Demo, Effect SDK integration artifacts, human-detection models, and the Demo material families used to train this skill."
+  },
+  "observed_package": {
+    "release_directory_name": "NvStreamingSdk_Android_3.16.1.25_20260707_161037_ARSCENE_MS",
+    "training_demo_relative_path": "samples/android/SdkDemo",
+    "effect_kit_demo_relative_path": "samples/android/NvEffectKitDemo",
+    "custom_video_fx_demo_relative_path": "samples/android/customvideofx",
+    "required_root_markers": [
+      "lib/android_jar/NvAndroidStreamingSdk.jar",
+      "lib/android_arm64/libNvStreamingSdkCore.so",
+      "extrasdk/sdk/android/effectlib.jar",
+      "samples/android/SdkDemo/app/src/main/assets/facemode",
+      "samples/android/SdkDemo/app/src/main/assets/version.txt"
+    ]
+  },
+  "policy": {
+    "store_absolute_download_path_in_skill": false,
+    "copy_full_demo_into_skill": false,
+    "copy_full_demo_into_generated_project": false,
+    "copy_only_selected_runtime_or_resource_subtrees": true,
+    "demo_license_scope": "The bundled Demo license and package sidecar .lic files may be used only within their authorized Demo/evaluation scope. Production application or material authorization questions must be directed to Meishe business.",
+    "online_material_service": "No material-service endpoint or request implementation is included. Contact Meishe business for service access.",
+    "version_drift": "Resolve paths relative to the extracted SDK root and verify them with scripts/inspect_official_sdk_package.py. Do not hard-code a user's download directory."
+  },
+  "resource_groups": [
+    {
+      "id": "streaming-sdk-runtime",
+      "resource_keys": ["R0"],
+      "module_ids": ["app-runtime"],
+      "availability": "included",
+      "relative_files": [
+        "lib/android_jar/NvAndroidStreamingSdk.jar",
+        "lib/android_arm64/libNvStreamingSdkCore.so",
+        "lib/android_armv7/libNvStreamingSdkCore.so"
+      ],
+      "copy_guidance": [
+        "lib/android_jar/NvAndroidStreamingSdk.jar -> app/libs/NvAndroidStreamingSdk.jar",
+        "lib/android_arm64/libNvStreamingSdkCore.so -> app/src/main/jniLibs/arm64-v8a/libNvStreamingSdkCore.so",
+        "lib/android_armv7/libNvStreamingSdkCore.so -> app/src/main/jniLibs/armeabi-v7a/libNvStreamingSdkCore.so when armeabi-v7a is required"
+      ]
+    },
+    {
+      "id": "effect-sdk-runtime",
+      "resource_keys": ["R8", "R9"],
+      "module_ids": ["beauty-camera", "makeup-editor", "makeup-service", "ar-scene", "segmentation-keying", "superzoom-ai"],
+      "availability": "included",
+      "relative_files": [
+        "extrasdk/sdk/android/effectlib.jar"
+      ],
+      "copy_guidance": [
+        "extrasdk/sdk/android/effectlib.jar -> app/libs/effectlib.jar when generated code imports com.meicam.effect.sdk"
+      ]
+    },
+    {
+      "id": "optional-sdk-helpers",
+      "resource_keys": ["R6", "R7", "R11", "R12"],
+      "module_ids": ["music-lyrics", "flip-caption", "photo-album", "audio-equalizer", "url-media-import"],
+      "availability": "included",
+      "relative_files": [
+        "extrasdk/sdk/android/cafconvertor.aar",
+        "extrasdk/sdk/android/nvconvertorlib.aar",
+        "extrasdk/sdk/android/nvjokeCaptionlib.jar",
+        "extrasdk/sdk/android/nvmusicLyricslib.jar",
+        "extrasdk/sdk/android/NvPhotoAlbumHelperLib.jar"
+      ],
+      "copy_guidance": [
+        "Copy only the helper required by the selected module into app/libs; do not add all optional libraries by default."
+      ]
+    },
+    {
+      "id": "streaming-demo-license",
+      "resource_keys": ["R0", "R13"],
+      "module_ids": ["app-runtime"],
+      "availability": "included_demo_scope",
+      "relative_files": [
+        "samples/android/SdkDemo/app/src/main/assets/meishesdk.lic"
+      ],
+      "copy_guidance": [
+        "For authorized Demo/evaluation only: samples/android/SdkDemo/app/src/main/assets/meishesdk.lic -> app/src/main/assets/meishesdk.lic",
+        "For a production application license, contact Meishe business instead of reusing the Demo license."
+      ]
+    },
+    {
+      "id": "effect-kit-demo-license",
+      "resource_keys": ["R8", "R13"],
+      "module_ids": ["beauty-camera", "makeup-service", "ar-scene", "segmentation-keying"],
+      "availability": "included_demo_scope",
+      "relative_files": [
+        "samples/android/NvEffectKitDemo/app/src/main/assets/effectsdkdemo.lic"
+      ],
+      "copy_guidance": [
+        "Use only for the downloaded NvEffectKitDemo/evaluation scope. Production authorization must come from Meishe business."
+      ]
+    },
+    {
+      "id": "streaming-human-detection-models",
+      "resource_keys": ["R8", "R9"],
+      "module_ids": ["beauty-camera", "makeup-editor", "makeup-service", "ar-scene", "segmentation-keying", "superzoom-ai"],
+      "availability": "included",
+      "relative_directories": [
+        "samples/android/SdkDemo/app/src/main/assets/facemode"
+      ],
+      "relative_files": [
+        "samples/android/SdkDemo/app/src/main/assets/facemode/ms/ms_face106_v4.0.3.next.model",
+        "samples/android/SdkDemo/app/src/main/assets/facemode/ms/ms_face240_v4.0.3.next.model",
+        "samples/android/SdkDemo/app/src/main/assets/facemode/common/facecommon_v1.0.1.dat",
+        "samples/android/SdkDemo/app/src/main/assets/facemode/common/advancedbeauty_v1.0.1.dat",
+        "samples/android/SdkDemo/app/src/main/assets/facemode/common/fakeface_v1.0.1.dat",
+        "samples/android/SdkDemo/app/src/main/assets/facemode/common/ms_humansegment_medium_v2.0.0.next.model",
+        "samples/android/SdkDemo/app/src/main/assets/facemode/common/ms_humansegment_small_v2.0.0.next.model",
+        "samples/android/SdkDemo/app/src/main/assets/facemode/common/ms_hand_common_v2.0.0.next.model",
+        "samples/android/SdkDemo/app/src/main/assets/facemode/common/ms_eyecontour_v2.0.0.next.model",
+        "samples/android/SdkDemo/app/src/main/assets/facemode/common/ms_avatar_v2.0.0.next.model",
+        "samples/android/SdkDemo/app/src/main/assets/facemode/common/ms_skysegment_v1.0.5.next.model"
+      ],
+      "copy_guidance": [
+        "Copy the selected model set while preserving facemode/ms and facemode/common relative structure.",
+        "The generator accepts --human-models-dir <sdk-root>/samples/android/SdkDemo/app/src/main/assets/facemode."
+      ]
+    },
+    {
+      "id": "effect-kit-reference-assets",
+      "resource_keys": ["R4", "R8", "R9"],
+      "module_ids": ["beauty-camera", "makeup-service", "ar-scene", "segmentation-keying", "caption-editor", "sticker-editor", "transition-editor"],
+      "availability": "included",
+      "relative_directories": [
+        "samples/android/NvEffectKitDemo/app/src/main/assets"
+      ],
+      "copy_guidance": [
+        "Use NvEffectKitDemo assets as an Effect SDK-specific reference. Streaming SDK projects should prefer the fuller SdkDemo facemode and matching Streaming SDK package families."
+      ]
+    }
+  ],
+  "asset_families": [
+    {"family": "animation", "relative_directory": "samples/android/SdkDemo/app/src/main/assets/animation", "resource_keys": ["R4", "R5"], "module_ids": ["animation-editor"]},
+    {"family": "arface", "relative_directory": "samples/android/SdkDemo/app/src/main/assets/arface", "resource_keys": ["R4", "R8"], "module_ids": ["ar-scene"]},
+    {"family": "audio", "relative_directory": "samples/android/SdkDemo/app/src/main/assets/audio", "resource_keys": ["R7"], "module_ids": ["music-editor", "audio-equalizer"]},
+    {"family": "background", "relative_directory": "samples/android/SdkDemo/app/src/main/assets/background", "resource_keys": ["R9", "R11"], "module_ids": ["background-editor", "segmentation-keying"]},
+    {"family": "beauty", "relative_directory": "samples/android/SdkDemo/app/src/main/assets/beauty", "resource_keys": ["R4", "R8", "R9"], "module_ids": ["beauty-camera", "makeup-editor", "makeup-service", "segmentation-keying"]},
+    {"family": "captionanimation", "relative_directory": "samples/android/SdkDemo/app/src/main/assets/captionanimation", "resource_keys": ["R4", "R6"], "module_ids": ["caption-editor", "animation-editor"]},
+    {"family": "captionbubble", "relative_directory": "samples/android/SdkDemo/app/src/main/assets/captionbubble", "resource_keys": ["R4", "R6"], "module_ids": ["caption-editor"]},
+    {"family": "captionrichword", "relative_directory": "samples/android/SdkDemo/app/src/main/assets/captionrichword", "resource_keys": ["R4", "R6"], "module_ids": ["caption-editor"]},
+    {"family": "captionstyle", "relative_directory": "samples/android/SdkDemo/app/src/main/assets/captionstyle", "resource_keys": ["R4", "R6"], "module_ids": ["caption-editor"]},
+    {"family": "capture", "relative_directory": "samples/android/SdkDemo/app/src/main/assets/capture", "resource_keys": ["R2", "R5"], "module_ids": ["capture-camera", "capture-filter"]},
+    {"family": "capturescene", "relative_directory": "samples/android/SdkDemo/app/src/main/assets/capturescene", "resource_keys": ["R4", "R5", "R8"], "module_ids": ["capture-scene"]},
+    {"family": "compoundcaption", "relative_directory": "samples/android/SdkDemo/app/src/main/assets/compoundcaption", "resource_keys": ["R4", "R6"], "module_ids": ["compound-caption-editor"]},
+    {"family": "curve_speed", "relative_directory": "samples/android/SdkDemo/app/src/main/assets/curve_speed", "resource_keys": ["R5"], "module_ids": ["clip-editor", "dou-video-workflow"]},
+    {"family": "customsticker", "relative_directory": "samples/android/SdkDemo/app/src/main/assets/customsticker", "resource_keys": ["R4", "R6"], "module_ids": ["sticker-editor"]},
+    {"family": "cutsamefont", "relative_directory": "samples/android/SdkDemo/app/src/main/assets/cutsamefont", "resource_keys": ["R6", "R10"], "module_ids": ["cutsame-template"]},
+    {"family": "douvideoeditfilter", "relative_directory": "samples/android/SdkDemo/app/src/main/assets/douvideoeditfilter", "resource_keys": ["R4", "R5"], "module_ids": ["filter-editor", "dou-video-workflow"]},
+    {"family": "facemode", "relative_directory": "samples/android/SdkDemo/app/src/main/assets/facemode", "resource_keys": ["R8", "R9"], "module_ids": ["beauty-camera", "makeup-service", "ar-scene", "segmentation-keying", "superzoom-ai"]},
+    {"family": "filter", "relative_directory": "samples/android/SdkDemo/app/src/main/assets/filter", "resource_keys": ["R4", "R5"], "module_ids": ["filter-editor", "capture-filter"]},
+    {"family": "flipcaption", "relative_directory": "samples/android/SdkDemo/app/src/main/assets/flipcaption", "resource_keys": ["R6", "R7"], "module_ids": ["flip-caption"]},
+    {"family": "font", "relative_directory": "samples/android/SdkDemo/app/src/main/assets/font", "resource_keys": ["R6", "R10"], "module_ids": ["caption-editor", "cutsame-template", "mimo-template"]},
+    {"family": "glitter", "relative_directory": "samples/android/SdkDemo/app/src/main/assets/glitter", "resource_keys": ["R5", "R11"], "module_ids": ["glitter-effects"]},
+    {"family": "meicam", "relative_directory": "samples/android/SdkDemo/app/src/main/assets/meicam", "resource_keys": ["R7", "R10", "R11"], "module_ids": ["quick-splicing", "theme-editor"]},
+    {"family": "msarface", "relative_directory": "samples/android/SdkDemo/app/src/main/assets/msarface", "resource_keys": ["R4", "R8"], "module_ids": ["ar-scene"]},
+    {"family": "music", "relative_directory": "samples/android/SdkDemo/app/src/main/assets/music", "resource_keys": ["R7"], "module_ids": ["music-editor", "music-lyrics"]},
+    {"family": "musiccaption", "relative_directory": "samples/android/SdkDemo/app/src/main/assets/musiccaption", "resource_keys": ["R6", "R7"], "module_ids": ["music-lyrics"]},
+    {"family": "particle", "relative_directory": "samples/android/SdkDemo/app/src/main/assets/particle", "resource_keys": ["R4", "R5"], "module_ids": ["particle-effects"]},
+    {"family": "picinpic", "relative_directory": "samples/android/SdkDemo/app/src/main/assets/picinpic", "resource_keys": ["R4", "R5", "R11"], "module_ids": ["pip-editor"]},
+    {"family": "record", "relative_directory": "samples/android/SdkDemo/app/src/main/assets/record", "resource_keys": ["R2", "R7"], "module_ids": ["voiceover-editor", "capture-camera"]},
+    {"family": "sticker", "relative_directory": "samples/android/SdkDemo/app/src/main/assets/sticker", "resource_keys": ["R4", "R6"], "module_ids": ["sticker-editor"]},
+    {"family": "stickeranimation", "relative_directory": "samples/android/SdkDemo/app/src/main/assets/stickeranimation", "resource_keys": ["R4", "R6"], "module_ids": ["sticker-editor", "animation-editor"]},
+    {"family": "theme", "relative_directory": "samples/android/SdkDemo/app/src/main/assets/theme", "resource_keys": ["R4", "R10", "R11"], "module_ids": ["theme-editor", "theme-shoot"]},
+    {"family": "transition", "relative_directory": "samples/android/SdkDemo/app/src/main/assets/transition", "resource_keys": ["R4", "R5"], "module_ids": ["transition-editor"]},
+    {"family": "voice", "relative_directory": "samples/android/SdkDemo/app/src/main/assets/voice", "resource_keys": ["R7"], "module_ids": ["voiceover-editor", "audio-equalizer"]},
+    {"family": "watermark", "relative_directory": "samples/android/SdkDemo/app/src/main/assets/watermark", "resource_keys": ["R5", "R11"], "module_ids": ["watermark-editor"]}
+  ],
+  "workflow_source_roots": [
+    {
+      "capability": "complete SDK Demo training source",
+      "relative_path": "samples/android/SdkDemo",
+      "usage": "Build-time evidence only; never a skill runtime dependency."
+    },
+    {
+      "capability": "official Doxygen source",
+      "relative_path": "doxygen",
+      "usage": "Build-time semantic evidence only; normal skill use reads bundled official Markdown references."
+    },
+    {
+      "capability": "Effect Kit reference Demo",
+      "relative_path": "samples/android/NvEffectKitDemo",
+      "usage": "Build-time Effect SDK integration evidence and optional local reference assets."
+    },
+    {
+      "capability": "custom video FX reference Demo",
+      "relative_path": "samples/android/customvideofx",
+      "usage": "Build-time custom video FX integration evidence only."
+    },
+    {
+      "capability": "Mimo implementation",
+      "relative_path": "samples/android/SdkDemo/app/src/main/java/com/meishe/sdkdemo/mimodemo",
+      "usage": "Implementation reference; the downloadable package does not contain a reusable Mimo ZIP."
+    },
+    {
+      "capability": "CutSame and SDK template implementation",
+      "relative_path": "samples/android/SdkDemo/MCutSame",
+      "usage": "Implementation reference; the downloadable package does not contain a reusable .template package."
+    },
+    {
+      "capability": "quick-splicing packaged storyboard examples",
+      "relative_path": "samples/android/SdkDemo/app/src/main/assets/meicam",
+      "usage": "Local XML/audio/image examples for quick-splicing, not an SDK .template package."
+    }
+  ],
+  "not_present_in_observed_package": [
+    {
+      "resource": "standard SDK .template package",
+      "scan_result": "0 files matching *.template",
+      "available_reference": "samples/android/SdkDemo/MCutSame"
+    },
+    {
+      "resource": "Mimo ZIP",
+      "scan_result": "0 files matching *.zip; assets/font/info_mimo.json is font metadata only",
+      "available_reference": "samples/android/SdkDemo/app/src/main/java/com/meishe/sdkdemo/mimodemo"
+    },
+    {
+      "resource": "CutSame template resource package",
+      "scan_result": "0 local CutSame template package files",
+      "available_reference": "samples/android/SdkDemo/MCutSame"
+    }
+  ]
+}

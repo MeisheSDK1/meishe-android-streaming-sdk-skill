@@ -1,0 +1,1980 @@
+{
+  "schema_version": "1.0",
+  "sdk_version": "3.16.1.25",
+  "verification_date": "2026-08-05",
+  "scope": "Physical-device verification for generated new-app blueprints and incremental/api-only host integration. A runtime_verified claim applies only to the exact modules, units, APIs, flows, device class, and resource configuration listed here.",
+  "devices": [
+    {
+      "id": "samsung-sm-a5460-api35",
+      "manufacturer": "samsung",
+      "model": "SM-A5460",
+      "android_api": 35,
+      "abi": "arm64-v8a",
+      "build_fingerprint": "samsung/a54xzc/a54x:15/AP3A.240905.015.A2/A5460ZCUCDYE1:user/release-keys"
+    }
+  ],
+  "runs": [
+    {
+      "id": "runtime.short-video-editor.core-20260731",
+      "blueprint_id": "short-video-editor",
+      "device_id": "samsung-sm-a5460-api35",
+      "mode": "new-app",
+      "package_label": "com.meishe.validation.shortvideoeditor2",
+      "build_result": "passed",
+      "install_result": "passed",
+      "runtime_result": "passed",
+      "verified_modules": [
+        "app-runtime",
+        "feature-hub",
+        "media-import",
+        "timeline-state-store",
+        "timeline-preview",
+        "export-compile",
+        "editor-shell",
+        "clip-editor",
+        "filter-editor",
+        "asset-package-service",
+        "caption-editor",
+        "sticker-editor",
+        "transition-editor",
+        "music-editor",
+        "asset-center-service"
+      ],
+      "verified_features": [
+        "app-root",
+        "base-meishe",
+        "selectmedia",
+        "edit",
+        "edit-clipedit",
+        "edit-filter",
+        "edit-caption",
+        "edit-animatesticker",
+        "edit-transition",
+        "edit-music",
+        "download",
+        "utils-asset"
+      ],
+      "verified_units": [
+        "java.sdk.initialize",
+        "java.app.apply-system-bar-insets",
+        "java.asset.install-or-upgrade",
+        "java.timeline.create",
+        "java.timeline.append-clip",
+        "java.preview.connect",
+        "java.preview.seek",
+        "java.effect.append-packaged",
+        "java.caption.add",
+        "java.sticker.add",
+        "java.transition.set-packaged",
+        "java.audio.ensure-track",
+        "java.audio.add-clip",
+        "java.export.compile"
+      ],
+      "verified_api_ids": [
+        "NvsStreamingContext#init(Landroid/app/Activity;Ljava/lang/String;)Lcom/meicam/sdk/NvsStreamingContext;",
+        "NvsStreamingContext#createTimeline(Lcom/meicam/sdk/NvsVideoResolution;Lcom/meicam/sdk/NvsRational;Lcom/meicam/sdk/NvsAudioResolution;)Lcom/meicam/sdk/NvsTimeline;",
+        "NvsStreamingContext#connectTimelineWithLiveWindow(Lcom/meicam/sdk/NvsTimeline;Lcom/meicam/sdk/NvsLiveWindow;)Z",
+        "NvsStreamingContext#seekTimeline(Lcom/meicam/sdk/NvsTimeline;JII)Z",
+        "NvsStreamingContext#compileTimeline(Lcom/meicam/sdk/NvsTimeline;JJLjava/lang/String;III)Z",
+        "NvsAssetPackageManager#installAssetPackage(Ljava/lang/String;Ljava/lang/String;IZLjava/lang/StringBuilder;)I",
+        "NvsVideoTrack#appendClip(Ljava/lang/String;)Lcom/meicam/sdk/NvsVideoClip;",
+        "NvsVideoClip#appendPackagedFx(Ljava/lang/String;)Lcom/meicam/sdk/NvsVideoFx;",
+        "NvsTimeline#addCaption(Ljava/lang/String;JJLjava/lang/String;)Lcom/meicam/sdk/NvsTimelineCaption;",
+        "NvsTimeline#addAnimatedSticker(JJLjava/lang/String;)Lcom/meicam/sdk/NvsTimelineAnimatedSticker;",
+        "NvsVideoTrack#setPackagedTransition(ILjava/lang/String;)Lcom/meicam/sdk/NvsVideoTransition;",
+        "NvsTimeline#appendAudioTrack()Lcom/meicam/sdk/NvsAudioTrack;"
+      ],
+      "flows": [
+        {
+          "id": "editor.sample-project-preview",
+          "result": "passed",
+          "assertions": [
+            "SDK initialized and five bundled packages installed",
+            "Bundled media created a one-clip timeline",
+            "NvsLiveWindow rendered the timeline after SDK initialization",
+            "System status and navigation bar insets did not cover controls"
+          ]
+        },
+        {
+          "id": "editor.mutate-and-refresh",
+          "result": "passed",
+          "assertions": [
+            "Seek changed the playhead used by structural editing",
+            "Split produced a second clip and refreshed the connected LiveWindow",
+            "Packaged filter, caption, animated sticker, packaged transition, and bundled music were applied",
+            "Crash buffer remained empty"
+          ]
+        },
+        {
+          "id": "editor.compile-export",
+          "result": "passed",
+          "assertions": [
+            "Compile callback reported completion",
+            "App Movies directory contained an MP4 output",
+            "Observed output size was 36789 bytes"
+          ]
+        }
+      ],
+      "limitations": [
+        "The bundled sample media is a lightweight still-image project rather than a production video corpus.",
+        "A trial SDK license watermark was visible.",
+        "Voiceover, trim, delete, move, undo/redo, persistence restore, and arbitrary user media import were not exercised in this run."
+      ]
+    },
+    {
+      "id": "runtime.short-video-editor.caption-20260731",
+      "blueprint_id": "short-video-editor",
+      "device_id": "samsung-sm-a5460-api35",
+      "mode": "new-app",
+      "package_label": "com.meishe.validation.shortvideoeditor3",
+      "build_result": "passed",
+      "install_result": "passed",
+      "runtime_result": "passed",
+      "verified_modules": [
+        "timeline-preview",
+        "caption-editor",
+        "editor-shell"
+      ],
+      "verified_features": [
+        "edit",
+        "edit-caption"
+      ],
+      "verified_units": [
+        "java.caption.add",
+        "java.caption.apply-readable-style"
+      ],
+      "verified_api_ids": [
+        "NvsTimeline#addCaption(Ljava/lang/String;JJLjava/lang/String;)Lcom/meicam/sdk/NvsTimelineCaption;"
+      ],
+      "flows": [
+        {
+          "id": "editor.default-caption-appearance",
+          "result": "passed",
+          "assertions": [
+            "Default caption rendered horizontally at the current timeline position",
+            "White text with black outline remained readable on the light bundled sample",
+            "Packaged caption styles remain opt-in through the material-center result"
+          ]
+        }
+      ],
+      "limitations": [
+        "Only the skill-owned default caption appearance was visually checked in this run.",
+        "Downloaded caption-style package rendering was not visually checked."
+      ]
+    },
+    {
+      "id": "runtime.beauty-camera-core-20260731",
+      "blueprint_id": "beauty-camera",
+      "device_id": "samsung-sm-a5460-api35",
+      "mode": "new-app",
+      "package_label": "com.meishe.validation.beautycamera3",
+      "build_result": "passed",
+      "install_result": "passed",
+      "runtime_result": "passed",
+      "verified_modules": [
+        "app-runtime",
+        "permission-gates",
+        "capture-camera",
+        "asset-package-service",
+        "beauty-camera",
+        "capture-filter",
+        "asset-center-service"
+      ],
+      "verified_features": [
+        "app-root",
+        "base-meishe",
+        "capture",
+        "capture-beauty",
+        "capture-filter",
+        "download",
+        "utils-asset"
+      ],
+      "verified_units": [
+        "java.sdk.initialize",
+        "java.app.apply-system-bar-insets",
+        "java.app.request-permissions",
+        "java.asset.install-or-upgrade",
+        "java.capture.start-preview",
+        "java.capture.append-packaged-fx",
+        "java.capture.start-recording",
+        "java.capture.stop-recording"
+      ],
+      "verified_api_ids": [
+        "NvsStreamingContext#init(Landroid/app/Activity;Ljava/lang/String;)Lcom/meicam/sdk/NvsStreamingContext;",
+        "NvsStreamingContext#startCapturePreview(IIILcom/meicam/sdk/NvsRational;)Z",
+        "NvsStreamingContext#startRecording(Ljava/lang/String;)Z",
+        "NvsStreamingContext#stopRecording()V",
+        "NvsStreamingContext#appendPackagedCaptureVideoFx(Ljava/lang/String;)Lcom/meicam/sdk/NvsCaptureVideoFx;",
+        "NvsAssetPackageManager#installAssetPackage(Ljava/lang/String;Ljava/lang/String;IZLjava/lang/StringBuilder;)I",
+        "NvsFx#setFloatVal(Ljava/lang/String;D)V"
+      ],
+      "flows": [
+        {
+          "id": "camera.permissions-and-preview",
+          "result": "passed",
+          "assertions": [
+            "Camera and microphone permissions completed without recursive permission requests",
+            "NvsLiveWindow was created after SDK initialization",
+            "Camera preview rendered and survived front/back device switching",
+            "System status and navigation bar insets did not cover controls"
+          ]
+        },
+        {
+          "id": "camera.effects-and-material-center",
+          "result": "passed",
+          "assertions": [
+            "Bundled capture filter was applied",
+            "Material center loaded 20 downloadable filters",
+            "Selected filter downloaded and installed with package id 58170A61-53CF-4EE3-90EF-86C908D26BB9",
+            "Returning to the camera applied the downloaded package and preserved a visible result status"
+          ]
+        },
+        {
+          "id": "camera.record",
+          "result": "passed",
+          "assertions": [
+            "Recording started and stopped from the generated controller",
+            "App Movies directory contained an MP4 output",
+            "Observed output size was 1686193 bytes",
+            "Crash buffer remained empty"
+          ]
+        }
+      ],
+      "limitations": [
+        "The configured demo material endpoint was used; this does not verify a production material service.",
+        "A trial SDK license watermark was visible.",
+        "No AR scene or makeup asset package was applied in this run."
+      ]
+    },
+    {
+      "id": "runtime.beauty-camera-human-models-20260731",
+      "blueprint_id": "beauty-camera",
+      "device_id": "samsung-sm-a5460-api35",
+      "mode": "new-app",
+      "package_label": "com.meishe.validation.beautycameramodels",
+      "build_result": "passed",
+      "install_result": "passed",
+      "runtime_result": "passed",
+      "verified_modules": [
+        "capture-camera",
+        "makeup-service",
+        "beauty-camera"
+      ],
+      "verified_features": [
+        "capture",
+        "capture-beauty",
+        "makeup"
+      ],
+      "verified_units": [
+        "java.beauty.effect-sdk-init",
+        "java.beauty.initialize-human-detection",
+        "java.capture.start-preview"
+      ],
+      "verified_api_ids": [
+        "NvsStreamingContext#initHumanDetection(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;I)Z",
+        "NvsStreamingContext#initHumanDetectionExt(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;I)Z",
+        "NvsStreamingContext#setupHumanDetectionData(ILjava/lang/String;)Z",
+        "NvsEffectSdkContext#initHumanDetection(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;I)Z"
+      ],
+      "flows": [
+        {
+          "id": "camera.human-model-initialization",
+          "result": "passed",
+          "assertions": [
+            "Generator copied the supplied facemode directory into app assets",
+            "Face-106 and optional common human-detection models initialized",
+            "Generated screen reported Human models: ready",
+            "Camera preview remained active and crash buffer remained empty"
+          ]
+        }
+      ],
+      "limitations": [
+        "Model initialization was verified with Demo-provided build-time resources; the skill does not bundle these large files.",
+        "Face tracking accuracy, AR scene rendering, makeup rendering, segmentation masks, hand tracking, avatar, and sky segmentation were not visually evaluated."
+      ]
+    },
+    {
+      "id": "runtime.pip-editor.core-20260731",
+      "blueprint_id": "pip-editor",
+      "device_id": "samsung-sm-a5460-api35",
+      "mode": "new-app",
+      "package_label": "com.meishe.runtime4.pipeditor",
+      "build_result": "passed",
+      "install_result": "passed",
+      "runtime_result": "passed",
+      "verified_modules": [
+        "app-runtime",
+        "media-import",
+        "timeline-state-store",
+        "timeline-preview",
+        "pip-editor",
+        "export-compile"
+      ],
+      "verified_features": [
+        "app-root",
+        "base-meishe",
+        "selectmedia",
+        "picinpic"
+      ],
+      "verified_units": [
+        "java.sdk.initialize",
+        "java.timeline.create",
+        "java.timeline.build-picture-in-picture",
+        "java.preview.connect",
+        "java.preview.seek",
+        "java.preview.play",
+        "java.export.compile"
+      ],
+      "verified_api_ids": [
+        "NvsStreamingContext#init(Landroid/app/Activity;Ljava/lang/String;)Lcom/meicam/sdk/NvsStreamingContext;",
+        "NvsStreamingContext#createTimeline(Lcom/meicam/sdk/NvsVideoResolution;Lcom/meicam/sdk/NvsRational;Lcom/meicam/sdk/NvsAudioResolution;)Lcom/meicam/sdk/NvsTimeline;",
+        "NvsTimeline#getVideoTrackByIndex(I)Lcom/meicam/sdk/NvsVideoTrack;",
+        "NvsTimeline#appendVideoTrack()Lcom/meicam/sdk/NvsVideoTrack;",
+        "NvsVideoTrack#appendClip(Ljava/lang/String;)Lcom/meicam/sdk/NvsVideoClip;",
+        "NvsVideoClip#setImageMotionAnimationEnabled(Z)V",
+        "NvsVideoClip#appendBuiltinFx(Ljava/lang/String;)Lcom/meicam/sdk/NvsVideoFx;",
+        "NvsFx#setFloatVal(Ljava/lang/String;D)V",
+        "NvsStreamingContext#connectTimelineWithLiveWindow(Lcom/meicam/sdk/NvsTimeline;Lcom/meicam/sdk/NvsLiveWindow;)Z",
+        "NvsStreamingContext#seekTimeline(Lcom/meicam/sdk/NvsTimeline;JII)Z",
+        "NvsStreamingContext#playbackTimeline(Lcom/meicam/sdk/NvsTimeline;JJIZI)Z",
+        "NvsStreamingContext#compileTimeline(Lcom/meicam/sdk/NvsTimeline;JJLjava/lang/String;III)Z"
+      ],
+      "flows": [
+        {
+          "id": "pip.two-track-preview",
+          "result": "passed",
+          "assertions": [
+            "Two bundled visual assets rendered as distinct base and overlay tracks.",
+            "Transform 2D scaling and translation produced a visible lower-right overlay.",
+            "Playback started from the connected LiveWindow timeline."
+          ]
+        },
+        {
+          "id": "pip.compile-export",
+          "result": "passed",
+          "assertions": [
+            "Compile callback reported completion.",
+            "The app Movies directory contained pip-1785492608722.mp4 with size 36416 bytes.",
+            "Crash buffer remained empty."
+          ]
+        }
+      ],
+      "limitations": [
+        "The visual baseline used bundled still images rather than arbitrary user-selected videos.",
+        "A trial SDK license watermark was visible."
+      ]
+    },
+    {
+      "id": "runtime.quick-splicing.core-20260731",
+      "blueprint_id": "quick-splicing-app",
+      "device_id": "samsung-sm-a5460-api35",
+      "mode": "new-app",
+      "package_label": "com.meishe.runtime4.quicksplicingapp",
+      "build_result": "passed",
+      "install_result": "passed",
+      "runtime_result": "passed",
+      "verified_modules": [
+        "app-runtime",
+        "media-import",
+        "timeline-state-store",
+        "timeline-preview",
+        "asset-package-service",
+        "quick-splicing",
+        "export-compile"
+      ],
+      "verified_features": [
+        "app-root",
+        "base-meishe",
+        "selectmedia",
+        "utils-asset",
+        "quicksplicing"
+      ],
+      "verified_units": [
+        "java.sdk.initialize",
+        "java.asset.install-or-upgrade",
+        "java.timeline.create",
+        "java.timeline.build-quick-splice",
+        "java.preview.connect",
+        "java.preview.play",
+        "java.export.compile"
+      ],
+      "verified_api_ids": [
+        "NvsStreamingContext#init(Landroid/app/Activity;Ljava/lang/String;)Lcom/meicam/sdk/NvsStreamingContext;",
+        "NvsStreamingContext#createTimeline(Lcom/meicam/sdk/NvsVideoResolution;Lcom/meicam/sdk/NvsRational;Lcom/meicam/sdk/NvsAudioResolution;)Lcom/meicam/sdk/NvsTimeline;",
+        "NvsTimeline#getVideoTrackByIndex(I)Lcom/meicam/sdk/NvsVideoTrack;",
+        "NvsVideoTrack#appendClip(Ljava/lang/String;)Lcom/meicam/sdk/NvsVideoClip;",
+        "NvsVideoClip#setImageMotionAnimationEnabled(Z)V",
+        "NvsVideoTrack#setPackagedTransition(ILjava/lang/String;)Lcom/meicam/sdk/NvsVideoTransition;",
+        "NvsVideoTrack#setBuiltinTransition(ILjava/lang/String;)Lcom/meicam/sdk/NvsVideoTransition;",
+        "NvsStreamingContext#connectTimelineWithLiveWindow(Lcom/meicam/sdk/NvsTimeline;Lcom/meicam/sdk/NvsLiveWindow;)Z",
+        "NvsStreamingContext#playbackTimeline(Lcom/meicam/sdk/NvsTimeline;JJIZI)Z",
+        "NvsStreamingContext#compileTimeline(Lcom/meicam/sdk/NvsTimeline;JJLjava/lang/String;III)Z"
+      ],
+      "flows": [
+        {
+          "id": "quick-splice.preview-and-export",
+          "result": "passed",
+          "assertions": [
+            "Three bundled sample clips were appended to one timeline track.",
+            "Transitions were applied between adjacent clips and the timeline connected to LiveWindow.",
+            "Playback started and export completed.",
+            "The app Movies directory contained quick-splice-1785492709330.mp4 with size 135887 bytes.",
+            "Crash buffer remained empty."
+          ]
+        }
+      ],
+      "limitations": [
+        "The default run used repeated lightweight still-image media.",
+        "The multi-select user-media path opened correctly but was not populated during this run."
+      ]
+    },
+    {
+      "id": "runtime.camera-plus-editor.core-20260731",
+      "blueprint_id": "camera-plus-editor",
+      "device_id": "samsung-sm-a5460-api35",
+      "mode": "new-app",
+      "package_label": "com.meishe.runtime4.camerapluseditor",
+      "build_result": "passed",
+      "install_result": "passed",
+      "runtime_result": "passed",
+      "verified_modules": [
+        "app-runtime",
+        "feature-hub",
+        "permission-gates",
+        "media-import",
+        "timeline-state-store",
+        "timeline-preview",
+        "capture-camera",
+        "editor-shell",
+        "export-compile"
+      ],
+      "verified_features": [
+        "app-root",
+        "base-meishe",
+        "main",
+        "activity",
+        "utils-permission",
+        "selectmedia",
+        "capture",
+        "edit"
+      ],
+      "verified_units": [
+        "java.sdk.initialize",
+        "java.app.apply-system-bar-insets",
+        "java.app.route-feature",
+        "java.timeline.create",
+        "java.timeline.append-clip",
+        "java.preview.connect",
+        "java.preview.play",
+        "java.export.compile",
+        "java.capture.start-preview",
+        "java.capture.start-recording",
+        "java.capture.stop-recording"
+      ],
+      "verified_api_ids": [
+        "NvsStreamingContext#init(Landroid/app/Activity;Ljava/lang/String;)Lcom/meicam/sdk/NvsStreamingContext;",
+        "NvsStreamingContext#createTimeline(Lcom/meicam/sdk/NvsVideoResolution;Lcom/meicam/sdk/NvsRational;Lcom/meicam/sdk/NvsAudioResolution;)Lcom/meicam/sdk/NvsTimeline;",
+        "NvsVideoTrack#appendClip(Ljava/lang/String;)Lcom/meicam/sdk/NvsVideoClip;",
+        "NvsStreamingContext#connectTimelineWithLiveWindow(Lcom/meicam/sdk/NvsTimeline;Lcom/meicam/sdk/NvsLiveWindow;)Z",
+        "NvsStreamingContext#playbackTimeline(Lcom/meicam/sdk/NvsTimeline;JJIZI)Z",
+        "NvsStreamingContext#compileTimeline(Lcom/meicam/sdk/NvsTimeline;JJLjava/lang/String;III)Z",
+        "NvsStreamingContext#startCapturePreview(IIILcom/meicam/sdk/NvsRational;)Z",
+        "NvsStreamingContext#startRecording(Ljava/lang/String;)Z",
+        "NvsStreamingContext#stopRecording()V"
+      ],
+      "flows": [
+        {
+          "id": "camera-plus-editor.timeline",
+          "result": "passed",
+          "assertions": [
+            "The editor route rendered bundled media in LiveWindow.",
+            "Playback and export completed.",
+            "The app Movies directory contained editor-1785492985253.mp4 with size 50668 bytes."
+          ]
+        },
+        {
+          "id": "camera-plus-editor.capture",
+          "result": "passed",
+          "assertions": [
+            "The capture route rendered a live camera preview and switched camera devices.",
+            "Recording started and stopped through the generated capture controller.",
+            "The app Movies directory contained capture-1785493060579.mp4 with size 5795770 bytes.",
+            "Crash buffer remained empty."
+          ]
+        }
+      ],
+      "limitations": [
+        "The editor route is a runnable baseline; the dedicated short-video-editor blueprint remains the verified full editing surface.",
+        "Beauty, makeup, and AR resources were not exercised in this combined run."
+      ]
+    },
+    {
+      "id": "runtime.template-mimo-cutsame.resources-20260731",
+      "blueprint_id": "template-mimo-cutsame-app",
+      "device_id": "samsung-sm-a5460-api35",
+      "mode": "new-app",
+      "package_label": "com.meishe.runtime4.templatemimocutsameapp",
+      "build_result": "passed",
+      "install_result": "passed",
+      "runtime_result": "partial",
+      "verified_modules": [
+        "app-runtime",
+        "feature-hub",
+        "asset-center-service"
+      ],
+      "verified_features": [
+        "app-root",
+        "base-meishe",
+        "main",
+        "activity",
+        "download",
+        "libnet",
+        "base"
+      ],
+      "verified_units": [
+        "java.sdk.initialize",
+        "java.app.apply-system-bar-insets",
+        "java.app.route-feature"
+      ],
+      "verified_api_ids": [
+        "NvsStreamingContext#init(Landroid/app/Activity;Ljava/lang/String;)Lcom/meicam/sdk/NvsStreamingContext;"
+      ],
+      "flows": [
+        {
+          "id": "template.resource-selection-and-gate",
+          "result": "passed",
+          "assertions": [
+            "Template selection opened Android DocumentsUI.",
+            "Replacement-footage and material-center entries were wired.",
+            "Material center loaded 20 materials.",
+            "The screen explicitly required a template descriptor and package id before timeline creation.",
+            "Crash buffer remained empty."
+          ]
+        }
+      ],
+      "limitations": [
+        "No Mimo, CutSame, or template descriptor/package was supplied, so template timeline creation and replacement were not executed.",
+        "Template-engine, cutsame-template, mimo-template, and export units are not runtime_verified by this run."
+      ]
+    },
+    {
+      "id": "runtime.full-sdk-demo.hub-20260731",
+      "blueprint_id": "full-sdk-demo",
+      "device_id": "samsung-sm-a5460-api35",
+      "mode": "new-app",
+      "package_label": "com.meishe.runtime4.fullsdkdemo",
+      "build_result": "passed",
+      "install_result": "passed",
+      "runtime_result": "partial",
+      "verified_modules": [
+        "app-runtime",
+        "feature-hub",
+        "timeline-state-store",
+        "timeline-preview",
+        "pip-editor",
+        "asset-center-service"
+      ],
+      "verified_features": [
+        "app-root",
+        "base-meishe",
+        "main",
+        "activity",
+        "picinpic",
+        "download",
+        "libnet",
+        "base"
+      ],
+      "verified_units": [
+        "java.sdk.initialize",
+        "java.app.apply-system-bar-insets",
+        "java.app.route-feature",
+        "java.timeline.create",
+        "java.timeline.build-picture-in-picture",
+        "java.preview.connect",
+        "java.preview.seek"
+      ],
+      "verified_api_ids": [
+        "NvsStreamingContext#init(Landroid/app/Activity;Ljava/lang/String;)Lcom/meicam/sdk/NvsStreamingContext;",
+        "NvsStreamingContext#createTimeline(Lcom/meicam/sdk/NvsVideoResolution;Lcom/meicam/sdk/NvsRational;Lcom/meicam/sdk/NvsAudioResolution;)Lcom/meicam/sdk/NvsTimeline;",
+        "NvsTimeline#appendVideoTrack()Lcom/meicam/sdk/NvsVideoTrack;",
+        "NvsVideoTrack#appendClip(Ljava/lang/String;)Lcom/meicam/sdk/NvsVideoClip;",
+        "NvsVideoClip#appendBuiltinFx(Ljava/lang/String;)Lcom/meicam/sdk/NvsVideoFx;",
+        "NvsFx#setFloatVal(Ljava/lang/String;D)V",
+        "NvsStreamingContext#connectTimelineWithLiveWindow(Lcom/meicam/sdk/NvsTimeline;Lcom/meicam/sdk/NvsLiveWindow;)Z",
+        "NvsStreamingContext#seekTimeline(Lcom/meicam/sdk/NvsTimeline;JII)Z"
+      ],
+      "flows": [
+        {
+          "id": "full-sdk-demo.feature-hub",
+          "result": "passed",
+          "assertions": [
+            "Six routed entries were visible for editor, capture, PIP, quick splice, material center, and advanced resource requirements.",
+            "The PIP route built and connected a two-track composition.",
+            "The material-center route loaded 20 materials.",
+            "Advanced resource requirements named the resource-gated module families.",
+            "Crash buffer remained empty."
+          ]
+        }
+      ],
+      "limitations": [
+        "Only hub routing, PIP baseline, material listing, and resource gating were exercised in this run.",
+        "The full set of advanced modules is not implied to be runtime_verified."
+      ]
+    },
+    {
+      "id": "runtime.incremental-integration.shell-20260731",
+      "blueprint_id": "incremental-integration",
+      "device_id": "samsung-sm-a5460-api35",
+      "mode": "new-app",
+      "package_label": "com.meishe.runtime4.incrementalintegration",
+      "build_result": "passed",
+      "install_result": "passed",
+      "runtime_result": "partial",
+      "verified_modules": [
+        "app-runtime"
+      ],
+      "verified_features": [
+        "app-root",
+        "base-meishe"
+      ],
+      "verified_units": [
+        "java.sdk.initialize",
+        "java.app.apply-system-bar-insets"
+      ],
+      "verified_api_ids": [
+        "NvsStreamingContext#init(Landroid/app/Activity;Ljava/lang/String;)Lcom/meicam/sdk/NvsStreamingContext;"
+      ],
+      "flows": [
+        {
+          "id": "incremental-integration.runtime-shell",
+          "result": "passed",
+          "assertions": [
+            "The generated shell initialized the SDK on the physical device.",
+            "The screen accurately described staged patch-manifest behavior.",
+            "Crash buffer remained empty."
+          ]
+        }
+      ],
+      "limitations": [
+        "This run validates the generated runtime shell, not application of a patch into a physical-device host project.",
+        "Java/Kotlin and Groovy/KTS host integration remains build-verified only."
+      ]
+    },
+    {
+      "id": "runtime.beauty-camera-ar-segmentation-20260731",
+      "blueprint_id": "beauty-camera",
+      "device_id": "samsung-sm-a5460-api35",
+      "mode": "new-app",
+      "package_label": "com.meishe.runtime6.beautyadvanced",
+      "build_result": "passed",
+      "install_result": "passed",
+      "runtime_result": "passed",
+      "verified_modules": [
+        "app-runtime",
+        "permission-gates",
+        "capture-camera",
+        "asset-package-service",
+        "beauty-camera",
+        "ar-scene",
+        "segmentation-keying"
+      ],
+      "verified_features": [
+        "app-root",
+        "base-meishe",
+        "capture",
+        "capture-beauty",
+        "ar-scene",
+        "utils-asset"
+      ],
+      "verified_units": [
+        "java.sdk.initialize",
+        "java.app.request-permissions",
+        "java.asset.install-or-upgrade",
+        "java.beauty.effect-sdk-init",
+        "java.beauty.initialize-human-detection",
+        "java.capture.start-preview",
+        "java.beauty.append-ar-scene",
+        "java.beauty.enable-ai-face-occlusion",
+        "java.beauty.configure-ar-scene",
+        "java.segmentation.append-background-capture",
+        "java.capture.start-recording",
+        "java.capture.stop-recording"
+      ],
+      "verified_api_ids": [
+        "NvsStreamingContext#init(Landroid/app/Activity;Ljava/lang/String;)Lcom/meicam/sdk/NvsStreamingContext;",
+        "NvsAssetPackageManager#installAssetPackage(Ljava/lang/String;Ljava/lang/String;IZLjava/lang/StringBuilder;)I",
+        "NvsEffectSdkContext#getInstance()Lcom/meicam/effect/sdk/NvsEffectSdkContext;",
+        "NvsEffectSdkContext#init(Landroid/content/Context;Ljava/lang/String;I)Lcom/meicam/effect/sdk/NvsEffectSdkContext;",
+        "NvsStreamingContext#initHumanDetection(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;I)Z",
+        "NvsStreamingContext#initHumanDetectionExt(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;I)Z",
+        "NvsStreamingContext#setupHumanDetectionData(ILjava/lang/String;)Z",
+        "NvsStreamingContext#getCaptureDeviceCount()I",
+        "NvsStreamingContext#connectCapturePreviewWithLiveWindow(Lcom/meicam/sdk/NvsLiveWindow;)Z",
+        "NvsStreamingContext#startCapturePreview(IIILcom/meicam/sdk/NvsRational;)Z",
+        "NvsStreamingContext#hasARModule()I",
+        "NvsStreamingContext#appendBuiltinCaptureVideoFx(Ljava/lang/String;)Lcom/meicam/sdk/NvsCaptureVideoFx;",
+        "NvsStreamingContext#isAndroidCameraPreferDualBufferAR()Z",
+        "NvsStreamingContext#getDeviceCpuLevel()I",
+        "NvsStreamingContext#DEVICE_POWER_LEVEL_HIGH:I",
+        "NvsFx#setBooleanVal(Ljava/lang/String;Z)V",
+        "NvsFx#setFloatVal(Ljava/lang/String;D)V",
+        "NvsFx#setMenuVal(Ljava/lang/String;Ljava/lang/String;)V",
+        "NvsFx#setIntVal(Ljava/lang/String;I)V",
+        "NvsFx#setColorVal(Ljava/lang/String;Lcom/meicam/sdk/NvsColor;)V",
+        "NvsStreamingContext#getStreamingEngineState()I",
+        "NvsStreamingContext#startRecording(Ljava/lang/String;)Z",
+        "NvsStreamingContext#stopRecording()V"
+      ],
+      "flows": [
+        {
+          "id": "camera.ar-models-and-preview",
+          "result": "passed",
+          "assertions": [
+            "The generator copied the Demo-provided facemode directory into app assets for this build-time validation only.",
+            "The screen reported five bundled packages, initialized human models, and an active camera preview.",
+            "AR Scene was appended and its beauty strength and whitening parameters were accepted."
+          ]
+        },
+        {
+          "id": "camera.background-segmentation",
+          "result": "passed",
+          "assertions": [
+            "The background segmentation capture effect was appended after model initialization and preview startup.",
+            "Menu, stretch, and green background-color parameters were applied.",
+            "The physical-device preview rendered a green segmentation background without a crash."
+          ]
+        },
+        {
+          "id": "camera.ar-segmentation-record",
+          "result": "passed",
+          "assertions": [
+            "Recording started and stopped while the AR and segmentation capture effects remained in the chain.",
+            "The app Movies directory contained beauty_camera_1785496005115.mp4 with size 330138 bytes.",
+            "Crash buffer remained empty."
+          ]
+        }
+      ],
+      "limitations": [
+        "The 37.72 MB facemode resources came from the external Demo for build-time validation and remain user-provided; they are not bundled in the skill.",
+        "No face subject was present, so face beautification, AI face occlusion quality, and segmentation edge quality were not visually scored.",
+        "Advanced AR, makeup, hand, avatar, and sky-segmentation packages were not supplied.",
+        "A trial SDK license watermark was visible."
+      ]
+    },
+    {
+      "id": "runtime.short-video-editor.user-media-voiceover-20260731",
+      "blueprint_id": "short-video-editor",
+      "device_id": "samsung-sm-a5460-api35",
+      "mode": "new-app",
+      "package_label": "com.meishe.runtime6.shorteditorv2",
+      "build_result": "passed",
+      "install_result": "passed",
+      "runtime_result": "passed",
+      "verified_modules": [
+        "app-runtime",
+        "feature-hub",
+        "permission-gates",
+        "media-import",
+        "timeline-state-store",
+        "timeline-preview",
+        "editor-shell",
+        "voiceover-editor",
+        "export-compile"
+      ],
+      "verified_features": [
+        "app-root",
+        "base-meishe",
+        "selectmedia",
+        "edit",
+        "edit-record"
+      ],
+      "verified_units": [
+        "java.sdk.initialize",
+        "java.app.copy-content-uri-to-project",
+        "java.media.probe",
+        "java.timeline.create",
+        "java.timeline.append-clip",
+        "java.preview.connect",
+        "java.preview.seek",
+        "java.audio.ensure-track",
+        "java.audio.add-clip",
+        "java.export.compile"
+      ],
+      "verified_api_ids": [
+        "NvsStreamingContext#init(Landroid/app/Activity;Ljava/lang/String;)Lcom/meicam/sdk/NvsStreamingContext;",
+        "NvsStreamingContext#getAVFileInfo(Ljava/lang/String;)Lcom/meicam/sdk/NvsAVFileInfo;",
+        "NvsStreamingContext#getAVInfoFromFile(Ljava/lang/String;I)Lcom/meicam/sdk/NvsAVFileInfo;",
+        "NvsAVFileInfo#getDuration()J",
+        "NvsAVFileInfo#getVideoStreamDimension(I)Lcom/meicam/sdk/NvsSize;",
+        "NvsAVFileInfo#getVideoStreamRotation(I)I",
+        "NvsStreamingContext#createTimeline(Lcom/meicam/sdk/NvsVideoResolution;Lcom/meicam/sdk/NvsRational;Lcom/meicam/sdk/NvsAudioResolution;)Lcom/meicam/sdk/NvsTimeline;",
+        "NvsTimeline#appendVideoTrack()Lcom/meicam/sdk/NvsVideoTrack;",
+        "NvsVideoTrack#appendClip(Ljava/lang/String;)Lcom/meicam/sdk/NvsVideoClip;",
+        "NvsStreamingContext#connectTimelineWithLiveWindow(Lcom/meicam/sdk/NvsTimeline;Lcom/meicam/sdk/NvsLiveWindow;)Z",
+        "NvsStreamingContext#seekTimeline(Lcom/meicam/sdk/NvsTimeline;JII)Z",
+        "NvsTimeline#audioTrackCount()I",
+        "NvsTimeline#appendAudioTrack()Lcom/meicam/sdk/NvsAudioTrack;",
+        "NvsTimeline#getAudioTrackByIndex(I)Lcom/meicam/sdk/NvsAudioTrack;",
+        "NvsAudioTrack#addClip(Ljava/lang/String;JJJ)Lcom/meicam/sdk/NvsAudioClip;",
+        "NvsStreamingContext#stop()V",
+        "NvsStreamingContext#setCompileConfigurations(Ljava/util/Hashtable;)V",
+        "NvsStreamingContext#compileTimeline(Lcom/meicam/sdk/NvsTimeline;JJLjava/lang/String;III)Z"
+      ],
+      "flows": [
+        {
+          "id": "editor.user-media-import",
+          "result": "passed",
+          "assertions": [
+            "Android ACTION_OPEN_DOCUMENT selected a user-visible MP4 from Downloads.",
+            "The URI was copied into persistent app-owned project media storage.",
+            "The selected file passed SDK media probing, created one video clip, and rendered in the connected LiveWindow."
+          ]
+        },
+        {
+          "id": "editor.voiceover-track",
+          "result": "passed",
+          "assertions": [
+            "Microphone recording produced an M4A file in the app Music directory.",
+            "A dedicated audio track was created at index 1 and the voiceover clip was inserted at the current playhead.",
+            "The screen reported that voiceover was added and the crash buffer remained empty."
+          ]
+        },
+        {
+          "id": "editor.user-media-voiceover-export",
+          "result": "passed",
+          "assertions": [
+            "The edited timeline exported to meishe_export_1785497013373.mp4 with size 173982 bytes.",
+            "ffprobe reported an 8.533-second H.264 video stream and an 8.545-second AAC audio stream.",
+            "Compile callbacks reported completion and the crash buffer remained empty."
+          ]
+        }
+      ],
+      "limitations": [
+        "This run used one portrait MP4; multi-selection, still-image mixing, unsupported media, and provider failure paths were not exercised.",
+        "Voiceover insertion and exported AAC presence were verified, but subjective audio quality and waveform editing were not evaluated.",
+        "A trial SDK license watermark was visible."
+      ]
+    },
+    {
+      "id": "runtime.short-video-editor.project-import-regression-20260731",
+      "blueprint_id": "short-video-editor",
+      "device_id": "samsung-sm-a5460-api35",
+      "mode": "new-app",
+      "package_label": "com.meishe.isolated6.shorteditor",
+      "build_result": "passed",
+      "install_result": "passed",
+      "runtime_result": "passed",
+      "verified_modules": [
+        "app-runtime",
+        "media-import",
+        "timeline-state-store",
+        "timeline-preview",
+        "editor-shell"
+      ],
+      "verified_features": [
+        "app-root",
+        "base-meishe",
+        "selectmedia",
+        "edit"
+      ],
+      "verified_units": [
+        "java.sdk.initialize",
+        "java.app.copy-content-uri-to-project",
+        "java.media.probe",
+        "java.timeline.create",
+        "java.timeline.append-clip",
+        "java.preview.connect",
+        "java.preview.seek"
+      ],
+      "verified_api_ids": [
+        "NvsStreamingContext#init(Landroid/app/Activity;Ljava/lang/String;)Lcom/meicam/sdk/NvsStreamingContext;",
+        "NvsStreamingContext#getAVFileInfo(Ljava/lang/String;)Lcom/meicam/sdk/NvsAVFileInfo;",
+        "NvsAVFileInfo#getDuration()J",
+        "NvsAVFileInfo#getVideoStreamDimension(I)Lcom/meicam/sdk/NvsSize;",
+        "NvsAVFileInfo#getVideoStreamRotation(I)I",
+        "NvsStreamingContext#createTimeline(Lcom/meicam/sdk/NvsVideoResolution;Lcom/meicam/sdk/NvsRational;Lcom/meicam/sdk/NvsAudioResolution;)Lcom/meicam/sdk/NvsTimeline;",
+        "NvsTimeline#appendVideoTrack()Lcom/meicam/sdk/NvsVideoTrack;",
+        "NvsVideoTrack#appendClip(Ljava/lang/String;)Lcom/meicam/sdk/NvsVideoClip;",
+        "NvsStreamingContext#connectTimelineWithLiveWindow(Lcom/meicam/sdk/NvsTimeline;Lcom/meicam/sdk/NvsLiveWindow;)Z",
+        "NvsStreamingContext#seekTimeline(Lcom/meicam/sdk/NvsTimeline;JII)Z"
+      ],
+      "flows": [
+        {
+          "id": "editor.current-project-import-unit",
+          "result": "passed",
+          "assertions": [
+            "The app was generated from the isolated current skill copy at C:/tmp/m6s733/s.",
+            "ACTION_OPEN_DOCUMENT imported meishe_user_input.mp4 into files/project-media as a 330138-byte app-owned file.",
+            "The current self-contained import unit passed SDK media probing and produced a one-clip portrait Timeline connected to LiveWindow.",
+            "Crash buffer remained empty."
+          ]
+        }
+      ],
+      "limitations": [
+        "This regression covers current-source project import and preview only; voiceover and export remain covered by runtime.short-video-editor.user-media-voiceover-20260731.",
+        "Only one MP4 from Android DocumentsUI was selected."
+      ]
+    },
+    {
+      "id": "runtime.short-video-editor.mixed-media-persistence-20260803",
+      "blueprint_id": "short-video-editor",
+      "device_id": "samsung-sm-a5460-api35",
+      "mode": "new-app",
+      "package_label": "com.meishe.skillvalidation.mixededitor",
+      "build_result": "passed",
+      "install_result": "passed",
+      "runtime_result": "passed",
+      "verified_modules": [
+        "app-runtime",
+        "feature-hub",
+        "media-import",
+        "app-repository",
+        "timeline-state-store",
+        "timeline-preview",
+        "editor-shell",
+        "clip-editor",
+        "export-compile"
+      ],
+      "verified_features": [
+        "app-root",
+        "base-meishe",
+        "selectmedia",
+        "edit",
+        "edit-clipedit"
+      ],
+      "verified_units": [
+        "java.sdk.initialize",
+        "java.app.copy-content-uri-to-project",
+        "java.media.probe",
+        "java.timeline.create",
+        "java.timeline.append-media-list",
+        "java.preview.connect",
+        "java.preview.seek",
+        "java.clip.move",
+        "java.clip.trim-out-at-playhead",
+        "java.app.save-timeline-structure",
+        "java.app.load-project-state",
+        "java.app.latest-project-id",
+        "java.app.read-project-dimension",
+        "java.app.restore-timeline-structure",
+        "java.engine.stop",
+        "java.export.compile"
+      ],
+      "verified_api_ids": [
+        "NvsStreamingContext#init(Landroid/app/Activity;Ljava/lang/String;)Lcom/meicam/sdk/NvsStreamingContext;",
+        "NvsStreamingContext#getAVFileInfo(Ljava/lang/String;)Lcom/meicam/sdk/NvsAVFileInfo;",
+        "NvsStreamingContext#createTimeline(Lcom/meicam/sdk/NvsVideoResolution;Lcom/meicam/sdk/NvsRational;Lcom/meicam/sdk/NvsAudioResolution;)Lcom/meicam/sdk/NvsTimeline;",
+        "NvsTimeline#appendVideoTrack()Lcom/meicam/sdk/NvsVideoTrack;",
+        "NvsVideoTrack#appendClip(Ljava/lang/String;)Lcom/meicam/sdk/NvsVideoClip;",
+        "NvsTrack#getClipCount()I",
+        "NvsVideoTrack#getClipByIndex(I)Lcom/meicam/sdk/NvsVideoClip;",
+        "NvsTrack#moveClip(II)Z",
+        "NvsClip#getFilePath()Ljava/lang/String;",
+        "NvsClip#getInPoint()J",
+        "NvsClip#getTrimIn()J",
+        "NvsClip#getTrimOut()J",
+        "NvsClip#getSpeed()D",
+        "NvsClip#changeTrimOutPoint(JZ)J",
+        "NvsTrack#removeAllClips()Z",
+        "NvsVideoClip#getVideoType()I",
+        "NvsVideoClip#getImageMotionAnimationEnabled()Z",
+        "NvsVideoClip#setImageMotionAnimationEnabled(Z)V",
+        "NvsStreamingContext#connectTimelineWithLiveWindow(Lcom/meicam/sdk/NvsTimeline;Lcom/meicam/sdk/NvsLiveWindow;)Z",
+        "NvsStreamingContext#seekTimeline(Lcom/meicam/sdk/NvsTimeline;JII)Z",
+        "NvsStreamingContext#stop()V",
+        "NvsStreamingContext#setCompileConfigurations(Ljava/util/Hashtable;)V",
+        "NvsStreamingContext#compileTimeline(Lcom/meicam/sdk/NvsTimeline;JJLjava/lang/String;III)Z"
+      ],
+      "flows": [
+        {
+          "id": "editor.multi-select-mixed-import",
+          "result": "passed",
+          "assertions": [
+            "Android ACTION_OPEN_DOCUMENT selected one MP4 and one PNG in a two-item batch.",
+            "Both provider URIs were copied to persistent app-owned project media storage.",
+            "The ordered mixed-media list created a two-clip Timeline, disabled default image motion for the still image, and rendered through the connected LiveWindow."
+          ]
+        },
+        {
+          "id": "editor.structural-edit-history",
+          "result": "passed",
+          "assertions": [
+            "Moving the selected first clip one slot changed the stored clip order.",
+            "Trimming the second clip converted the Timeline playhead to source trim coordinates and shortened trimOutUs to 2345655.",
+            "Undo and redo both completed after the mutation snapshots were captured in post-mutation order."
+          ]
+        },
+        {
+          "id": "editor.process-death-structural-restore",
+          "result": "passed",
+          "assertions": [
+            "The saved project contained ratio 720x1280 and two ordered clip records with source trim, speed, media type, and image-motion state.",
+            "After force-stop and relaunch, Resume Latest Project was enabled and rebuilt a two-clip Timeline.",
+            "Seeking to the restored Timeline start and end rendered the video and still-image items respectively in LiveWindow."
+          ]
+        },
+        {
+          "id": "editor.mixed-media-export",
+          "result": "passed",
+          "assertions": [
+            "Compile callbacks reported completion and the app Movies directory contained meishe_export_1785724965342.mp4.",
+            "ffprobe reported H.264 video, AAC audio, 96x144 dimensions, 10.900-second duration, and 208823-byte size.",
+            "The exported duration matched the persisted clip trim durations within frame/container rounding and the crash buffer remained empty."
+          ]
+        }
+      ],
+      "limitations": [
+        "This run verifies structural project persistence only; captions, stickers, filters, transitions, audio edits, and undo history are not serialized by this project-state format.",
+        "Delete, split, unsupported media, provider read failures, and partial-success batch import were not exercised in this run.",
+        "The selected MP4 and PNG were lightweight validation media, and a trial SDK license watermark was visible."
+      ]
+    },
+    {
+      "id": "runtime.short-video-editor.full-state-persistence-20260803",
+      "blueprint_id": "short-video-editor",
+      "device_id": "samsung-sm-a5460-api35",
+      "mode": "new-app",
+      "package_label": "com.meishe.skillvalidation.fullstatev2",
+      "build_result": "passed",
+      "install_result": "passed",
+      "runtime_result": "passed",
+      "verified_modules": [
+        "app-runtime",
+        "feature-hub",
+        "media-import",
+        "app-repository",
+        "timeline-state-store",
+        "timeline-preview",
+        "editor-shell",
+        "clip-editor",
+        "filter-editor",
+        "caption-editor",
+        "sticker-editor",
+        "transition-editor",
+        "music-editor",
+        "voiceover-editor",
+        "export-compile"
+      ],
+      "verified_features": [
+        "app-root",
+        "base-meishe",
+        "selectmedia",
+        "edit",
+        "edit-clipedit",
+        "edit-filter",
+        "edit-caption",
+        "edit-animatesticker",
+        "edit-transition",
+        "edit-music",
+        "edit-record"
+      ],
+      "verified_units": [
+        "java.sdk.initialize",
+        "java.app.copy-bundled-media-to-project",
+        "java.timeline.create",
+        "java.timeline.append-media-list",
+        "java.clip.split-at-playhead",
+        "java.effect.append-packaged",
+        "java.caption.add",
+        "java.caption.apply-readable-style",
+        "java.sticker.add",
+        "java.transition.set-packaged",
+        "java.audio.ensure-track",
+        "java.audio.add-clip-at",
+        "java.audio.set-clip-volume",
+        "java.audio.set-fades",
+        "java.app.save-timeline-structure",
+        "java.app.save-editor-state",
+        "java.app.load-project-state",
+        "java.app.extract-editor-state",
+        "java.app.restore-timeline-structure",
+        "java.editor.clear-supported-features",
+        "java.editor.restore-supported-features",
+        "java.preview.connect",
+        "java.preview.seek",
+        "java.engine.stop",
+        "java.export.compile"
+      ],
+      "verified_api_ids": [
+        "NvsStreamingContext#init(Landroid/app/Activity;Ljava/lang/String;)Lcom/meicam/sdk/NvsStreamingContext;",
+        "NvsStreamingContext#createTimeline(Lcom/meicam/sdk/NvsVideoResolution;Lcom/meicam/sdk/NvsRational;Lcom/meicam/sdk/NvsAudioResolution;)Lcom/meicam/sdk/NvsTimeline;",
+        "NvsTimeline#appendVideoTrack()Lcom/meicam/sdk/NvsVideoTrack;",
+        "NvsVideoTrack#appendClip(Ljava/lang/String;)Lcom/meicam/sdk/NvsVideoClip;",
+        "NvsClip#getFxCount()I",
+        "NvsVideoClip#appendPackagedFx(Ljava/lang/String;)Lcom/meicam/sdk/NvsVideoFx;",
+        "NvsVideoClip#removeAllFx()Z",
+        "NvsTimeline#addCaption(Ljava/lang/String;JJLjava/lang/String;)Lcom/meicam/sdk/NvsTimelineCaption;",
+        "NvsCaption#setTextAlignment(I)V",
+        "NvsCaption#setTextColor(Lcom/meicam/sdk/NvsColor;)V",
+        "NvsCaption#setFontSize(F)V",
+        "NvsCaption#setDrawOutline(Z)V",
+        "NvsCaption#setOutlineColor(Lcom/meicam/sdk/NvsColor;)V",
+        "NvsCaption#setOutlineWidth(F)V",
+        "NvsTimeline#removeCaption(Lcom/meicam/sdk/NvsTimelineCaption;)Lcom/meicam/sdk/NvsTimelineCaption;",
+        "NvsTimeline#addAnimatedSticker(JJLjava/lang/String;)Lcom/meicam/sdk/NvsTimelineAnimatedSticker;",
+        "NvsTimeline#removeAnimatedSticker(Lcom/meicam/sdk/NvsTimelineAnimatedSticker;)Lcom/meicam/sdk/NvsTimelineAnimatedSticker;",
+        "NvsVideoTrack#setPackagedTransition(ILjava/lang/String;)Lcom/meicam/sdk/NvsVideoTransition;",
+        "NvsVideoTrack#setBuiltinTransition(ILjava/lang/String;)Lcom/meicam/sdk/NvsVideoTransition;",
+        "NvsTimeline#audioTrackCount()I",
+        "NvsTimeline#appendAudioTrack()Lcom/meicam/sdk/NvsAudioTrack;",
+        "NvsAudioTrack#addClip(Ljava/lang/String;JJJ)Lcom/meicam/sdk/NvsAudioClip;",
+        "NvsClip#setVolumeGain(FF)V",
+        "NvsAudioClip#setFadeInDuration(J)V",
+        "NvsAudioClip#setFadeOutDuration(J)V",
+        "NvsTrack#removeAllClips()Z",
+        "NvsStreamingContext#connectTimelineWithLiveWindow(Lcom/meicam/sdk/NvsTimeline;Lcom/meicam/sdk/NvsLiveWindow;)Z",
+        "NvsStreamingContext#seekTimeline(Lcom/meicam/sdk/NvsTimeline;JII)Z",
+        "NvsStreamingContext#stop()V",
+        "NvsStreamingContext#compileTimeline(Lcom/meicam/sdk/NvsTimeline;JJLjava/lang/String;III)Z"
+      ],
+      "flows": [
+        {
+          "id": "editor.bundled-media-copy-and-split",
+          "result": "passed",
+          "assertions": [
+            "The bundled JPEG was copied from APK assets to persistent app-owned sample-media storage before SDK probing.",
+            "The absolute file path created a one-clip Timeline, rendered in LiveWindow, and split into two source-trimmed clips at the playhead."
+          ]
+        },
+        {
+          "id": "editor.versioned-feature-persistence",
+          "result": "passed",
+          "assertions": [
+            "The version-2 project root stored two structural clip records and editor descriptors for one packaged filter, one readable caption, one animated sticker, one packaged transition, bundled music, and recorded voiceover.",
+            "Voiceover permission, recording, persistent file creation, and insertion on a dedicated audio track completed on the device."
+          ]
+        },
+        {
+          "id": "editor.process-death-full-state-restore",
+          "result": "passed",
+          "assertions": [
+            "After force-stop and relaunch, Resume Latest Project rebuilt two clips and reported six restored editor items.",
+            "A seek after restore rendered the readable State_restore caption and filtered image in the connected LiveWindow."
+          ]
+        },
+        {
+          "id": "editor.full-state-history-and-export",
+          "result": "passed",
+          "assertions": [
+            "Adding a second filter descriptor after restore, undoing to one filter, and redoing to two filters updated both Timeline objects and persisted editor JSON.",
+            "Compile callbacks completed and produced meishe_export_1785728507095.mp4.",
+            "ffprobe reported H.264 video, AAC audio, 96x144 dimensions, 4.017-second container duration, and 104415-byte size."
+          ]
+        }
+      ],
+      "limitations": [
+        "The serializer owns objects created by this generated editor; it is not safe to clear arbitrary host-owned Timeline objects without an ownership adapter.",
+        "Keyframes, compound captions, custom sticker image assets, per-effect parameter maps, timeline effects, and arbitrary third-party SDK objects remain outside this verified serializer.",
+        "Missing package/file restore failures and production-license output were not exercised; a trial SDK watermark was visible."
+      ]
+    },
+    {
+      "id": "runtime.short-video-editor.activity-split-regression-20260803",
+      "blueprint_id": "short-video-editor",
+      "device_id": "samsung-sm-a5460-api35",
+      "mode": "new-app",
+      "package_label": "com.meishe.stage5.shortvideoeditor",
+      "build_result": "passed",
+      "install_result": "passed",
+      "runtime_result": "passed",
+      "verified_modules": [
+        "app-runtime",
+        "feature-hub",
+        "media-import",
+        "app-repository",
+        "timeline-state-store",
+        "timeline-preview",
+        "editor-shell",
+        "clip-editor",
+        "export-compile"
+      ],
+      "verified_features": [
+        "app-root",
+        "base-meishe",
+        "selectmedia",
+        "edit",
+        "edit-clipedit"
+      ],
+      "verified_units": [
+        "java.sdk.initialize",
+        "java.app.copy-bundled-media-to-project",
+        "java.timeline.create",
+        "java.timeline.append-media-list",
+        "java.preview.connect",
+        "java.preview.seek",
+        "java.clip.split-at-playhead",
+        "java.app.save-timeline-structure",
+        "java.engine.stop",
+        "java.export.compile",
+        "recipe.editor-session-orchestration"
+      ],
+      "verified_api_ids": [
+        "NvsStreamingContext#init(Landroid/app/Activity;Ljava/lang/String;)Lcom/meicam/sdk/NvsStreamingContext;",
+        "NvsStreamingContext#createTimeline(Lcom/meicam/sdk/NvsVideoResolution;Lcom/meicam/sdk/NvsRational;Lcom/meicam/sdk/NvsAudioResolution;)Lcom/meicam/sdk/NvsTimeline;",
+        "NvsTimeline#appendVideoTrack()Lcom/meicam/sdk/NvsVideoTrack;",
+        "NvsVideoTrack#appendClip(Ljava/lang/String;)Lcom/meicam/sdk/NvsVideoClip;",
+        "NvsStreamingContext#connectTimelineWithLiveWindow(Lcom/meicam/sdk/NvsTimeline;Lcom/meicam/sdk/NvsLiveWindow;)Z",
+        "NvsStreamingContext#seekTimeline(Lcom/meicam/sdk/NvsTimeline;JII)Z",
+        "NvsStreamingContext#stop()V",
+        "NvsTrack#splitClip(IJ)Z",
+        "NvsTrack#removeAllClips()Z",
+        "NvsStreamingContext#compileTimeline(Lcom/meicam/sdk/NvsTimeline;JJLjava/lang/String;III)Z"
+      ],
+      "flows": [
+        {
+          "id": "editor.activity-split-import-preview",
+          "result": "passed",
+          "assertions": [
+            "The bundled sample was copied to app-owned media storage and opened through the refactored editor entry without direct SDK ownership in MeisheEditorActivity.",
+            "The one-clip Timeline connected to NvsLiveWindow and rendered a nonblank image before editing."
+          ]
+        },
+        {
+          "id": "editor.activity-split-command-history",
+          "result": "passed",
+          "assertions": [
+            "Seeking inside the clip and invoking Split reported Clip split at the playhead.",
+            "The command controller persisted the mutation and Undo reported Undo applied while the LiveWindow remained connected."
+          ]
+        },
+        {
+          "id": "editor.activity-split-export",
+          "result": "passed",
+          "assertions": [
+            "Export callbacks reported completion and produced meishe_export_1785745131823.mp4 in the app Movies directory.",
+            "ffprobe reported H.264 video, AAC audio, 96x144 dimensions, 4.017-second duration, and 36460-byte size.",
+            "The Android crash buffer remained empty for the complete import, preview, split, undo, and export regression."
+          ]
+        }
+      ],
+      "limitations": [
+        "This Stage 5 run validates the refactored editor architecture against the bundled-sample path; the earlier mixed-media run remains the evidence for Android provider multi-import.",
+        "The current project serializer remains version 2; stable object ownership and extension codecs are intentionally deferred to Stage 6.",
+        "A trial SDK license watermark was visible."
+      ]
+    },
+    {
+      "id": "runtime.short-video-editor.project-v3-ownership-20260803",
+      "blueprint_id": "short-video-editor",
+      "device_id": "samsung-sm-a5460-api35",
+      "mode": "new-app",
+      "package_label": "com.meishe.stage6.runtime",
+      "build_result": "passed",
+      "install_result": "passed",
+      "runtime_result": "passed",
+      "verified_modules": [
+        "app-runtime",
+        "app-repository",
+        "timeline-state-store",
+        "timeline-preview",
+        "editor-shell"
+      ],
+      "verified_features": [
+        "repository",
+        "edit"
+      ],
+      "verified_units": [
+        "java.sdk.initialize",
+        "java.app.create-stable-object-id",
+        "java.app.load-atomic-project-state",
+        "java.app.save-atomic-project-state",
+        "java.timeline.create",
+        "java.timeline.append-media-list",
+        "java.preview.connect",
+        "java.caption.add",
+        "java.timeline.remove",
+        "recipe.editor-project-v3-ownership"
+      ],
+      "verified_api_ids": [
+        "NvsStreamingContext#init(Landroid/app/Activity;Ljava/lang/String;)Lcom/meicam/sdk/NvsStreamingContext;",
+        "NvsStreamingContext#createTimeline(Lcom/meicam/sdk/NvsVideoResolution;Lcom/meicam/sdk/NvsRational;Lcom/meicam/sdk/NvsAudioResolution;)Lcom/meicam/sdk/NvsTimeline;",
+        "NvsStreamingContext#connectTimelineWithLiveWindow(Lcom/meicam/sdk/NvsTimeline;Lcom/meicam/sdk/NvsLiveWindow;)Z",
+        "NvsStreamingContext#removeTimeline(Lcom/meicam/sdk/NvsTimeline;)Z",
+        "NvsTimeline#appendVideoTrack()Lcom/meicam/sdk/NvsVideoTrack;",
+        "NvsTimeline#appendAudioTrack()Lcom/meicam/sdk/NvsAudioTrack;",
+        "NvsTimeline#addCaption(Ljava/lang/String;JJLjava/lang/String;)Lcom/meicam/sdk/NvsTimelineCaption;",
+        "NvsTimeline#getFirstCaption()Lcom/meicam/sdk/NvsTimelineCaption;",
+        "NvsVideoTrack#appendClip(Ljava/lang/String;)Lcom/meicam/sdk/NvsVideoClip;"
+      ],
+      "flows": [
+        {
+          "id": "editor.project-v2-to-v3-atomic-migration",
+          "result": "passed",
+          "assertions": [
+            "A version-2 SharedPreferences project migrated to version 3 with canvas/FPS, audio resolution, stable clip ids, stable filter/transition relations, and namespaced extension state.",
+            "The migrated project was atomically written to files/meishe-projects/stage6-legacy/project.json and reloaded after a cold force-stop/relaunch."
+          ]
+        },
+        {
+          "id": "editor.project-v3-mixed-media-and-identity",
+          "result": "passed",
+          "assertions": [
+            "The v3 project restored one JPEG and one H.264 MP4 into a two-clip Timeline and retained their media types.",
+            "Split created a distinct stable id, move preserved the selected clip id, delete removed the requested id, and the extension codec round-tripped its namespace value."
+          ]
+        },
+        {
+          "id": "editor.project-v3-bounded-history",
+          "result": "passed",
+          "assertions": [
+            "Sixty project captures retained only the newest 50 snapshots and exposed exactly 49 valid undo transitions.",
+            "A fresh process rebuilt only the latest persisted project and did not reconstruct the in-memory history stack."
+          ]
+        },
+        {
+          "id": "editor.host-owned-timeline-preservation",
+          "result": "passed",
+          "assertions": [
+            "A HOST_OWNED session denied structural mutation, descriptor rebuild, undo, and redo by default while still connecting the supplied Timeline to LiveWindow.",
+            "After session close, the host Timeline still contained both host clips and its host-created caption, proving that editor teardown did not call removeTimeline or clear host objects."
+          ]
+        }
+      ],
+      "limitations": [
+        "This run validates the safe default for HOST_OWNED sessions; explicit host opt-in to structural mutation or descriptor rebuild was not exercised.",
+        "The validation activity directly exercised project and session contracts; the existing Stage 5 runs remain the evidence for the full editor UI import, split, undo, preview, and export workflow.",
+        "The Demo license reported that the validation package was not authorised, so production-license behavior and watermark removal are not implied."
+      ]
+    },
+    {
+      "id": "runtime.full-sdk-demo.stage7-modules-20260803",
+      "blueprint_id": "full-sdk-demo",
+      "device_id": "samsung-sm-a5460-api35",
+      "mode": "new-app",
+      "package_label": "com.meishe.stage7.runtime",
+      "build_result": "passed",
+      "install_result": "passed",
+      "runtime_result": "passed",
+      "verified_modules": [
+        "compound-caption-editor",
+        "mask-editor",
+        "background-editor",
+        "watermark-editor",
+        "animation-editor",
+        "makeup-editor",
+        "capture-scene",
+        "superzoom-ai",
+        "template-engine",
+        "template-editor",
+        "cutsame-template",
+        "mimo-template",
+        "url-media-import",
+        "music-lyrics",
+        "photo-album",
+        "theme-shoot",
+        "dou-video-workflow",
+        "boomrang-capture",
+        "particle-effects",
+        "glitter-effects",
+        "flip-caption",
+        "cover-maker",
+        "sequence-nesting",
+        "livephoto-editor",
+        "audio-equalizer",
+        "timeline-ui",
+        "theme-editor",
+        "still-image-export",
+        "editor-ui-shell",
+        "effect-parameter-models",
+        "support-feedback"
+      ],
+      "verified_features": [
+        "edit-compoundcaption",
+        "edit-mask",
+        "edit-background",
+        "edit-watermark",
+        "edit-anim",
+        "edit-makeup",
+        "capturescene",
+        "superzoom",
+        "engine-meishe",
+        "cutsame-template",
+        "mimodemo",
+        "urledit",
+        "musiclyrics",
+        "photoalbum",
+        "themeshoot",
+        "douvideo",
+        "boomrang",
+        "particle",
+        "glitter",
+        "flipcaption",
+        "makecover",
+        "sequencenesting",
+        "edit-livephoto",
+        "edit-audio",
+        "edit-timelineeditor",
+        "edit-theme",
+        "edit-createpic",
+        "dialog",
+        "view",
+        "bean",
+        "edit-data",
+        "feedback"
+      ],
+      "verified_units": [
+        "java.app.apply-system-bar-insets",
+        "java.app.show-editor-message",
+        "java.effect.build-parameter",
+        "java.app.create-feedback",
+        "java.preview.map-thumbnail-position",
+        "java.media.grab-cover-frame",
+        "java.media.export-still-frame",
+        "java.media.make-live-photo",
+        "java.asset.install-or-upgrade",
+        "java.caption.add-compound",
+        "java.caption.list-compound",
+        "java.caption.set-compound-text",
+        "java.effect.apply-mask-region",
+        "java.effect.apply-solid-background",
+        "java.effect.add-watermark",
+        "java.clip.configure-image-motion",
+        "java.effect.add-particle",
+        "java.caption.add-flip-storyboard",
+        "java.audio.apply-equalizer",
+        "java.caption.add-timed-lyrics",
+        "java.makeup.apply-compound",
+        "java.workflow.append-photo-album",
+        "java.timeline.append-nested",
+        "java.superzoom.create-output-timeline",
+        "java.media.probe-url",
+        "java.workflow.append-theme-shots",
+        "java.workflow.append-recorded-clips",
+        "java.workflow.append-boomerang",
+        "java.theme.apply",
+        "java.capture.start-preview",
+        "java.capture.append-scene-keyer",
+        "java.capture.append-glitter",
+        "java.template.query-footages",
+        "java.template.list-replaceable-footage",
+        "java.template.validate-footage",
+        "java.template.build-footage",
+        "java.template.create-editor-timeline",
+        "java.template.create-cutsame-timeline",
+        "java.template.reconnect-preview",
+        "java.mimo.parse-package",
+        "java.mimo.install-child-packages",
+        "java.mimo.build-timeline"
+      ],
+      "verified_api_ids": [
+        "NvsAssetPackageManager#installAssetPackage(Ljava/lang/String;Ljava/lang/String;IZLjava/lang/StringBuilder;)I",
+        "NvsAssetPackageManager#setCallbackInterface(Lcom/meicam/sdk/NvsAssetPackageManager$AssetPackageManagerCallback;)V",
+        "NvsAssetPackageManager#getTemplateFootages(Ljava/lang/String;)Ljava/util/List;",
+        "NvsStreamingContext#createTimeline(Lcom/meicam/sdk/NvsVideoResolution;Lcom/meicam/sdk/NvsRational;Lcom/meicam/sdk/NvsAudioResolution;)Lcom/meicam/sdk/NvsTimeline;",
+        "NvsStreamingContext#createTimeline(Ljava/lang/String;Ljava/util/List;)Lcom/meicam/sdk/NvsTimeline;",
+        "NvsStreamingContext#createTimeline(Ljava/lang/String;Ljava/util/List;I)Lcom/meicam/sdk/NvsTimeline;",
+        "NvsStreamingContext#connectTimelineWithLiveWindow(Lcom/meicam/sdk/NvsTimeline;Lcom/meicam/sdk/NvsLiveWindow;)Z",
+        "NvsStreamingContext#seekTimeline(Lcom/meicam/sdk/NvsTimeline;JII)Z",
+        "NvsStreamingContext#getAVFileInfo(Ljava/lang/String;I)Lcom/meicam/sdk/NvsAVFileInfo;",
+        "NvsStreamingContext#grabImageFromTimeline(Lcom/meicam/sdk/NvsTimeline;JLcom/meicam/sdk/NvsRational;)Landroid/graphics/Bitmap;",
+        "NvsStreamingContext#makeLivePhotoFromVideoFile(Ljava/lang/String;JLjava/lang/String;)Z",
+        "NvsStreamingContext#startCapturePreview(IIILcom/meicam/sdk/NvsRational;)Z",
+        "NvsStreamingContext#applyCaptureScene(Ljava/lang/String;)Z",
+        "NvsStreamingContext#appendBuiltinCaptureVideoFx(Ljava/lang/String;)Lcom/meicam/sdk/NvsCaptureVideoFx;",
+        "NvsTimeline#appendVideoTrack()Lcom/meicam/sdk/NvsVideoTrack;",
+        "NvsTimeline#appendAudioTrack()Lcom/meicam/sdk/NvsAudioTrack;",
+        "NvsTimeline#addCompoundCaption(JJLjava/lang/String;)Lcom/meicam/sdk/NvsTimelineCompoundCaption;",
+        "NvsTimeline#addPackagedTimelineVideoFx(JJLjava/lang/String;)Lcom/meicam/sdk/NvsTimelineVideoFx;",
+        "NvsTimeline#addWatermark(Ljava/lang/String;IIFIII)Z",
+        "NvsTimeline#addCaption(Ljava/lang/String;JJLjava/lang/String;)Lcom/meicam/sdk/NvsTimelineCaption;",
+        "NvsTimeline#applyTheme(Ljava/lang/String;)Z",
+        "NvsVideoTrack#appendClip(Ljava/lang/String;)Lcom/meicam/sdk/NvsVideoClip;",
+        "NvsVideoTrack#appendClip(Ljava/lang/String;JJ)Lcom/meicam/sdk/NvsVideoClip;",
+        "NvsVideoTrack#appendTimelineClip(Lcom/meicam/sdk/NvsTimeline;)Lcom/meicam/sdk/NvsVideoClip;",
+        "NvsVideoTrack#setPackagedTransition(ILjava/lang/String;)Lcom/meicam/sdk/NvsVideoTransition;",
+        "NvsVideoClip#appendRawBuiltinFx(Ljava/lang/String;)Lcom/meicam/sdk/NvsVideoFx;",
+        "NvsVideoClip#appendPackagedFx(Ljava/lang/String;)Lcom/meicam/sdk/NvsVideoFx;",
+        "NvsVideoClip#appendAudioFx(Ljava/lang/String;)Lcom/meicam/sdk/NvsAudioFx;",
+        "NvsVideoClip#setImageMotionMode(I)V",
+        "NvsVideoClip#setPanAndScan(FF)V",
+        "NvsVideoClip#setImageMotionAnimationEnabled(Z)V",
+        "NvsAudioTrack#appendClip(Ljava/lang/String;)Lcom/meicam/sdk/NvsAudioClip;"
+      ],
+      "flows": [
+        {
+          "id": "stage7.basic-ui-and-editing-modules",
+          "result": "passed",
+          "assertions": [
+            "Editor shell, effect parameter model, feedback intent, thumbnail mapping, cover extraction, still export, and live-photo creation executed on the generated probe.",
+            "Compound caption, mask, background, watermark, image motion, particle, flip caption, audio equalizer, timed lyrics, and makeup package workflows returned valid SDK objects or output files."
+          ]
+        },
+        {
+          "id": "stage7.special-media-workflows",
+          "result": "passed",
+          "assertions": [
+            "Photo album, nested Timeline, SuperZoom output preview, HTTP URL media probing, theme shots, recorded clip editing, boomerang ordering, and theme application completed.",
+            "The HTTP fixture was reachable only during this temporary validation run and is not a skill runtime dependency."
+          ]
+        },
+        {
+          "id": "stage7.capture-modules",
+          "result": "passed",
+          "assertions": [
+            "Physical camera preview started, capture-scene package and Master Keyer were applied, and Glitter capture FX was listed in the live capture chain."
+          ]
+        },
+        {
+          "id": "stage7.template-and-cutsame-modules",
+          "result": "passed",
+          "assertions": [
+            "The .template installer returned WORKING_INPROGRESS, the completion callback reported success, and replacement descriptors validated.",
+            "Both standard and CutSame Timeline overloads returned Timelines and connected to NvsLiveWindow."
+          ]
+        },
+        {
+          "id": "stage7.mimo-module",
+          "result": "passed",
+          "assertions": [
+            "Mimo info.json parsed, all 12 referenced child packages installed, five shots were built, six packaged effects and five compound captions were applied, music was appended, and the Timeline connected to NvsLiveWindow.",
+            "The final probe report was STAGE7_COMPLETE passed=31 partial=0 total=31."
+          ]
+        }
+      ],
+      "resource_evidence": [
+        "Demo model and package resources were copied only into .stage7-runtime-validation and were not added to the skill.",
+        "The standard template SHA-256 was c3830a05079e0cf35f36ddf8a70d100539c048764ad31c85e2ff91fc64eb8d04.",
+        "The Mimo info.json SHA-256 was f252870f7129a685e95d1ffe00570cf276a0003919a9ac346ef68ead2a2ba106."
+      ],
+      "limitations": [
+        "This run used one Samsung API 35 arm64-v8a device and temporary Demo resources.",
+        "The run verifies the listed API flows and module contracts, not visual quality across arbitrary third-party packages or media.",
+        "Production licensing and production material acquisition remain outside this run."
+      ]
+    },
+    {
+      "id": "runtime.template-mimo-cutsame.execution-20260803",
+      "blueprint_id": "template-mimo-cutsame-app",
+      "device_id": "samsung-sm-a5460-api35",
+      "mode": "new-app",
+      "package_label": "com.meishe.stage7.template",
+      "build_result": "passed",
+      "install_result": "passed",
+      "runtime_result": "passed",
+      "verified_modules": [
+        "app-runtime",
+        "asset-package-service",
+        "media-import",
+        "template-engine",
+        "template-editor",
+        "cutsame-template",
+        "mimo-template",
+        "timeline-preview",
+        "export-compile"
+      ],
+      "verified_features": [
+        "app-root",
+        "base-meishe",
+        "selectmedia",
+        "engine-meishe",
+        "cutsame-template",
+        "mimodemo"
+      ],
+      "verified_units": [
+        "java.sdk.initialize",
+        "java.asset.install-async",
+        "java.app.copy-content-uri-to-project",
+        "java.template.query-footages",
+        "java.template.query-captions",
+        "java.template.query-compound-captions",
+        "java.template.list-replaceable-footage",
+        "java.template.list-reverse-footage",
+        "java.template.validate-footage",
+        "java.template.build-footage",
+        "java.template.reverse-register-callback",
+        "java.template.reverse-generate",
+        "java.template.create-editor-timeline",
+        "java.template.create-cutsame-timeline",
+        "java.template.reconnect-preview",
+        "java.template.export",
+        "java.mimo.extract-archive",
+        "java.mimo.parse-package",
+        "java.mimo.install-extracted-child-packages",
+        "java.mimo.build-timeline",
+        "java.mimo.reconnect-preview",
+        "java.mimo.export"
+      ],
+      "verified_api_ids": [
+        "NvsAssetPackageManager#installAssetPackage(Ljava/lang/String;Ljava/lang/String;IZLjava/lang/StringBuilder;)I",
+        "NvsAssetPackageManager#setCallbackInterface(Lcom/meicam/sdk/NvsAssetPackageManager$AssetPackageManagerCallback;)V",
+        "NvsAssetPackageManager#getTemplateFootages(Ljava/lang/String;)Ljava/util/List;",
+        "NvsAssetPackageManager#getTemplateCaptions(Ljava/lang/String;)Ljava/util/List;",
+        "NvsAssetPackageManager#getTemplateCompoundCaptions(Ljava/lang/String;)Ljava/util/List;",
+        "NvsMediaFileConvertor#setMeidaFileConvertorCallback(Lcom/meicam/sdk/NvsMediaFileConvertor$MeidaFileConvertorCallback;Landroid/os/Handler;)V",
+        "NvsMediaFileConvertor#convertMeidaFile(Ljava/lang/String;Ljava/lang/String;ZJJLjava/util/Hashtable;)J",
+        "NvsStreamingContext#createTimeline(Ljava/lang/String;Ljava/util/List;)Lcom/meicam/sdk/NvsTimeline;",
+        "NvsStreamingContext#createTimeline(Ljava/lang/String;Ljava/util/List;I)Lcom/meicam/sdk/NvsTimeline;",
+        "NvsStreamingContext#createTimeline(Lcom/meicam/sdk/NvsVideoResolution;Lcom/meicam/sdk/NvsRational;Lcom/meicam/sdk/NvsAudioResolution;)Lcom/meicam/sdk/NvsTimeline;",
+        "NvsStreamingContext#connectTimelineWithLiveWindow(Lcom/meicam/sdk/NvsTimeline;Lcom/meicam/sdk/NvsLiveWindow;)Z",
+        "NvsStreamingContext#seekTimeline(Lcom/meicam/sdk/NvsTimeline;JII)Z",
+        "NvsStreamingContext#compileTimeline(Lcom/meicam/sdk/NvsTimeline;JJLjava/lang/String;IILjava/util/Hashtable;I)Z",
+        "NvsTimeline#appendVideoTrack()Lcom/meicam/sdk/NvsVideoTrack;",
+        "NvsTimeline#appendAudioTrack()Lcom/meicam/sdk/NvsAudioTrack;",
+        "NvsTimeline#addCompoundCaption(JJLjava/lang/String;)Lcom/meicam/sdk/NvsTimelineCompoundCaption;",
+        "NvsTimeline#addPackagedTimelineVideoFx(JJLjava/lang/String;)Lcom/meicam/sdk/NvsTimelineVideoFx;",
+        "NvsVideoTrack#appendClip(Ljava/lang/String;JJ)Lcom/meicam/sdk/NvsVideoClip;",
+        "NvsVideoTrack#setPackagedTransition(ILjava/lang/String;)Lcom/meicam/sdk/NvsVideoTransition;",
+        "NvsVideoClip#appendPackagedFx(Ljava/lang/String;)Lcom/meicam/sdk/NvsVideoFx;",
+        "NvsAudioTrack#appendClip(Ljava/lang/String;)Lcom/meicam/sdk/NvsAudioClip;"
+      ],
+      "flows": [
+        {
+          "id": "template.standard-replacement-preview",
+          "result": "passed",
+          "assertions": [
+            "The generated app preserved the UUID .template filename, waited for asynchronous package installation, exposed 14 replacement slots, reused one selected media item across the slots, completed required reverse conversion, and connected the 14.32-second Timeline to NvsLiveWindow."
+          ]
+        },
+        {
+          "id": "template.cutsame-replacement-preview",
+          "result": "passed",
+          "assertions": [
+            "The CutSame branch used its dedicated createTimeline overload and connected a 14.32-second replacement Timeline to NvsLiveWindow."
+          ]
+        },
+        {
+          "id": "template.mimo-json-preview",
+          "result": "passed",
+          "assertions": [
+            "The generated app extracted the Mimo ZIP with traversal guards, parsed info.json, installed 12 child packages, built five clips with six effects and five captions, appended music, and connected the regular Timeline to NvsLiveWindow.",
+            "Mimo did not enter the SDK .template installation or template createTimeline overload path."
+          ]
+        },
+        {
+          "id": "template.mimo-export",
+          "result": "passed",
+          "assertions": [
+            "The compile callback displayed Export finished and created template-output-1785754927752.mp4 in the app Movies directory.",
+            "The observed output size was 1012870 bytes and the AndroidRuntime crash buffer was empty."
+          ]
+        }
+      ],
+      "resource_evidence": [
+        "standard.template: 503160 bytes, SHA-256 c3830a05079e0cf35f36ddf8a70d100539c048764ad31c85e2ff91fc64eb8d04.",
+        "mimo.zip: 2735729 bytes, SHA-256 0e1e7169d96001b6473520e80b6a65060c6dab0949142068d28ac027e192e5a4.",
+        "Mimo info.json: 2208 bytes, SHA-256 f252870f7129a685e95d1ffe00570cf276a0003919a9ac346ef68ead2a2ba106.",
+        "All template and Mimo resources remained under .stage7-runtime-validation and are not bundled in the skill."
+      ],
+      "limitations": [
+        "Only one standard .template package and one Mimo package were exercised on one API 35 arm64-v8a device.",
+        "The Demo license reported authorization warnings, so production licensing and watermark behavior are not implied.",
+        "External material acquisition remains customer-provided and outside this run."
+      ]
+    },
+    {
+      "id": "runtime.incremental-integration.host-matrix-20260803",
+      "blueprint_id": "incremental-integration",
+      "device_id": "samsung-sm-a5460-api35",
+      "mode": "incremental",
+      "package_label": "four-host-matrix: java-groovy, java-kts, kotlin-groovy, kotlin-kts",
+      "build_result": "passed",
+      "install_result": "passed",
+      "runtime_result": "passed",
+      "verified_modules": [
+        "app-runtime",
+        "permission-gates",
+        "media-import",
+        "app-repository",
+        "timeline-state-store",
+        "export-compile",
+        "timeline-preview",
+        "editor-shell",
+        "asset-package-service",
+        "caption-editor",
+        "capture-camera",
+        "template-engine"
+      ],
+      "verified_features": [
+        "app-root",
+        "base-meishe",
+        "utils-permission",
+        "selectmedia",
+        "repository",
+        "utils",
+        "utils-datainfo",
+        "edit",
+        "utils-asset",
+        "edit-caption",
+        "capture",
+        "engine-meishe"
+      ],
+      "verified_units": [
+        "java.sdk.initialize",
+        "java.app.request-permissions",
+        "java.timeline.create",
+        "java.timeline.append-clip",
+        "java.preview.connect",
+        "java.preview.seek",
+        "java.caption.add",
+        "java.asset.install-async",
+        "java.template.query-footages",
+        "java.capture.start-preview",
+        "java.export.register-callbacks",
+        "java.export.compile",
+        "java.engine.stop",
+        "java.timeline.remove",
+        "recipe.editor-session-orchestration",
+        "recipe.editor-project-v3-ownership"
+      ],
+      "verified_api_ids": [
+        "NvsStreamingContext#init(Landroid/app/Activity;Ljava/lang/String;)Lcom/meicam/sdk/NvsStreamingContext;",
+        "NvsStreamingContext#createTimeline(Lcom/meicam/sdk/NvsVideoResolution;Lcom/meicam/sdk/NvsRational;Lcom/meicam/sdk/NvsAudioResolution;)Lcom/meicam/sdk/NvsTimeline;",
+        "NvsTimeline#appendVideoTrack()Lcom/meicam/sdk/NvsVideoTrack;",
+        "NvsTimeline#appendAudioTrack()Lcom/meicam/sdk/NvsAudioTrack;",
+        "NvsVideoTrack#appendClip(Ljava/lang/String;)Lcom/meicam/sdk/NvsVideoClip;",
+        "NvsStreamingContext#connectTimelineWithLiveWindow(Lcom/meicam/sdk/NvsTimeline;Lcom/meicam/sdk/NvsLiveWindow;)Z",
+        "NvsStreamingContext#seekTimeline(Lcom/meicam/sdk/NvsTimeline;JII)Z",
+        "NvsTimeline#addCaption(Ljava/lang/String;JJLjava/lang/String;)Lcom/meicam/sdk/NvsTimelineCaption;",
+        "NvsAssetPackageManager#setCallbackInterface(Lcom/meicam/sdk/NvsAssetPackageManager$AssetPackageManagerCallback;)V",
+        "NvsAssetPackageManager#installAssetPackage(Ljava/lang/String;Ljava/lang/String;IZLjava/lang/StringBuilder;)I",
+        "NvsAssetPackageManager#getTemplateFootages(Ljava/lang/String;)Ljava/util/List;",
+        "NvsStreamingContext#getCaptureDeviceCount()I",
+        "NvsStreamingContext#connectCapturePreviewWithLiveWindow(Lcom/meicam/sdk/NvsLiveWindow;)Z",
+        "NvsStreamingContext#startCapturePreview(IIILcom/meicam/sdk/NvsRational;)Z",
+        "NvsStreamingContext#setCompileCallback(Lcom/meicam/sdk/NvsStreamingContext$CompileCallback;)V",
+        "NvsStreamingContext#setCompileCallback2(Lcom/meicam/sdk/NvsStreamingContext$CompileCallback2;)V",
+        "NvsStreamingContext#stop()V",
+        "NvsStreamingContext#compileTimeline(Lcom/meicam/sdk/NvsTimeline;JJLjava/lang/String;III)Z",
+        "NvsStreamingContext#removeTimeline(Lcom/meicam/sdk/NvsTimeline;)Z"
+      ],
+      "flows": [
+        {
+          "id": "incremental.four-host-apply-and-navigation",
+          "result": "passed",
+          "assertions": [
+            "Java/Groovy, Java/KTS, Kotlin/Groovy, and Kotlin/KTS hosts each received the controlled incremental patch, built, installed, launched their original host Activity, and navigated into the generated integration Activity.",
+            "A second identical --apply reported an idempotent result without duplicating source, Manifest permissions, or Gradle configuration."
+          ]
+        },
+        {
+          "id": "incremental.lifecycle-permission-and-ownership",
+          "result": "passed",
+          "assertions": [
+            "The Java/Groovy host completed real CAMERA and RECORD_AUDIO permission dialogs and delivered the Activity Result callback before camera preview.",
+            "All four hosts reused the same NvsStreamingContext singleton, connected and sought a Timeline through NvsLiveWindow, started and stopped physical-camera preview, and completed lifecycle cleanup.",
+            "MeisheTimelineOwnership.HOST_OWNED preserved the host clip and caption after the editor session closed; the host subsequently removed its own Timeline successfully."
+          ]
+        },
+        {
+          "id": "incremental.template-and-export-callbacks",
+          "result": "passed",
+          "assertions": [
+            "The standard .template package completed asynchronous installation, returned nonempty template footage descriptors, and remained a host-provided temporary resource.",
+            "Compile callbacks completed on all four hosts and produced MP4 files; the incremental outputs were 19232 bytes and AndroidRuntime crash buffers were empty."
+          ]
+        },
+        {
+          "id": "incremental.atomic-conflict-stop",
+          "result": "passed",
+          "assertions": [
+            "A modified host-owned MeisheSdkManager.java caused --apply --force to stop before any source copy, Manifest edit, or Gradle edit.",
+            "All preflight hashes remained unchanged and a pending controller file was not partially copied."
+          ]
+        }
+      ],
+      "resource_evidence": [
+        "stage8_forward.mp4: 80915 bytes, SHA-256 046f0aa5a79e5c470012fd969bdec7303d22d50673e139feb7209549f0992388.",
+        "standard.template: 503160 bytes, SHA-256 c3830a05079e0cf35f36ddf8a70d100539c048764ad31c85e2ff91fc64eb8d04.",
+        "Stage 8 media, template, SDK binaries, and license remained under .stage8-integration-validation and are not bundled into or required by the skill."
+      ],
+      "limitations": [
+        "The four host-language/Gradle variants ran on one Samsung API 35 arm64-v8a device.",
+        "Only the default HOST_OWNED no-mutation policy was verified; arbitrary host serializers and explicit host mutation opt-in remain outside this run.",
+        "Production licensing, production material acquisition, and other device classes remain unverified."
+      ]
+    },
+    {
+      "id": "runtime.api-only.host-matrix-20260803",
+      "blueprint_id": "incremental-integration",
+      "device_id": "samsung-sm-a5460-api35",
+      "mode": "api-only",
+      "package_label": "four-host-matrix: java-groovy, java-kts, kotlin-groovy, kotlin-kts",
+      "build_result": "passed",
+      "install_result": "passed",
+      "runtime_result": "passed",
+      "verified_modules": [
+        "app-runtime",
+        "permission-gates",
+        "media-import",
+        "app-repository",
+        "timeline-state-store",
+        "export-compile",
+        "timeline-preview",
+        "editor-shell",
+        "asset-package-service",
+        "caption-editor",
+        "capture-camera",
+        "template-engine"
+      ],
+      "verified_features": [
+        "app-root",
+        "base-meishe",
+        "utils-permission",
+        "selectmedia",
+        "repository",
+        "utils",
+        "utils-datainfo",
+        "edit",
+        "utils-asset",
+        "edit-caption",
+        "capture",
+        "engine-meishe"
+      ],
+      "verified_units": [
+        "java.sdk.initialize",
+        "java.timeline.create",
+        "java.timeline.append-clip",
+        "java.preview.connect",
+        "java.preview.seek",
+        "java.caption.add",
+        "java.asset.install-async",
+        "java.template.query-footages",
+        "java.capture.start-preview",
+        "java.export.register-callbacks",
+        "java.export.compile",
+        "java.engine.stop",
+        "java.timeline.remove"
+      ],
+      "verified_api_ids": [
+        "NvsStreamingContext#init(Landroid/app/Activity;Ljava/lang/String;)Lcom/meicam/sdk/NvsStreamingContext;",
+        "NvsStreamingContext#createTimeline(Lcom/meicam/sdk/NvsVideoResolution;Lcom/meicam/sdk/NvsRational;Lcom/meicam/sdk/NvsAudioResolution;)Lcom/meicam/sdk/NvsTimeline;",
+        "NvsTimeline#appendVideoTrack()Lcom/meicam/sdk/NvsVideoTrack;",
+        "NvsTimeline#appendAudioTrack()Lcom/meicam/sdk/NvsAudioTrack;",
+        "NvsVideoTrack#appendClip(Ljava/lang/String;)Lcom/meicam/sdk/NvsVideoClip;",
+        "NvsStreamingContext#connectTimelineWithLiveWindow(Lcom/meicam/sdk/NvsTimeline;Lcom/meicam/sdk/NvsLiveWindow;)Z",
+        "NvsStreamingContext#seekTimeline(Lcom/meicam/sdk/NvsTimeline;JII)Z",
+        "NvsTimeline#addCaption(Ljava/lang/String;JJLjava/lang/String;)Lcom/meicam/sdk/NvsTimelineCaption;",
+        "NvsAssetPackageManager#setCallbackInterface(Lcom/meicam/sdk/NvsAssetPackageManager$AssetPackageManagerCallback;)V",
+        "NvsAssetPackageManager#installAssetPackage(Ljava/lang/String;Ljava/lang/String;IZLjava/lang/StringBuilder;)I",
+        "NvsAssetPackageManager#getTemplateFootages(Ljava/lang/String;)Ljava/util/List;",
+        "NvsStreamingContext#getCaptureDeviceCount()I",
+        "NvsStreamingContext#connectCapturePreviewWithLiveWindow(Lcom/meicam/sdk/NvsLiveWindow;)Z",
+        "NvsStreamingContext#startCapturePreview(IIILcom/meicam/sdk/NvsRational;)Z",
+        "NvsStreamingContext#setCompileCallback(Lcom/meicam/sdk/NvsStreamingContext$CompileCallback;)V",
+        "NvsStreamingContext#setCompileCallback2(Lcom/meicam/sdk/NvsStreamingContext$CompileCallback2;)V",
+        "NvsStreamingContext#stop()V",
+        "NvsStreamingContext#compileTimeline(Lcom/meicam/sdk/NvsTimeline;JJLjava/lang/String;III)Z",
+        "NvsStreamingContext#removeTimeline(Lcom/meicam/sdk/NvsTimeline;)Z"
+      ],
+      "flows": [
+        {
+          "id": "api-only.generated-usage-four-hosts",
+          "result": "passed",
+          "assertions": [
+            "The generated ApiOnlyUsage class, rather than a hand-written replacement, initialized the SDK and executed Timeline creation, media append, LiveWindow connection and seek, caption insertion, asset installation, template descriptor query, capture preview, and compile callbacks in all four host variants.",
+            "Java controller output remained directly callable from Java and Kotlin hosts using Groovy and Kotlin DSL Gradle configurations."
+          ]
+        },
+        {
+          "id": "api-only.export-and-cleanup",
+          "result": "passed",
+          "assertions": [
+            "API-only compile callbacks produced 18371-byte MP4 files on all four hosts and each run reported singleton=true, template=true, and capture=true.",
+            "The generated usage stopped the engine and left Timeline removal under the host validation Activity's explicit ownership cleanup."
+          ]
+        }
+      ],
+      "resource_evidence": [
+        "stage8_forward.mp4: 80915 bytes, SHA-256 046f0aa5a79e5c470012fd969bdec7303d22d50673e139feb7209549f0992388.",
+        "standard.template: 503160 bytes, SHA-256 c3830a05079e0cf35f36ddf8a70d100539c048764ad31c85e2ff91fc64eb8d04.",
+        "API-only validation copied temporary resources into host fixtures only; no Demo resource or test host was added to the skill."
+      ],
+      "limitations": [
+        "API-only was exercised for the selected P0/P1 integration chain, not every registered module or every SDK member.",
+        "All four variants ran on one Samsung API 35 arm64-v8a device.",
+        "Production resources, licenses, and host-specific navigation frameworks remain user-owned integration concerns."
+      ]
+    },
+    {
+      "id": "runtime.beauty-camera.trial-ar-trigger-20260805",
+      "blueprint_id": "beauty-camera",
+      "device_id": "samsung-sm-a5460-api35",
+      "mode": "new-app",
+      "package_label": "com.example.demo2",
+      "build_result": "passed",
+      "install_result": "passed",
+      "runtime_result": "passed",
+      "verified_modules": [
+        "app-runtime",
+        "permission-gates",
+        "asset-package-service",
+        "capture-camera",
+        "beauty-camera",
+        "ar-scene"
+      ],
+      "verified_features": [
+        "capture",
+        "capture-beauty",
+        "ar-scene",
+        "utils-asset"
+      ],
+      "verified_units": [
+        "java.sdk.initialize",
+        "java.asset.install-or-upgrade",
+        "java.beauty.initialize-human-detection",
+        "java.beauty.append-ar-scene",
+        "java.beauty.configure-ar-manipulation",
+        "java.beauty.configure-ar-scene",
+        "java.capture.build-preview-flags",
+        "java.capture.start-preview",
+        "recipe.feature.capture",
+        "recipe.feature.capture-beauty",
+        "recipe.feature.ar-scene"
+      ],
+      "verified_api_ids": [
+        "NvsStreamingContext#init(Landroid/content/Context;Ljava/lang/String;I)Lcom/meicam/sdk/NvsStreamingContext;",
+        "NvsStreamingContext#hasARModule()I",
+        "NvsStreamingContext#initHumanDetection(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;I)Z",
+        "NvsStreamingContext#setupHumanDetectionData(ILjava/lang/String;)Z",
+        "NvsStreamingContext#connectCapturePreviewWithLiveWindow(Lcom/meicam/sdk/NvsLiveWindow;)Z",
+        "NvsStreamingContext#startCapturePreview(IIILcom/meicam/sdk/NvsRational;)Z",
+        "NvsStreamingContext#appendBuiltinCaptureVideoFx(Ljava/lang/String;)Lcom/meicam/sdk/NvsCaptureVideoFx;",
+        "NvsStreamingContext#isAndroidCameraPreferDualBufferAR()Z",
+        "NvsAssetPackageManager#installAssetPackage(Ljava/lang/String;Ljava/lang/String;IZLjava/lang/StringBuilder;)I",
+        "NvsAssetPackageManager#getAssetPackageStatus(Ljava/lang/String;I)I",
+        "NvsAssetPackageManager#getARSceneAssetPackagePrompt(Ljava/lang/String;)Ljava/lang/String;",
+        "NvsFx#setStringVal(Ljava/lang/String;Ljava/lang/String;)V",
+        "NvsFx#setFloatVal(Ljava/lang/String;D)V",
+        "NvsFx#setBooleanVal(Ljava/lang/String;Z)V",
+        "NvsFx#getARSceneManipulate()Lcom/meicam/sdk/NvsARSceneManipulate;",
+        "NvsARSceneManipulate#setARSceneCallback(Lcom/meicam/sdk/NvsARSceneManipulate$NvsARSceneManipulateCallback;)V"
+      ],
+      "flows": [
+        {
+          "id": "camera.trial-ar-action-trigger",
+          "result": "passed",
+          "assertions": [
+            "The SDK and AR package were initialized/installed with empty license paths; isSdkAuthorised returned false and the preview displayed the Trial Version watermark.",
+            "The standard Demo debug configuration's 106-point face model initialized with FACE_LANDMARK, FACE_ACTION, and SEMI_IMAGE_MODE; face bounding-box and feature callbacks reached count=1.",
+            "AR package EDF352FC-701B-4C05-86CE-B0E293469341 installed with code 0, Scene Id readback matched, and getARSceneAssetPackagePrompt returned 请张嘴试一试~.",
+            "After the subject opened their mouth, the dancing-note graphics were visibly rendered around the mouth while the trial watermark remained."
+          ]
+        },
+        {
+          "id": "camera.ar-trigger-guidance-ui",
+          "result": "passed",
+          "assertions": [
+            "The generated camera UI displayed 素材触发动作：请张嘴试一试~ instead of reporting only installation/application state.",
+            "The application kept AR controls usable in trial mode and reserved production-license guidance for watermark removal."
+          ]
+        }
+      ],
+      "resource_evidence": [
+        "AR scene package EDF352FC-701B-4C05-86CE-B0E293469341 and the 106-point human model were copied from the external official Demo package for validation only.",
+        "Physical-device screenshots and concise logs were captured in the validation workspace and are not bundled into the skill."
+      ],
+      "limitations": [
+        "The visual result was verified for one action-triggered AR package on one Samsung API 35 arm64-v8a device; arbitrary AR packages and other device classes remain outside this evidence.",
+        "The face-mesh package installation, parameter readback, and face callbacks were verified, but a controlled before/after visual comparison was not retained as a separate passed flow.",
+        "Production authorization and watermark removal were not tested; production licenses and materials remain user-owned resources obtained from Meishe business."
+      ]
+    }
+  ],
+  "unverified_scope": [
+    "Eight of nine app blueprints have at least one passed physical-device run; asset-center-demo still requires a physical-device run. Historical partial runs verify only their explicitly listed flows.",
+    "Runtime evidence covers 60 of 62 registered Demo features; edit-view and presenter remain unverified on a physical device.",
+    "Incremental and api-only host integration are physical-device verified for the selected Stage 8 module chain across Java/Kotlin and Groovy/Kotlin DSL hosts; arbitrary host architectures and unselected modules remain outside that evidence.",
+    "The current bundled-local-material implementation replaced the retired request-based material implementation and has not yet received a new physical-device run.",
+    "Mimo, CutSame, one standard template, the selected dancing-note AR package in trial mode, selected advanced makeup/segmentation packages, and the 57 registered modules have exact recorded runtime flows; arbitrary third-party package quality, other face-subject AR quality, hand/avatar/sky segmentation quality, and arbitrary keyframe/effect-parameter project serialization remain unverified."
+  ]
+}

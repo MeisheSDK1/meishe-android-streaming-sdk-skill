@@ -1,0 +1,4 @@
+interface:
+  display_name: "Meishe Android Streaming SDK API"
+  short_description: "Build and troubleshoot Meishe Android camera and editor apps."
+  default_prompt: "Use $meishe-android-streaming-sdk-api to build or troubleshoot a Meishe Android app with evidence-based SDK, resource, license, and optional device QA guidance."

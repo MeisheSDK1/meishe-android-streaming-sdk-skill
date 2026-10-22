@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_screen_gradient"
+    android:orientation="vertical"
+    android:padding="20dp">
+
+    <TextView
+        android:id="@+id/mediaPickerTitle"
+        style="@style/ScreenTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Project media" />
+
+    <TextView
+        android:id="@+id/mediaPickerSubtitle"
+        style="@style/BodyText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Choose videos or images, then choose the project ratio." />
+
+    <TextView
+        android:id="@+id/mediaPickerStatusText"
+        style="@style/BodyText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/bg_surface_card"
+        android:gravity="center_vertical"
+        android:minHeight="62dp"
+        android:text="Select one or more videos or images." />
+
+    <Button
+        android:id="@+id/selectMediaButton"
+        style="@style/PrimaryButton"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:text="Choose videos or images" />
+
+    <ListView
+        android:id="@+id/selectedMediaList"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="14dp"
+        android:layout_weight="1"
+        android:background="@drawable/bg_surface_card"
+        android:divider="@color/divider"
+        android:dividerHeight="1dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginBottom="10dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/moveMediaEarlierButton"
+            style="@style/SecondaryButton"
+            android:layout_width="0dp"
+            android:layout_height="44dp"
+            android:layout_marginRight="5dp"
+            android:layout_weight="1"
+            android:text="Move earlier"
+            android:visibility="gone" />
+
+        <Button
+            android:id="@+id/moveMediaLaterButton"
+            style="@style/SecondaryButton"
+            android:layout_width="0dp"
+            android:layout_height="44dp"
+            android:layout_marginLeft="5dp"
+            android:layout_weight="1"
+            android:text="Move later"
+            android:visibility="gone" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/continueToEditorButton"
+        style="@style/PrimaryButton"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:enabled="false"
+        android:text="Choose ratio and continue" />
+</LinearLayout>

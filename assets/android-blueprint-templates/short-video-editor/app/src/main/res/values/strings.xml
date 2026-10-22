@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">{{APP_NAME}}</string>
+    <string name="editor_building">Building timeline...</string>
+    <string name="editor_track">Video track</string>
+    <string name="editor_play">Play</string>
+    <string name="editor_pause">Pause</string>
+    <string name="editor_export">Export</string>
+    <string name="editor_add_media">＋ Add media</string>
+    <string name="editor_split">Split</string>
+    <string name="editor_select">Select</string>
+    <string name="editor_trim">Trim</string>
+    <string name="editor_delete">Delete</string>
+    <string name="editor_move">Move later</string>
+    <string name="editor_undo">Previous step</string>
+    <string name="editor_redo">Next step</string>
+    <string name="editor_filter">Filter</string>
+    <string name="editor_caption">Caption</string>
+    <string name="editor_sticker">Sticker</string>
+    <string name="editor_transition">Transition</string>
+    <string name="editor_music">Music</string>
+    <string name="editor_voiceover">Voiceover</string>
+    <string name="editor_stop_voiceover">Stop voiceover</string>
+    <string name="editor_assets">Materials</string>
+    <string name="editor_time_placeholder">00:00.0 / 00:00.0</string>
+    <string name="editor_empty_preview">Timeline is empty\nTap “＋ Add media” to continue</string>
+    <string name="editor_voiceover_empty">Voiceover track · no recordings</string>
+    <string name="editor_preview_voiceover">Preview latest</string>
+    <string name="editor_delete_voiceover">Delete latest</string>
+    <string name="editor_applied_materials_empty">Applied materials · 0</string>
+</resources>

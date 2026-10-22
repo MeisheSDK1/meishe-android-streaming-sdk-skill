@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_screen_gradient"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:padding="24dp">
+
+    <TextView
+        style="@style/ScreenTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="{{APP_NAME}}" />
+
+    <TextView
+        android:id="@+id/homeStatusText"
+        style="@style/BodyText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:background="@drawable/bg_surface_card"
+        android:gravity="center"
+        android:minHeight="64dp"
+        android:text="Initializing SDK and local materials..." />
+
+    <Button
+        android:id="@+id/createProjectButton"
+        style="@style/PrimaryButton"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:layout_marginTop="24dp"
+        android:text="Select media and create project" />
+
+    <Button
+        android:id="@+id/sampleProjectButton"
+        style="@style/SecondaryButton"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:layout_marginTop="12dp"
+        android:text="Open local sample project" />
+
+    <Button
+        android:id="@+id/resumeProjectButton"
+        style="@style/SecondaryButton"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:layout_marginTop="12dp"
+        android:enabled="false"
+        android:text="Resume latest project" />
+
+    <Button
+        android:id="@+id/materialCenterButton"
+        style="@style/SecondaryButton"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:layout_marginTop="12dp"
+        android:text="Material center" />
+</LinearLayout>

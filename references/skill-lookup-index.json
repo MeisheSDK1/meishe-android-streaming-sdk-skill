@@ -1,0 +1,1563 @@
+{
+  "version": 1,
+  "description": "Small retrieval index for routing user intent to Meishe Android Streaming SDK API skill references, snippets, resources, and optional templates.",
+  "entries": [
+    {
+      "id": "core-lifecycle",
+      "title": "SDK initialization, lifecycle, permissions, callbacks",
+      "category": "core-lifecycle",
+      "aliases": [
+        "init",
+        "initialize",
+        "sdk init",
+        "license",
+        "lifecycle",
+        "permission",
+        "callback",
+        "context",
+        "初始化",
+        "授权",
+        "许可证",
+        "生命周期",
+        "权限",
+        "回调"
+      ],
+      "api_classes": [
+        "NvsStreamingContext",
+        "NvsEffectSdkContext",
+        "NvsAssetPackageManager",
+        "NvsLiveWindow"
+      ],
+      "feature_refs": [
+        "demo-feature-list.md",
+        "demo-feature-priority-map.md"
+      ],
+      "api_refs": [
+        "demo-api-list.md",
+        "demo-api-priority-map.md",
+        "demo-api-constraint-map.md",
+        "demo-api-call-order-map.md"
+      ],
+      "snippet_refs": [
+        "demo-simple-snippets-core-lifecycle.md"
+      ],
+      "official_refs": [
+        "official-core.md",
+        "android-integration.md"
+      ],
+      "resource_keys": [
+        "R0"
+      ],
+      "module_ids": [
+        "app-runtime",
+        "permission-gates"
+      ],
+      "blueprint_ids": [
+        "incremental-integration"
+      ],
+      "simple_code_refs": [
+        "demo-simple-snippets-core-lifecycle.md",
+        "android-integration.md"
+      ],
+      "optional_template_features": [],
+      "simple_code_ids": [
+        "java.app.request-permissions",
+        "java.engine.stop",
+        "java.engine.stop-with-flags",
+        "java.sdk.configure-runtime",
+        "java.sdk.initialize",
+        "java.sdk.initialize-activity",
+        "java.sdk.initialize-activity-default",
+        "java.thread.require-main",
+        "recipe.feature.app-root",
+        "recipe.feature.base-meishe",
+        "recipe.feature.utils-permission",
+        "recipe.sdk-init"
+      ]
+    },
+    {
+      "id": "short-video-editor",
+      "title": "Complete short-video editor with media import, live preview, child modules, asset center, and export",
+      "category": "timeline-editing",
+      "aliases": [
+        "short video editor",
+        "video editor app",
+        "complete editor",
+        "from zero to one demo",
+        "0 to 1 demo",
+        "media picker editor",
+        "subtitle sticker filter editor",
+        "restore editor filters captions stickers audio",
+        "editor project state restore",
+        "短视频编辑器",
+        "视频编辑器",
+        "完整编辑器",
+        "从0到1",
+        "从零到一",
+        "选择素材",
+        "选择图片视频",
+        "字幕贴纸滤镜",
+        "恢复工程滤镜字幕贴纸音乐",
+        "编辑工程完整恢复",
+        "编辑页面",
+        "我要做短视频编辑器",
+        "我要做视频编辑器",
+        "字幕贴纸属性编辑对话框",
+        "字幕贴纸xy",
+        "编辑对话框滚动"
+      ],
+      "api_classes": [
+        "NvsStreamingContext",
+        "NvsTimeline",
+        "NvsLiveWindow",
+        "NvsAssetPackageManager",
+        "NvsTimelineCaption",
+        "NvsTimelineAnimatedSticker",
+        "NvsVideoFx",
+        "NvsAudioTrack"
+      ],
+      "feature_refs": [
+        "demo-validated-editor-architecture.md",
+        "demo-feature-priority-map.md",
+        "demo-feature-dependency-graph.md",
+        "demo-feature-list.md",
+        "capability-catalog.md",
+        "editor-runtime-pitfalls.md"
+      ],
+      "api_refs": [
+        "demo-api-dependency-graph.md",
+        "demo-api-call-order-map.md",
+        "demo-api-constraint-map.md",
+        "demo-sdk-constants-map.md"
+      ],
+      "snippet_refs": [
+        "demo-simple-snippets-timeline-editing.md",
+        "demo-simple-snippets-preview-export.md",
+        "demo-simple-snippets-effects-transforms.md",
+        "demo-simple-snippets-captions-stickers.md",
+        "demo-simple-snippets-audio-media.md",
+        "demo-simple-snippets-assets-packages.md"
+      ],
+      "official_refs": [
+        "official-editing-export.md",
+        "android-integration.md",
+        "official-core.md"
+      ],
+      "resource_keys": [
+        "R0",
+        "R1",
+        "R3",
+        "R4"
+      ],
+      "module_ids": [
+        "editor-shell",
+        "media-import",
+        "timeline-state-store",
+        "timeline-preview",
+        "app-repository",
+        "export-compile",
+        "caption-editor",
+        "sticker-editor",
+        "filter-editor",
+        "asset-center-service"
+      ],
+      "blueprint_ids": [
+        "short-video-editor"
+      ],
+      "simple_code_refs": [
+        "demo-validated-editor-architecture.md",
+        "demo-simple-snippets-timeline-editing.md",
+        "demo-simple-snippets-preview-export.md",
+        "demo-simple-snippets-effects-transforms.md",
+        "demo-simple-snippets-captions-stickers.md",
+        "demo-simple-snippets-assets-packages.md"
+      ],
+      "optional_template_features": [
+        "preview-playback",
+        "effects",
+        "captions-stickers",
+        "audio",
+        "asset-center"
+      ],
+      "simple_code_ids": [
+        "java.app.copy-bundled-media-to-project",
+        "java.app.copy-content-uri-to-cache",
+        "java.app.copy-content-uri-to-project",
+        "java.app.create-stable-object-id",
+        "java.app.extract-editor-state",
+        "java.app.latest-project-id",
+        "java.app.load-atomic-project-state",
+        "java.app.load-project-state",
+        "java.app.read-project-dimension",
+        "java.app.restore-timeline-structure",
+        "java.app.save-atomic-project-state",
+        "java.app.save-editor-state",
+        "java.app.save-project-state",
+        "java.app.save-timeline-structure",
+        "java.asset-center.install-bundled-package",
+        "java.asset-center.list-bundled-materials",
+        "java.asset-center.register-bundled-font",
+        "java.caption.add",
+        "java.caption.apply-modular-assets",
+        "java.caption.apply-readable-style",
+        "java.caption.clip-range",
+        "java.caption.configure-transform",
+        "java.caption.configure-typography",
+        "java.caption.list-clip",
+        "java.caption.list-timeline",
+        "java.caption.register-font",
+        "java.caption.remove",
+        "java.caption.set-letter-spacing",
+        "java.caption.set-text",
+        "java.caption.timeline-range",
+        "java.clip.add-animated-sticker",
+        "java.clip.add-caption",
+        "java.clip.add-modular-caption",
+        "java.clip.list-animated-stickers",
+        "java.clip.remove-animated-sticker",
+        "java.clip.remove-caption",
+        "java.editor.clear-supported-features",
+        "java.editor.restore-supported-features",
+        "java.effect.add-packaged-timeline",
+        "java.effect.add-timeline-builtin",
+        "java.effect.append-builtin",
+        "java.effect.append-builtin-range",
+        "java.effect.append-packaged",
+        "java.effect.append-packaged-range",
+        "java.effect.append-raw-builtin",
+        "java.effect.append-raw-builtin-range",
+        "java.effect.get-first-timeline-fx",
+        "java.effect.list-clip-fx",
+        "java.effect.remove-timeline-fx",
+        "java.effect.set-float",
+        "java.effect.set-position-parameters",
+        "java.export.bitrate-grade",
+        "java.export.compile",
+        "java.export.compile-configured",
+        "java.export.configure",
+        "java.export.register-callback3",
+        "java.export.register-callbacks",
+        "java.export.resolution-grade",
+        "java.media.create-frame-retriever",
+        "java.media.probe",
+        "java.media.probe-with-flags",
+        "java.media.release-frame-retriever",
+        "java.media.retrieve-frame",
+        "java.preview.build-seek-flags",
+        "java.preview.configure-live-window",
+        "java.preview.connect",
+        "java.preview.current-position",
+        "java.preview.map-live-window-point",
+        "java.preview.play",
+        "java.preview.play-with-fps",
+        "java.preview.read-engine-state",
+        "java.preview.register-callbacks",
+        "java.preview.seek",
+        "java.preview.seek-with-fps",
+        "java.preview.set-seek-scale",
+        "java.sticker.add",
+        "java.sticker.add-custom",
+        "java.sticker.clip-range",
+        "java.sticker.configure-animation-transform",
+        "java.sticker.list-at-position",
+        "java.sticker.list-timeline",
+        "java.sticker.remove",
+        "java.sticker.timeline-range",
+        "java.timeline.append-clip",
+        "java.timeline.append-media-list",
+        "java.timeline.configure-structure",
+        "java.timeline.create",
+        "java.timeline.create-with-flags",
+        "java.timeline.get-video-resolution",
+        "java.timeline.remove",
+        "recipe.apply-refresh-editor-child",
+        "recipe.bundled-material-install",
+        "recipe.caption-sticker-edit",
+        "recipe.compile-export",
+        "recipe.connect-livewindow",
+        "recipe.editor-project-v3-ownership",
+        "recipe.editor-session-orchestration",
+        "recipe.feature.base",
+        "recipe.feature.download",
+        "recipe.feature.edit",
+        "recipe.feature.edit-animatesticker",
+        "recipe.feature.edit-caption",
+        "recipe.feature.edit-filter",
+        "recipe.feature.libnet",
+        "recipe.feature.repository",
+        "recipe.feature.selectmedia",
+        "recipe.feature.utils",
+        "recipe.feature.utils-datainfo",
+        "recipe.filter-effect-edit",
+        "recipe.media-probe-and-ratio",
+        "recipe.timeline-build"
+      ]
+    },
+    {
+      "id": "timeline-editing",
+      "title": "Timeline, tracks, clips, trim, split, project editing",
+      "category": "timeline-editing",
+      "aliases": [
+        "timeline",
+        "track",
+        "clip",
+        "trim",
+        "split",
+        "append clip",
+        "video edit",
+        "photo album",
+        "时间线",
+        "轨道",
+        "片段",
+        "剪辑",
+        "裁剪",
+        "分割",
+        "拼接",
+        "相册",
+        "clip speed move trim",
+        "片段变速移动"
+      ],
+      "api_classes": [
+        "NvsTimeline",
+        "NvsVideoTrack",
+        "NvsVideoClip",
+        "NvsAudioTrack",
+        "NvsAudioClip"
+      ],
+      "feature_refs": [
+        "demo-feature-list.md",
+        "demo-feature-dependency-graph.md"
+      ],
+      "api_refs": [
+        "demo-api-list.md",
+        "demo-api-dependency-graph.md",
+        "demo-api-constraint-map.md"
+      ],
+      "snippet_refs": [
+        "demo-simple-snippets-timeline-editing.md",
+        "demo-simple-snippets-audio-media.md"
+      ],
+      "official_refs": [
+        "official-editing-export.md"
+      ],
+      "resource_keys": [
+        "R0",
+        "R1",
+        "R3"
+      ],
+      "module_ids": [
+        "media-import",
+        "timeline-state-store",
+        "timeline-preview",
+        "clip-editor",
+        "export-compile"
+      ],
+      "blueprint_ids": [
+        "incremental-integration"
+      ],
+      "simple_code_refs": [
+        "demo-simple-snippets-timeline-editing.md",
+        "demo-simple-snippets-audio-media.md",
+        "demo-validated-editor-architecture.md"
+      ],
+      "optional_template_features": [],
+      "simple_code_ids": [
+        "java.app.copy-bundled-media-to-project",
+        "java.app.copy-content-uri-to-cache",
+        "java.app.copy-content-uri-to-project",
+        "java.app.restore-timeline-structure",
+        "java.clip.change-speed",
+        "java.clip.change-trim-in",
+        "java.clip.configure-advanced-playback",
+        "java.clip.is-audio-video",
+        "java.clip.move",
+        "java.clip.move-to-timeline-position",
+        "java.clip.remove-at",
+        "java.clip.split-at-playhead",
+        "java.clip.trim-out-at-playhead",
+        "java.export.bitrate-grade",
+        "java.export.compile",
+        "java.export.compile-configured",
+        "java.export.configure",
+        "java.export.register-callback3",
+        "java.export.register-callbacks",
+        "java.export.resolution-grade",
+        "java.media.create-frame-retriever",
+        "java.media.probe",
+        "java.media.probe-with-flags",
+        "java.media.release-frame-retriever",
+        "java.media.retrieve-frame",
+        "java.preview.build-seek-flags",
+        "java.preview.configure-live-window",
+        "java.preview.connect",
+        "java.preview.current-position",
+        "java.preview.map-live-window-point",
+        "java.preview.play",
+        "java.preview.play-with-fps",
+        "java.preview.read-engine-state",
+        "java.preview.register-callbacks",
+        "java.preview.seek",
+        "java.preview.seek-with-fps",
+        "java.preview.set-seek-scale",
+        "java.timeline.add-clip-at-position",
+        "java.timeline.append-clip",
+        "java.timeline.append-media-list",
+        "java.timeline.append-trimmed-clip",
+        "java.timeline.configure-structure",
+        "java.timeline.create",
+        "java.timeline.create-with-flags",
+        "java.timeline.get-video-clip",
+        "java.timeline.get-video-resolution",
+        "java.timeline.insert-clip-at-index",
+        "java.timeline.remove",
+        "recipe.apply-refresh-editor-child",
+        "recipe.compile-export",
+        "recipe.connect-livewindow",
+        "recipe.editor-session-orchestration",
+        "recipe.feature.edit-clipedit",
+        "recipe.feature.selectmedia",
+        "recipe.feature.utils",
+        "recipe.feature.utils-datainfo",
+        "recipe.media-probe-and-ratio",
+        "recipe.timeline-build"
+      ]
+    },
+    {
+      "id": "preview-playback-export",
+      "title": "Preview, playback, seek, compile/export, thumbnails",
+      "category": "preview-export",
+      "aliases": [
+        "preview",
+        "playback",
+        "seek",
+        "scrub",
+        "compile",
+        "export",
+        "thumbnail",
+        "live window",
+        "预览",
+        "播放",
+        "定位",
+        "拖动",
+        "导出",
+        "合成",
+        "缩略图",
+        "configured timeline compile callback3",
+        "配置式时间线导出和二次进度回调"
+      ],
+      "api_classes": [
+        "NvsStreamingContext",
+        "NvsLiveWindow",
+        "NvsMultiThumbnailSequenceView",
+        "NvsVideoFrameRetriever"
+      ],
+      "feature_refs": [
+        "demo-feature-list.md",
+        "demo-feature-priority-map.md"
+      ],
+      "api_refs": [
+        "demo-api-list.md",
+        "demo-api-dependency-graph.md",
+        "demo-api-call-order-map.md"
+      ],
+      "snippet_refs": [
+        "demo-simple-snippets-preview-export.md"
+      ],
+      "official_refs": [
+        "official-editing-export.md"
+      ],
+      "resource_keys": [
+        "R0",
+        "R3"
+      ],
+      "module_ids": [
+        "timeline-preview",
+        "export-compile"
+      ],
+      "blueprint_ids": [
+        "incremental-integration"
+      ],
+      "simple_code_refs": [
+        "demo-simple-snippets-preview-export.md",
+        "demo-validated-editor-architecture.md"
+      ],
+      "optional_template_features": [
+        "preview-playback"
+      ],
+      "simple_code_ids": [
+        "java.export.bitrate-grade",
+        "java.export.compile",
+        "java.export.compile-configured",
+        "java.export.configure",
+        "java.export.register-callback3",
+        "java.export.register-callbacks",
+        "java.export.resolution-grade",
+        "java.preview.build-seek-flags",
+        "java.preview.configure-live-window",
+        "java.preview.connect",
+        "java.preview.current-position",
+        "java.preview.map-live-window-point",
+        "java.preview.play",
+        "java.preview.play-with-fps",
+        "java.preview.read-engine-state",
+        "java.preview.register-callbacks",
+        "java.preview.seek",
+        "java.preview.seek-with-fps",
+        "java.preview.set-seek-scale",
+        "recipe.compile-export",
+        "recipe.connect-livewindow",
+        "recipe.editor-session-orchestration"
+      ]
+    },
+    {
+      "id": "capture-recording",
+      "title": "Camera capture, preview, recording, focus, flash",
+      "category": "capture-recording",
+      "aliases": [
+        "capture",
+        "camera",
+        "record",
+        "recording",
+        "focus",
+        "flash",
+        "take picture",
+        "拍摄",
+        "相机",
+        "录制",
+        "录像",
+        "对焦",
+        "闪光灯",
+        "拍照",
+        "synchronous stop recording",
+        "同步停止录制"
+      ],
+      "api_classes": [
+        "NvsStreamingContext",
+        "NvsLiveWindow",
+        "NvsCaptureVideoFx"
+      ],
+      "feature_refs": [
+        "demo-feature-list.md",
+        "demo-feature-dependency-graph.md"
+      ],
+      "api_refs": [
+        "demo-api-list.md",
+        "demo-api-constraint-map.md",
+        "demo-api-call-order-map.md"
+      ],
+      "snippet_refs": [
+        "demo-simple-snippets-capture-recording.md"
+      ],
+      "official_refs": [
+        "official-editing-export.md"
+      ],
+      "resource_keys": [
+        "R0",
+        "R2"
+      ],
+      "module_ids": [
+        "capture-camera",
+        "capture-filter"
+      ],
+      "blueprint_ids": [
+        "beauty-camera",
+        "camera-plus-editor"
+      ],
+      "simple_code_refs": [
+        "demo-simple-snippets-capture-recording.md"
+      ],
+      "optional_template_features": [],
+      "simple_code_ids": [
+        "java.capture.append-packaged-fx",
+        "java.capture.build-preview-flags",
+        "java.capture.clear-effects",
+        "java.capture.configure-device-controls",
+        "java.capture.get-device-capability",
+        "java.capture.list-effects",
+        "java.capture.pause-recording",
+        "java.capture.register-callbacks",
+        "java.capture.remove-effect",
+        "java.capture.resume-recording",
+        "java.capture.start-preview",
+        "java.capture.start-recording",
+        "java.capture.start-recording-configured",
+        "java.capture.start-recording-with-flags",
+        "java.capture.stop-recording",
+        "java.capture.stop-recording-synchronous",
+        "recipe.capture-preview-record",
+        "recipe.feature.capture",
+        "recipe.feature.capture-filter",
+        "recipe.install-asset-package"
+      ]
+    },
+    {
+      "id": "effects-transforms",
+      "title": "Built-in/package effects, filters, transitions, transform, color, crop, speed",
+      "category": "effects-transforms",
+      "aliases": [
+        "effect",
+        "fx",
+        "filter",
+        "transition",
+        "transform",
+        "color",
+        "crop",
+        "speed",
+        "mask",
+        "particle",
+        "watermark",
+        "特效",
+        "滤镜",
+        "转场",
+        "变换",
+        "调色",
+        "裁剪",
+        "变速",
+        "遮罩",
+        "粒子",
+        "水印",
+        "packaged transition and raw video fx",
+        "素材包转场和原始特效",
+        "range clip fx",
+        "区间滤镜"
+      ],
+      "api_classes": [
+        "NvsFx",
+        "NvsVideoFx",
+        "NvsTimelineVideoFx",
+        "NvsVideoTransition",
+        "NvsMaskRegionInfo",
+        "NvsAssetPackageManager"
+      ],
+      "feature_refs": [
+        "demo-feature-list.md",
+        "demo-feature-priority-map.md"
+      ],
+      "api_refs": [
+        "demo-api-list.md",
+        "demo-api-constraint-map.md",
+        "demo-sdk-constants-map.md"
+      ],
+      "snippet_refs": [
+        "demo-simple-snippets-effects-transforms.md",
+        "demo-simple-snippets-assets-packages.md"
+      ],
+      "official_refs": [
+        "official-fx-and-errors.md",
+        "official-editing-export.md"
+      ],
+      "resource_keys": [
+        "R0",
+        "R4",
+        "R5"
+      ],
+      "module_ids": [
+        "filter-editor"
+      ],
+      "blueprint_ids": [
+        "short-video-editor",
+        "incremental-integration"
+      ],
+      "simple_code_refs": [
+        "demo-simple-snippets-effects-transforms.md",
+        "demo-simple-snippets-assets-packages.md"
+      ],
+      "optional_template_features": [
+        "effects"
+      ],
+      "simple_code_ids": [
+        "java.effect.add-packaged-timeline",
+        "java.effect.add-timeline-builtin",
+        "java.effect.append-builtin",
+        "java.effect.append-builtin-range",
+        "java.effect.append-packaged",
+        "java.effect.append-packaged-range",
+        "java.effect.append-raw-builtin",
+        "java.effect.append-raw-builtin-range",
+        "java.effect.get-first-timeline-fx",
+        "java.effect.list-clip-fx",
+        "java.effect.remove-timeline-fx",
+        "java.effect.set-float",
+        "java.effect.set-position-parameters",
+        "recipe.feature.edit-filter",
+        "recipe.filter-effect-edit"
+      ]
+    },
+    {
+      "id": "captions-stickers",
+      "title": "Captions, compound captions, caption spans, animated stickers, fonts",
+      "category": "captions-stickers",
+      "aliases": [
+        "caption",
+        "subtitle",
+        "text",
+        "compound caption",
+        "sticker",
+        "animated sticker",
+        "font",
+        "lyrics",
+        "字幕",
+        "文字",
+        "标题",
+        "复合字幕",
+        "贴纸",
+        "动态贴纸",
+        "字体",
+        "歌词",
+        "caption sticker time range",
+        "subtitle sticker timing",
+        "字幕贴纸时间范围",
+        "compound caption slot text",
+        "复合字幕单槽文本",
+        "modular caption",
+        "caption bubble",
+        "caption renderer",
+        "caption animation",
+        "字幕气泡",
+        "富文本字幕渲染器",
+        "字幕动画",
+        "拼装字幕",
+        "字幕位置移动",
+        "贴纸位置移动",
+        "字幕气泡不生效",
+        "字幕动画不生效"
+      ],
+      "api_classes": [
+        "NvsTimelineCaption",
+        "NvsCaption",
+        "NvsTimelineCompoundCaption",
+        "NvsTimelineAnimatedSticker",
+        "NvsCaptionSpan"
+      ],
+      "feature_refs": [
+        "demo-feature-list.md",
+        "demo-feature-dependency-graph.md",
+        "editor-runtime-pitfalls.md"
+      ],
+      "api_refs": [
+        "demo-api-list.md",
+        "demo-api-constraint-map.md",
+        "demo-sdk-constants-map.md"
+      ],
+      "snippet_refs": [
+        "demo-simple-snippets-captions-stickers.md",
+        "demo-simple-snippets-rare-structural.md"
+      ],
+      "official_refs": [
+        "official-editing-export.md"
+      ],
+      "resource_keys": [
+        "R0",
+        "R4",
+        "R6"
+      ],
+      "module_ids": [
+        "caption-editor",
+        "sticker-editor"
+      ],
+      "blueprint_ids": [
+        "short-video-editor",
+        "incremental-integration"
+      ],
+      "simple_code_refs": [
+        "demo-simple-snippets-captions-stickers.md",
+        "demo-simple-snippets-rare-structural.md"
+      ],
+      "optional_template_features": [
+        "captions-stickers"
+      ],
+      "simple_code_ids": [
+        "java.caption.add",
+        "java.caption.apply-modular-assets",
+        "java.caption.apply-readable-style",
+        "java.caption.clip-range",
+        "java.caption.configure-transform",
+        "java.caption.configure-typography",
+        "java.caption.list-clip",
+        "java.caption.list-timeline",
+        "java.caption.register-font",
+        "java.caption.remove",
+        "java.caption.set-letter-spacing",
+        "java.caption.set-text",
+        "java.caption.timeline-range",
+        "java.clip.add-animated-sticker",
+        "java.clip.add-caption",
+        "java.clip.add-modular-caption",
+        "java.clip.list-animated-stickers",
+        "java.clip.remove-animated-sticker",
+        "java.clip.remove-caption",
+        "java.sticker.add",
+        "java.sticker.add-custom",
+        "java.sticker.clip-range",
+        "java.sticker.configure-animation-transform",
+        "java.sticker.list-at-position",
+        "java.sticker.list-timeline",
+        "java.sticker.remove",
+        "java.sticker.timeline-range",
+        "recipe.caption-sticker-edit",
+        "recipe.feature.edit-animatesticker",
+        "recipe.feature.edit-caption"
+      ]
+    },
+    {
+      "id": "audio-media",
+      "title": "Audio tracks, music, voiceover, lyrics, media conversion",
+      "category": "audio-media",
+      "aliases": [
+        "audio",
+        "music",
+        "voice",
+        "voiceover",
+        "lyrics",
+        "lrc",
+        "convert",
+        "media file",
+        "音频",
+        "音乐",
+        "配乐",
+        "录音",
+        "配音",
+        "歌词",
+        "转码",
+        "媒体",
+        "stereo track volume",
+        "音轨左右声道音量"
+      ],
+      "api_classes": [
+        "NvsAudioTrack",
+        "NvsAudioClip",
+        "NvsAudioFx",
+        "NvsMediaFileConvertor",
+        "NvsAVFileInfo"
+      ],
+      "feature_refs": [
+        "demo-feature-list.md",
+        "demo-feature-dependency-graph.md"
+      ],
+      "api_refs": [
+        "demo-api-list.md",
+        "demo-api-constraint-map.md",
+        "demo-api-call-order-map.md"
+      ],
+      "snippet_refs": [
+        "demo-simple-snippets-audio-media.md"
+      ],
+      "official_refs": [
+        "official-editing-export.md"
+      ],
+      "resource_keys": [
+        "R0",
+        "R1",
+        "R7",
+        "R12"
+      ],
+      "module_ids": [
+        "music-editor",
+        "voiceover-editor",
+        "quick-splicing",
+        "url-media-import",
+        "music-lyrics",
+        "audio-equalizer"
+      ],
+      "blueprint_ids": [
+        "quick-splicing-app",
+        "incremental-integration"
+      ],
+      "simple_code_refs": [
+        "demo-simple-snippets-audio-media.md"
+      ],
+      "optional_template_features": [
+        "audio"
+      ],
+      "simple_code_ids": [
+        "java.audio.add-clip",
+        "java.audio.add-clip-at",
+        "java.audio.add-voiceover",
+        "java.audio.append-clip-default",
+        "java.audio.append-clip-fx",
+        "java.audio.apply-equalizer",
+        "java.audio.configure-transition",
+        "java.audio.ensure-track",
+        "java.audio.get-clip",
+        "java.audio.replace-clip-fx",
+        "java.audio.set-clip-volume",
+        "java.audio.set-fades",
+        "java.audio.set-track-stereo-volume",
+        "java.caption.add-timed-lyrics",
+        "java.media.convert-passthrough",
+        "java.media.probe-url",
+        "java.timeline.build-quick-splice",
+        "java.timeline.set-theme-music-volume",
+        "recipe.audio-edit",
+        "recipe.caption-sticker-edit",
+        "recipe.feature.edit-audio",
+        "recipe.feature.edit-music",
+        "recipe.feature.edit-record",
+        "recipe.feature.musiclyrics",
+        "recipe.feature.quicksplicing",
+        "recipe.feature.urledit",
+        "recipe.media-probe-and-ratio"
+      ]
+    },
+    {
+      "id": "asset-packages",
+      "title": "Asset package install, upgrade, query, package ids",
+      "category": "assets-packages",
+      "aliases": [
+        "asset",
+        "package",
+        "install asset package",
+        "install package",
+        "upgrade package",
+        "package id",
+        "素材",
+        "素材包",
+        "安装素材",
+        "升级素材",
+        "包id",
+        "资源包"
+      ],
+      "api_classes": [
+        "NvsAssetPackageManager",
+        "NvsAssetPackageManager.AssetPackageManagerCallback"
+      ],
+      "feature_refs": [
+        "demo-feature-list.md"
+      ],
+      "api_refs": [
+        "demo-api-list.md",
+        "demo-api-constraint-map.md",
+        "demo-sdk-constants-map.md"
+      ],
+      "snippet_refs": [
+        "demo-simple-snippets-assets-packages.md"
+      ],
+      "official_refs": [
+        "official-core.md",
+        "android-integration.md"
+      ],
+      "resource_keys": [
+        "R0",
+        "R4"
+      ],
+      "module_ids": [
+        "asset-package-service"
+      ],
+      "blueprint_ids": [
+        "asset-center-demo",
+        "incremental-integration"
+      ],
+      "simple_code_refs": [
+        "demo-simple-snippets-assets-packages.md",
+        "asset-center-workflow.md"
+      ],
+      "optional_template_features": [],
+      "simple_code_ids": [
+        "java.asset.inspect-package",
+        "java.asset.install-async",
+        "java.asset.install-or-upgrade",
+        "java.asset.package-type",
+        "java.sdk.get-asset-package-manager",
+        "recipe.feature.utils-asset",
+        "recipe.install-asset-package"
+      ]
+    },
+    {
+      "id": "beauty-makeup-ar",
+      "title": "Beauty, makeup, face shape, face mesh, AR scene",
+      "category": "ar-makeup-segmentation",
+      "aliases": [
+        "beauty",
+        "makeup",
+        "ar",
+        "ar scene",
+        "face",
+        "face mesh",
+        "face shape",
+        "warp",
+        "prop",
+        "美颜",
+        "美妆",
+        "AR",
+        "道具",
+        "人脸",
+        "脸型",
+        "网格",
+        "变形",
+        "human detection model lifecycle",
+        "人体检测模型初始化释放",
+        "extended human detection model",
+        "人体检测扩展模型",
+        "AR effect invisible",
+        "face detected but no effect",
+        "face detected but AR effect invisible",
+        "installed but no visual effect",
+        "Trial Version isSdkAuthorised false",
+        "真机检测到人脸但 AR 场景依旧没效果",
+        "人脸网格已安装应用但没有视觉效果",
+        "AR 场景不生效",
+        "人脸网格不生效",
+        "许可证未授权",
+        "检测到人脸但没效果"
+      ],
+      "api_classes": [
+        "NvsCaptureVideoFx",
+        "NvsFx",
+        "NvsEffectSdkContext",
+        "NvsEffectRenderCore",
+        "NvsARSceneManipulate",
+        "NvsMakeupEffectInfo"
+      ],
+      "feature_refs": [
+        "demo-feature-list.md",
+        "demo-feature-priority-map.md",
+        "demo-feature-dependency-graph.md"
+      ],
+      "api_refs": [
+        "demo-api-list.md",
+        "demo-api-constraint-map.md",
+        "demo-sdk-constants-map.md"
+      ],
+      "snippet_refs": [
+        "demo-simple-snippets-ar-makeup-segmentation.md"
+      ],
+      "official_refs": [
+        "official-effects-ar-template.md"
+      ],
+      "resource_keys": [
+        "R0",
+        "R2",
+        "R4",
+        "R8"
+      ],
+      "module_ids": [
+        "beauty-camera",
+        "makeup-editor",
+        "makeup-service",
+        "ar-scene"
+      ],
+      "blueprint_ids": [
+        "beauty-camera",
+        "camera-plus-editor"
+      ],
+      "simple_code_refs": [
+        "demo-simple-snippets-ar-makeup-segmentation.md",
+        "official-effects-ar-template.md",
+        "ar-face-runtime-troubleshooting.md"
+      ],
+      "optional_template_features": [
+        "beauty-ar"
+      ],
+      "simple_code_ids": [
+        "java.beauty.append-ar-scene",
+        "java.beauty.append-capture-fx",
+        "java.beauty.apply-ar-scene-package",
+        "java.beauty.apply-face-mesh-package",
+        "java.beauty.configure-ar-manipulation",
+        "java.beauty.configure-ar-scene",
+        "java.beauty.effect-human-detection-ext-configured",
+        "java.beauty.effect-sdk-init",
+        "java.beauty.effect-sdk-init-activity-default",
+        "java.beauty.effect-sdk-init-activity-flags",
+        "java.beauty.enable-ai-face-occlusion",
+        "java.beauty.initialize-human-detection",
+        "java.beauty.initialize-human-detection-configured",
+        "java.beauty.initialize-human-detection-ext-configured",
+        "java.beauty.release-human-detection",
+        "java.makeup.apply-compound",
+        "java.makeup.configure-part",
+        "recipe.capture-preview-record",
+        "recipe.effect-sdk-init",
+        "recipe.feature.ar-scene",
+        "recipe.feature.capture-beauty",
+        "recipe.feature.edit-makeup",
+        "recipe.feature.edit-view",
+        "recipe.feature.makeup",
+        "recipe.feature.presenter",
+        "recipe.filter-effect-edit",
+        "recipe.install-asset-package"
+      ]
+    },
+    {
+      "id": "segmentation-keying-ai",
+      "title": "Human segmentation, keying, virtual background, AI face workflows",
+      "category": "ar-makeup-segmentation",
+      "aliases": [
+        "segmentation",
+        "matting",
+        "keyer",
+        "master keyer",
+        "virtual background",
+        "superzoom",
+        "ai face",
+        "分割",
+        "抠像",
+        "绿幕",
+        "背景替换",
+        "虚拟背景",
+        "AI人脸",
+        "超分"
+      ],
+      "api_classes": [
+        "NvsEffectSdkContext",
+        "NvsEffectRenderCore",
+        "NvsAIContext",
+        "NvsFaceDetector",
+        "NvsCaptureVideoFx"
+      ],
+      "feature_refs": [
+        "demo-feature-list.md",
+        "demo-feature-dependency-graph.md"
+      ],
+      "api_refs": [
+        "demo-api-list.md",
+        "demo-api-constraint-map.md",
+        "demo-sdk-constants-map.md"
+      ],
+      "snippet_refs": [
+        "demo-simple-snippets-ar-makeup-segmentation.md",
+        "demo-simple-snippets-rare-structural.md"
+      ],
+      "official_refs": [
+        "official-effects-ar-template.md"
+      ],
+      "resource_keys": [
+        "R0",
+        "R1",
+        "R4",
+        "R8",
+        "R9"
+      ],
+      "module_ids": [
+        "segmentation-keying",
+        "superzoom-ai"
+      ],
+      "blueprint_ids": [
+        "full-sdk-demo",
+        "incremental-integration"
+      ],
+      "simple_code_refs": [
+        "demo-simple-snippets-ar-makeup-segmentation.md",
+        "demo-simple-snippets-rare-structural.md"
+      ],
+      "optional_template_features": [
+        "beauty-ar"
+      ],
+      "simple_code_ids": [
+        "java.segmentation.append-background-capture",
+        "java.superzoom.create-output-timeline",
+        "recipe.connect-livewindow",
+        "recipe.effect-sdk-init",
+        "recipe.feature.superzoom",
+        "recipe.timeline-build"
+      ]
+    },
+    {
+      "id": "template-mimo-cutsame",
+      "title": "Mimo, CutSame, templates, footage replacement",
+      "category": "template-mimo-cutsame",
+      "aliases": [
+        "template",
+        "mimo",
+        "cutsame",
+        "cutsame reverse footage and compound caption replacement",
+        "cut same",
+        "footage",
+        "replace footage",
+        "theme template",
+        "模板",
+        "剪同款",
+        "一键成片",
+        "卡点",
+        "替换素材",
+        "素材位"
+      ],
+      "api_classes": [
+        "NvsTemplateFootageDesc",
+        "NvsTemplateFootageCorrespondingClipInfo",
+        "NvsTemplateCaptionDesc",
+        "NvsTimeline"
+      ],
+      "feature_refs": [
+        "demo-feature-list.md",
+        "demo-feature-priority-map.md",
+        "demo-feature-dependency-graph.md"
+      ],
+      "api_refs": [
+        "demo-api-list.md",
+        "demo-api-constraint-map.md",
+        "demo-api-call-order-map.md"
+      ],
+      "snippet_refs": [
+        "demo-simple-snippets-template-mimo-cutsame.md"
+      ],
+      "official_refs": [
+        "official-effects-ar-template.md"
+      ],
+      "resource_keys": [
+        "R0",
+        "R1",
+        "R4",
+        "R10"
+      ],
+      "module_ids": [
+        "template-engine",
+        "template-editor",
+        "cutsame-template",
+        "mimo-template"
+      ],
+      "blueprint_ids": [
+        "template-mimo-cutsame-app"
+      ],
+      "simple_code_refs": [
+        "demo-simple-snippets-template-mimo-cutsame.md"
+      ],
+      "optional_template_features": [],
+      "simple_code_ids": [
+        "java.mimo.build-timeline",
+        "java.mimo.export",
+        "java.mimo.extract-archive",
+        "java.mimo.install-child-packages",
+        "java.mimo.install-extracted-child-packages",
+        "java.mimo.parse-package",
+        "java.mimo.reconnect-preview",
+        "java.template.build-footage",
+        "java.template.create-cutsame-timeline",
+        "java.template.create-editor-timeline",
+        "java.template.create-mimo-timeline",
+        "java.template.current-position",
+        "java.template.export",
+        "java.template.list-replaceable-footage",
+        "java.template.list-reverse-footage",
+        "java.template.play",
+        "java.template.query-captions",
+        "java.template.query-compound-captions",
+        "java.template.query-footages",
+        "java.template.reconnect-preview",
+        "java.template.register-compile-callbacks",
+        "java.template.replace-captions",
+        "java.template.replace-compound-captions",
+        "java.template.reverse-cancel",
+        "java.template.reverse-generate",
+        "java.template.reverse-register-callback",
+        "java.template.reverse-release",
+        "java.template.validate-footage",
+        "recipe.cutsame-replace-export",
+        "recipe.feature.cutsame-template",
+        "recipe.feature.engine-meishe",
+        "recipe.feature.mimodemo",
+        "recipe.mimo-replace-export",
+        "recipe.template-prepare-footage",
+        "recipe.template-replace-export"
+      ]
+    },
+    {
+      "id": "themes-pip-watermark",
+      "title": "Themes, photo album, PIP, watermark, background assets",
+      "category": "effects-transforms",
+      "aliases": [
+        "theme",
+        "album",
+        "photo",
+        "pip",
+        "picture in picture",
+        "watermark",
+        "background",
+        "ending",
+        "主题",
+        "相册",
+        "图片",
+        "画中画",
+        "水印",
+        "背景",
+        "片尾"
+      ],
+      "api_classes": [
+        "NvsAssetPackageManager",
+        "NvsTimelineVideoFx",
+        "NvsVideoFx",
+        "NvsTimeline",
+        "NvsVideoClip"
+      ],
+      "feature_refs": [
+        "demo-feature-list.md",
+        "demo-feature-dependency-graph.md"
+      ],
+      "api_refs": [
+        "demo-api-list.md",
+        "demo-api-constraint-map.md",
+        "demo-sdk-constants-map.md"
+      ],
+      "snippet_refs": [
+        "demo-simple-snippets-effects-transforms.md",
+        "demo-simple-snippets-template-mimo-cutsame.md"
+      ],
+      "official_refs": [
+        "official-editing-export.md",
+        "official-fx-and-errors.md"
+      ],
+      "resource_keys": [
+        "R0",
+        "R1",
+        "R4",
+        "R11"
+      ],
+      "module_ids": [
+        "pip-editor"
+      ],
+      "blueprint_ids": [
+        "pip-editor",
+        "short-video-editor"
+      ],
+      "simple_code_refs": [
+        "demo-simple-snippets-effects-transforms.md",
+        "demo-simple-snippets-template-mimo-cutsame.md"
+      ],
+      "optional_template_features": [
+        "effects"
+      ],
+      "simple_code_ids": [
+        "java.timeline.build-picture-in-picture",
+        "recipe.compile-export",
+        "recipe.connect-livewindow",
+        "recipe.feature.picinpic",
+        "recipe.filter-effect-edit",
+        "recipe.timeline-build"
+      ]
+    },
+    {
+      "id": "asset-center",
+      "title": "External local material catalog and authorized-resource guidance",
+      "category": "assets-packages",
+      "aliases": [
+        "asset center",
+        "material center",
+        "external local material",
+        "offline material",
+        "online material",
+        "material service",
+        "license acquisition",
+        "素材中心",
+        "本地素材",
+        "在线素材",
+        "素材服务",
+        "远程素材下载",
+        "下载素材",
+        "lic 获取",
+        "官网素材目录",
+        "官方SDK包素材路径",
+        "下载SDK人脸版本"
+      ],
+      "api_classes": [
+        "NvsAssetPackageManager",
+        "NvsStreamingContext",
+        "MeisheLocalMaterialCatalog"
+      ],
+      "feature_refs": [
+        "asset-center-workflow.md",
+        "default-sample-assets.md",
+        "resource-requirements-index.md",
+        "official-sdk-download-resources.md"
+      ],
+      "api_refs": [
+        "demo-api-constraint-map.md",
+        "demo-sdk-constants-map.md",
+        "demo-api-call-order-map.md"
+      ],
+      "snippet_refs": [
+        "demo-simple-snippets-assets-packages.md"
+      ],
+      "official_refs": [
+        "android-integration.md",
+        "official-core.md"
+      ],
+      "resource_keys": [
+        "R0",
+        "R4"
+      ],
+      "module_ids": [
+        "asset-center-service",
+        "asset-package-service"
+      ],
+      "blueprint_ids": [
+        "asset-center-demo",
+        "short-video-editor"
+      ],
+      "simple_code_refs": [
+        "asset-center-workflow.md",
+        "demo-simple-snippets-assets-packages.md"
+      ],
+      "optional_template_features": [
+        "asset-center"
+      ],
+      "simple_code_ids": [
+        "java.asset-center.install-bundled-package",
+        "java.asset-center.list-bundled-materials",
+        "java.asset-center.register-bundled-font",
+        "java.asset.inspect-package",
+        "java.asset.install-async",
+        "java.asset.install-or-upgrade",
+        "java.asset.package-type",
+        "java.sdk.get-asset-package-manager",
+        "recipe.bundled-material-install",
+        "recipe.feature.base",
+        "recipe.feature.download",
+        "recipe.feature.libnet",
+        "recipe.feature.utils-asset",
+        "recipe.install-asset-package"
+      ]
+    },
+    {
+      "id": "official-sdk-resources",
+      "title": "Official Android LTS face package resource paths",
+      "category": "android-integration",
+      "aliases": [
+        "official sdk download",
+        "Android LTS SDK",
+        "download SDK face version",
+        "SDK face package",
+        "SDK package resource path",
+        "NvAndroidStreamingSdk.jar path",
+        "libNvStreamingSdkCore.so path",
+        "effectlib.jar path",
+        "effectlib.jar 总包路径",
+        "facemode model path",
+        "NvAndroidStreamingSdk.jar 官网包路径",
+        "官网下载SDK",
+        "SDK下载及开发文档",
+        "Android LTS",
+        "下载SDK人脸版本",
+        "官网SDK资源",
+        "SDK总包",
+        "总包资源目录",
+        "人脸模型目录",
+        "facemode 在哪里",
+        "模板包是否在SDK下载包中",
+        "Mimo 模板包是否在SDK下载包中"
+      ],
+      "api_classes": [
+        "NvsStreamingContext",
+        "NvsEffectSdkContext",
+        "NvsAssetPackageManager"
+      ],
+      "feature_refs": [
+        "official-sdk-download-resources.md",
+        "resource-requirements-index.md",
+        "default-sample-assets.md",
+        "asset-center-workflow.md"
+      ],
+      "api_refs": [
+        "android-integration.md"
+      ],
+      "snippet_refs": [],
+      "official_refs": [
+        "official-sdk-download-resources.md",
+        "official-core.md",
+        "android-integration.md"
+      ],
+      "resource_keys": [
+        "R0",
+        "R4",
+        "R8",
+        "R9",
+        "R10",
+        "R13"
+      ],
+      "module_ids": [
+        "app-runtime",
+        "asset-package-service",
+        "beauty-camera",
+        "makeup-service",
+        "ar-scene",
+        "segmentation-keying",
+        "superzoom-ai",
+        "template-engine",
+        "cutsame-template",
+        "mimo-template"
+      ],
+      "blueprint_ids": [
+        "beauty-camera",
+        "template-mimo-cutsame-app",
+        "full-sdk-demo"
+      ],
+      "simple_code_refs": [
+        "official-sdk-download-resources.md",
+        "official-sdk-download-resource-map.json"
+      ],
+      "optional_template_features": [
+        "beauty-ar"
+      ],
+      "simple_code_ids": [
+        "java.asset.inspect-package",
+        "java.asset.install-async",
+        "java.asset.install-or-upgrade",
+        "java.asset.package-type",
+        "java.beauty.append-ar-scene",
+        "java.beauty.append-capture-fx",
+        "java.beauty.apply-ar-scene-package",
+        "java.beauty.apply-face-mesh-package",
+        "java.beauty.configure-ar-manipulation",
+        "java.beauty.configure-ar-scene",
+        "java.beauty.effect-human-detection-ext-configured",
+        "java.beauty.effect-sdk-init",
+        "java.beauty.effect-sdk-init-activity-default",
+        "java.beauty.effect-sdk-init-activity-flags",
+        "java.beauty.enable-ai-face-occlusion",
+        "java.beauty.initialize-human-detection",
+        "java.beauty.initialize-human-detection-configured",
+        "java.beauty.initialize-human-detection-ext-configured",
+        "java.beauty.release-human-detection",
+        "java.engine.stop",
+        "java.engine.stop-with-flags",
+        "java.makeup.configure-part",
+        "java.mimo.build-timeline",
+        "java.mimo.export",
+        "java.mimo.extract-archive",
+        "java.mimo.install-child-packages",
+        "java.mimo.install-extracted-child-packages",
+        "java.mimo.parse-package",
+        "java.mimo.reconnect-preview",
+        "java.sdk.configure-runtime",
+        "java.sdk.get-asset-package-manager",
+        "java.sdk.initialize",
+        "java.sdk.initialize-activity",
+        "java.sdk.initialize-activity-default",
+        "java.segmentation.append-background-capture",
+        "java.superzoom.create-output-timeline",
+        "java.template.build-footage",
+        "java.template.create-cutsame-timeline",
+        "java.template.list-replaceable-footage",
+        "java.template.list-reverse-footage",
+        "java.template.query-captions",
+        "java.template.query-compound-captions",
+        "java.template.query-footages",
+        "java.template.reverse-cancel",
+        "java.template.reverse-generate",
+        "java.template.reverse-register-callback",
+        "java.template.reverse-release",
+        "java.template.validate-footage",
+        "java.thread.require-main",
+        "recipe.capture-preview-record",
+        "recipe.connect-livewindow",
+        "recipe.cutsame-replace-export",
+        "recipe.effect-sdk-init",
+        "recipe.feature.app-root",
+        "recipe.feature.ar-scene",
+        "recipe.feature.base-meishe",
+        "recipe.feature.capture-beauty",
+        "recipe.feature.cutsame-template",
+        "recipe.feature.engine-meishe",
+        "recipe.feature.makeup",
+        "recipe.feature.mimodemo",
+        "recipe.feature.presenter",
+        "recipe.feature.superzoom",
+        "recipe.feature.utils-asset",
+        "recipe.install-asset-package",
+        "recipe.mimo-replace-export",
+        "recipe.sdk-init",
+        "recipe.template-prepare-footage",
+        "recipe.timeline-build"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_screen_gradient"
+    android:orientation="vertical"
+    android:padding="22dp">
+
+    <TextView
+        style="@style/ScreenTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Local materials" />
+
+    <TextView
+        style="@style/BodyText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="Project-local samples; install first, then use them in an editor or camera" />
+
+    <Spinner
+        android:id="@+id/assetTypeSpinner"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/bg_surface_card"
+        android:paddingLeft="12dp"
+        android:paddingRight="12dp" />
+
+    <Button
+        android:id="@+id/showAssetFamilyButton"
+        style="@style/SecondaryButton"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:text="Show selected family" />
+
+    <TextView
+        android:id="@+id/assetStatusText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/bg_surface_card"
+        android:gravity="center_vertical"
+        android:minHeight="62dp"
+        android:text="Ready" />
+
+    <ListView
+        android:id="@+id/assetList"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="14dp"
+        android:layout_weight="1"
+        android:background="@drawable/bg_surface_card"
+        android:divider="@color/divider"
+        android:dividerHeight="1dp" />
+
+    <Button
+        android:id="@+id/installAssetButton"
+        style="@style/PrimaryButton"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:enabled="false"
+        android:text="Install or register selected" />
+
+    <Button
+        android:id="@+id/applyAssetButton"
+        style="@style/SecondaryButton"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginTop="10dp"
+        android:enabled="false"
+        android:text="Use selected material"
+        android:visibility="gone" />
+</LinearLayout>

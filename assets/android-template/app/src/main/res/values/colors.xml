@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="app_background">#0B0D14</color>
+    <color name="surface">#151824</color>
+    <color name="surface_elevated">#1D2130</color>
+    <color name="surface_pressed">#292E40</color>
+    <color name="brand_primary">#7C5CFF</color>
+    <color name="brand_primary_pressed">#6547E6</color>
+    <color name="brand_accent">#2DD4BF</color>
+    <color name="text_primary">#F7F7FB</color>
+    <color name="text_secondary">#A9AEC1</color>
+    <color name="text_muted">#737A91</color>
+    <color name="divider">#30364A</color>
+    <color name="danger">#FF667A</color>
+    <color name="white">#FFFFFFFF</color>
+</resources>
