@@ -32,7 +32,7 @@ Short video apps · live commerce · social streaming · video editing tools · 
 3. Add the SDK dependency and configure capture/editing/export.
 4. Test on target Android devices and ship.
 
-> Dependency coordinates, sample code, and API references: see the repository docs.
+> Dependency coordinates, sample code, and SDK references: see the repository docs.
 
 ## MeisheSDK Demo Download:
 
